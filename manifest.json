@@ -1,0 +1,26 @@
+{
+  "bundleName": "IAP - Data Manipulation",
+  "version": "0.0.1",
+  "fingerprint": "6597037c054ed701a81657cd",
+  "createdEpoch": "1704395644809",
+  "artifacts": [
+    {
+      "id": "5f2df1cbc707342a6caacb98",
+      "name": "aggregateFunctions",
+      "type": "transformation",
+      "location": "/bundles/transformations/aggregateFunctions.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f510ee4a1ff8106e83c1963",
+      "name": "allocateNewPair",
+      "type": "transformation",
+      "location": "/bundles/transformations/allocateNewPair.json",
+      "properties": {
+        "entryPoint": false
+      }
+    }
+  ]
+}

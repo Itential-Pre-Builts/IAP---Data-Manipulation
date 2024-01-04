@@ -1,0 +1,13 @@
+{
+  "readme": "/documentation/readme.json",
+  "assets": [
+    {
+      "name": "Aggregate Functions For Arrays - IAP",
+      "path": "/documentation/Aggregate Functions For Arrays - IAP.json"
+    },
+    {
+      "name": "Allocate A Pair Of Numbers - IAP",
+      "path": "/documentation/Allocate A Pair Of Numbers - IAP.json"
+    }
+  ]
+}

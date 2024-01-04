@@ -1,0 +1,50 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and a given ending integer"
+    }
+  ],
+  "entryPoint": {
+    "name": "aggregateFunctions",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "allocated",
+      "type": "array",
+      "required": "yes",
+      "description": "Array of already allocated integers",
+      "exampleValue": "[1, 4, 5]"
+    },
+    {
+      "name": "startRange",
+      "type": "number",
+      "required": "yes",
+      "description": "A given starting integer",
+      "exampleValue": "5"
+    },
+    {
+      "name": "endRange",
+      "type": "number",
+      "required": "yes",
+      "description": "A given ending integer",
+      "exampleValue": "8"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "output",
+      "type": "object",
+      "description": "Has assigned property which contains the consecutive pair or a boolean value",
+      "exampleValue": "[6, 7]"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Allocate A Pair Of Numbers - IAP",
+  "overview": "This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and a given ending integer",
+  "webName": "Allocate A Pair Of Numbers - IAP",
+  "assetType": "Transformation"
+}
