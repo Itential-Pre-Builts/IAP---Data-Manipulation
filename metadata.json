@@ -1,0 +1,76 @@
+{
+  "name": "IAP - Data Manipulation",
+  "webName": "IAP - Data Manipulation Examples with Transformation ",
+  "type": "Transformation Project",
+  "vendor": "IAP",
+  "product": "Data Manipulation",
+  "method": "REST",
+  "osVersions": [],
+  "apiVersions": [],
+  "iapVersions": [
+    "2023.1"
+  ],
+  "domains": [],
+  "tags": [],
+  "useCases": [],
+  "deprecated": {
+    "isDeprecated": false,
+    "deprecatedOn": "",
+    "endOfLife": "",
+    "replacedBy": {
+      "name": "",
+      "overview": "",
+      "repoLink": "",
+      "docLink": "",
+      "webLink": "",
+      "isProductFeature": false
+    }
+  },
+  "brokerSince": "",
+  "documentation": {
+    "storeLink": "",
+    "repoLink": "https://gitlab.com/itentialopensource/pre-built-automations/staging/iap-data-manipulation",
+    "npmLink": "https://www.npmjs.com/package/@itentialopensource/iap-data-manipulation",
+    "docLink": "",
+    "demoLinks": [],
+    "faqLink": "",
+    "contributeLink": "",
+    "issueLink": "",
+    "webLink": "",
+    "vendorLink": "https://www.itential.com/",
+    "productLink": "",
+    "apiLinks": []
+  },
+  "assets": [
+    {
+      "name": "Aggregate Functions For Arrays - IAP",
+      "webName": "Aggregate Functions For Arrays - IAP",
+      "assetType": "Transformation",
+      "overview": "This transformation allows IAP users to to run a set of mathematical aggregate functions on an array of numbers",
+      "iapVersions": [
+        "2023.1"
+      ],
+      "exampleInput": "",
+      "exampleOutput": ""
+    },
+    {
+      "name": "Allocate A Pair Of Numbers - IAP",
+      "webName": "Allocate A Pair Of Numbers - IAP",
+      "assetType": "Transformation",
+      "overview": "This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and a given ending integer",
+      "iapVersions": [
+        "2023.1"
+      ],
+      "exampleInput": "",
+      "exampleOutput": ""
+    }
+  ],
+  "relatedItems": {
+    "adapters": [],
+    "integrations": [],
+    "ecosystemApplications": [],
+    "workflowProjects": [],
+    "transformationProjects": [],
+    "exampleProjects": []
+  }
+}
