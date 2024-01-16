@@ -1,8 +1,8 @@
-# Allocate a Pair of Numbers - IAP
+# Parse Number - IAP
 
 ## Table of Contents
 
-- [Allocate a Pair of Numbers - IAP](#allocate-a-pair-of-numbers---iap)
+- [Parse Number - IAP](#parse-number---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -21,17 +21,17 @@
 
 ## Overview
 
-Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+Convert strings and strings within objects to numbers
 
 Capabilities include:
-- This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+- This transformation allows IAP users to convert strings and strings within objects to numbers
 
 
 ## Getting Started
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Allocate a Pair of Numbers - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Parse Number - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>Allocate a Pair of Numbers - IAP</td>
+      <td>Parse Number - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>
@@ -98,27 +98,22 @@ The following table lists the inputs to the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>allocated</td>
+      <td>keysToConvert</td>
       <td>array</td>
       <td>yes</td>
-      <td>Array of already allocated integers</td>
-      <td><pre lang="json">[
-  1,
-  4,
-  5
-]</pre></td>
+      <td>The keys to be converted in the object if the data is an object or an array of objects. Set this attribute to [] if not applicable, or if all keys need to be converted</td>
+      <td><pre lang="json">["price", "aisle"]</pre></td>
     </tr>    <tr>
-      <td>startRange</td>
-      <td>number</td>
+      <td>data</td>
+      <td>array, number, string, oject</td>
       <td>yes</td>
-      <td>Lower bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">5</pre></td>
-    </tr>    <tr>
-      <td>endRange</td>
-      <td>number</td>
-      <td>yes</td>
-      <td>Upper bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">8</pre></td>
+      <td>Data that have strings that need to be converted to number. For arrays and objects, the JST will convert strings in the first level only</td>
+      <td><pre lang="json">{
+  "fruit": "apple",
+  "quantity": "30",
+  "price": "42.2",
+  "aisle": "23b"
+}</pre></td>
     </tr>
   </tbody>
 </table>
@@ -140,13 +135,15 @@ The following table lists the outputs of the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>assigned</td>
-      <td>array, boolean</td>
-      <td>An array of the first availble consecutive pair if found. Otherwise, it is a boolean value</td>
-      <td><pre lang="json">[
-  6,
-  7
-]</pre></td>
+      <td>output</td>
+      <td>array, object, number, string</td>
+      <td>Parsed data</td>
+      <td><pre lang="json">{
+  "fruit": "apple",
+  "quantity": "30",
+  "price": 42.2,
+  "aisle": "23b"
+}</pre></td>
     </tr>
   </tbody>
 </table>
@@ -167,24 +164,97 @@ No related documentation provided.
     
 Input:
 <pre>{
-  "allocated": [
-    1,
-    4,
-    5
+  "keysToConvert": [
+    "price",
+    "aisle"
   ],
-  "startRange": 5,
-  "endRange": 8
+  "data": {
+    "fruit": "apple",
+    "quantity": "30",
+    "price": "42.2",
+    "aisle": "23b"
+  }
 } </pre>
 
     
     
 Output:
 <pre>{
-  "assigned": [
-    6,
-    7
+  "fruit": "apple",
+  "quantity": "30",
+  "price": 42.2,
+  "aisle": "23b"
+} </pre>
+
+
+#### Example 2
+
+    
+Input:
+<pre>{
+  "keysToConvert": [],
+  "data": [
+    12,
+    true,
+    "32.23",
+    "banana",
+    [
+      "43"
+    ],
+    "35"
   ]
 } </pre>
+
+    
+    
+Output:
+<pre>[
+  12,
+  true,
+  32.23,
+  "banana",
+  [
+    "43"
+  ],
+  35
+] </pre>
+
+
+#### Example 3
+
+    
+Input:
+<pre>{
+  "keysToConvert": [],
+  "data": [
+    {
+      "FILE_SYSTEM": "net/node0_RP0_CPU0/harddisk",
+      "TOTAL_SIZE": "17538482176",
+      "TOTAL_FREE": "14333425152"
+    },
+    {
+      "FILE_SYSTEM": "net/node0_RP1_CPU0/harddisk",
+      "TOTAL_SIZE": "17538482175",
+      "TOTAL_FREE": "44222222"
+    }
+  ]
+} </pre>
+
+    
+    
+Output:
+<pre>[
+  {
+    "FILE_SYSTEM": "net/node0_RP0_CPU0/harddisk",
+    "TOTAL_SIZE": 17538482176,
+    "TOTAL_FREE": 14333425152
+  },
+  {
+    "FILE_SYSTEM": "net/node0_RP1_CPU0/harddisk",
+    "TOTAL_SIZE": 17538482175,
+    "TOTAL_FREE": 44222222
+  }
+] </pre>
 
 
 

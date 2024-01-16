@@ -1,0 +1,768 @@
+{
+  "_id": "5f1e1c05655a0306dde634b1",
+  "name": "Remove Duplicates From Array of Arrays or Objects - IAP",
+  "incoming": [
+    {
+      "$id": "array",
+      "type": "array",
+      "items": {
+        "type": [
+          "object",
+          "array"
+        ]
+      }
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "uniqueArray",
+      "type": "array",
+      "items": {
+        "type": [
+          "object",
+          "array"
+        ]
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": 3,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "array",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 13,
+      "type": "declaration",
+      "library": "Array",
+      "method": "new Array",
+      "args": [],
+      "view": {
+        "row": 2,
+        "col": 1
+      },
+      "summary": "Accumulator array for final result",
+      "polymorphIndex": 0
+    },
+    {
+      "id": 1,
+      "type": "method",
+      "library": "Array",
+      "method": "reverse",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 1
+      },
+      "summary": "Reversing to preserve output order"
+    },
+    {
+      "id": 14,
+      "type": "assign",
+      "from": {
+        "location": "declaration",
+        "name": 13,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "declaration",
+        "name": 6,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 4,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 2,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 15,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "declaration",
+        "name": 6,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 6,
+      "type": "declaration",
+      "library": "Array",
+      "method": "new Array",
+      "args": [
+        null,
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 2
+      },
+      "summary": "Combined Accumulator",
+      "polymorphIndex": 0
+    },
+    {
+      "id": 12,
+      "type": "assign",
+      "from": {
+        "location": "declaration",
+        "name": 6,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 2,
+        "ptr": "/args/2/value"
+      }
+    },
+    {
+      "id": 2,
+      "type": "method",
+      "library": "Array",
+      "method": "reduce",
+      "args": [
+        null,
+        "ƒ_reduce_1",
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 3
+      },
+      "summary": "Check each value and DEDUP"
+    },
+    {
+      "id": 18,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 2,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 17,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 17,
+      "type": "method",
+      "library": "Array",
+      "method": "getIndex",
+      "args": [
+        null,
+        0
+      ],
+      "view": {
+        "row": 1,
+        "col": 4
+      },
+      "summary": "Get the accumulator array"
+    },
+    {
+      "id": 21,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 17,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "uniqueArray",
+        "ptr": ""
+      }
+    }
+  ],
+  "functions": [
+    {
+      "incoming": [
+        {
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "accumulator"
+        },
+        {
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "currentValue"
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "$id": "array"
+        },
+        {
+          "$id": "thisArg",
+          "type": "object",
+          "properties": {},
+          "isContext": true
+        }
+      ],
+      "outgoing": [
+        {
+          "title": "accumulator",
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "accumulator"
+        }
+      ],
+      "steps": [
+        {
+          "id": 2,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "accumulator",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 4,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "accumulator",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 43,
+          "type": "declaration",
+          "library": "Array",
+          "method": "new Array",
+          "args": [],
+          "view": {
+            "row": 4,
+            "col": 3
+          },
+          "summary": "Add nothing to accumulator array",
+          "polymorphIndex": 0
+        },
+        {
+          "id": 1,
+          "type": "method",
+          "library": "Array",
+          "method": "getIndex",
+          "args": [
+            null,
+            0
+          ],
+          "view": {
+            "row": 1,
+            "col": 1
+          },
+          "summary": "Get the Accumulator array"
+        },
+        {
+          "id": 3,
+          "type": "method",
+          "library": "Array",
+          "method": "getIndex",
+          "args": [
+            null,
+            1
+          ],
+          "view": {
+            "row": 2,
+            "col": 1
+          },
+          "summary": "Get the reversed array"
+        },
+        {
+          "id": 44,
+          "type": "assign",
+          "from": {
+            "location": "declaration",
+            "name": 43,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 41,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 6,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 39,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 25,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 5,
+          "type": "method",
+          "library": "Array",
+          "method": "pop",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 2
+          },
+          "summary": "Pop the last element for comparision"
+        },
+        {
+          "id": 33,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/return/value"
+          },
+          "to": {
+            "location": "method",
+            "name": 31,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 38,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/return/array"
+          },
+          "to": {
+            "location": "method",
+            "name": 31,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 42,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/return/value"
+          },
+          "to": {
+            "location": "method",
+            "name": 41,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 48,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/return/value"
+          },
+          "to": {
+            "location": "declaration",
+            "name": 47,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 47,
+          "type": "declaration",
+          "library": "Array",
+          "method": "new Array",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 3
+          },
+          "summary": "Add popped element to accumulator array",
+          "polymorphIndex": 0
+        },
+        {
+          "id": 49,
+          "type": "assign",
+          "from": {
+            "location": "declaration",
+            "name": 47,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 41,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 31,
+          "type": "method",
+          "library": "Array",
+          "method": "filter",
+          "args": [
+            null,
+            "ƒ_query_1",
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 4
+          },
+          "summary": "Remove other instances of popped element from the array"
+        },
+        {
+          "id": 37,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 31,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "declaration",
+            "name": 7,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 41,
+          "type": "method",
+          "library": "Conditional",
+          "method": "ternary",
+          "args": [
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 4
+          },
+          "summary": "Check if popped element is not null"
+        },
+        {
+          "id": 46,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 41,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 25,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 25,
+          "type": "method",
+          "library": "Array",
+          "method": "concat",
+          "args": [
+            null,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 5
+          },
+          "summary": "Add popped element to accumulator array"
+        },
+        {
+          "id": 28,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 25,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "declaration",
+            "name": 7,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 7,
+          "type": "declaration",
+          "library": "Array",
+          "method": "new Array",
+          "args": [
+            null,
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 6
+          },
+          "summary": "Make combined accumulator",
+          "polymorphIndex": 0
+        },
+        {
+          "id": 30,
+          "type": "assign",
+          "from": {
+            "location": "declaration",
+            "name": 7,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "accumulator",
+            "ptr": ""
+          }
+        }
+      ],
+      "functions": [],
+      "name": "arrayReducer",
+      "view": {
+        "col": 6,
+        "row": 5
+      },
+      "id": "ƒ_reduce_1",
+      "comments": []
+    },
+    {
+      "incoming": [
+        {
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "element"
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "$id": "array"
+        },
+        {
+          "$id": "thisArg",
+          "type": "object",
+          "properties": {
+            "0_pop return": {
+              "type": [
+                "array",
+                "boolean",
+                "number",
+                "integer",
+                "string",
+                "object",
+                "null"
+              ]
+            }
+          },
+          "isContext": true,
+          "isIndexed": true
+        }
+      ],
+      "outgoing": [
+        {
+          "title": "return",
+          "type": "boolean",
+          "$id": "return"
+        }
+      ],
+      "steps": [
+        {
+          "id": 2,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "element",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 3,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "thisArg",
+            "ptr": "/0_pop return"
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 1,
+          "type": "method",
+          "library": "Equality",
+          "method": "deepEquals",
+          "args": [
+            null,
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 1
+          },
+          "summary": "Do deep comparison against all elements "
+        },
+        {
+          "id": 5,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 4,
+          "type": "method",
+          "library": "Logical",
+          "method": "not",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 2
+          },
+          "summary": "Remove matching elements"
+        },
+        {
+          "id": 6,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "return",
+            "ptr": ""
+          }
+        }
+      ],
+      "functions": [],
+      "name": "filterObjects",
+      "view": {
+        "col": 2,
+        "row": 5
+      },
+      "id": "ƒ_query_1",
+      "comments": []
+    }
+  ],
+  "comments": [],
+  "view": {
+    "col": 4,
+    "row": 5
+  },
+  "created": "2024-01-08T19:51:27.558Z",
+  "createdBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2024-01-08T20:45:23.104Z",
+  "lastUpdatedBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "4.1.2-2023.1.10",
+  "tags": []
+}

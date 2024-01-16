@@ -1,8 +1,8 @@
-# Allocate a Pair of Numbers - IAP
+# Get Value From JSON Pointer - IAP
 
 ## Table of Contents
 
-- [Allocate a Pair of Numbers - IAP](#allocate-a-pair-of-numbers---iap)
+- [Get Value From JSON Pointer - IAP](#get-value-from-json-pointer---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -21,17 +21,17 @@
 
 ## Overview
 
-Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+Get a value from an object based on the JSON Pointer
 
 Capabilities include:
-- This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+- This transformation allows IAP users to get a value from an object based on the JSON Pointer
 
 
 ## Getting Started
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Allocate a Pair of Numbers - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Get Value From JSON Pointer - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>Allocate a Pair of Numbers - IAP</td>
+      <td>Get Value From JSON Pointer - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>
@@ -98,27 +98,22 @@ The following table lists the inputs to the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>allocated</td>
-      <td>array</td>
+      <td>jsonPointer</td>
+      <td>string</td>
       <td>yes</td>
-      <td>Array of already allocated integers</td>
-      <td><pre lang="json">[
-  1,
-  4,
-  5
-]</pre></td>
+      <td>A string that provides a reference to a specific value within a JSON document</td>
+      <td><pre lang="json">/a/b</pre></td>
     </tr>    <tr>
-      <td>startRange</td>
-      <td>number</td>
+      <td>obj</td>
+      <td>object</td>
       <td>yes</td>
-      <td>Lower bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">5</pre></td>
-    </tr>    <tr>
-      <td>endRange</td>
-      <td>number</td>
-      <td>yes</td>
-      <td>Upper bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">8</pre></td>
+      <td>Object to get value from</td>
+      <td><pre lang="json">{
+  "a": {
+    "b": 2,
+    "c": 3
+  }
+}</pre></td>
     </tr>
   </tbody>
 </table>
@@ -140,13 +135,10 @@ The following table lists the outputs of the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>assigned</td>
-      <td>array, boolean</td>
-      <td>An array of the first availble consecutive pair if found. Otherwise, it is a boolean value</td>
-      <td><pre lang="json">[
-  6,
-  7
-]</pre></td>
+      <td>value</td>
+      <td>array, boolean, string, number, object, null</td>
+      <td>The value obtained using JSON pointer</td>
+      <td><pre lang="json">2</pre></td>
     </tr>
   </tbody>
 </table>
@@ -167,25 +159,42 @@ No related documentation provided.
     
 Input:
 <pre>{
-  "allocated": [
-    1,
-    4,
-    5
-  ],
-  "startRange": 5,
-  "endRange": 8
+  "jsonPointer": "/a/b",
+  "obj": {
+    "a": {
+      "b": 2,
+      "c": 3
+    }
+  }
+} </pre>
+
+    
+    
+Output:
+<pre>2</pre>
+
+
+#### Example 2
+
+    
+Input:
+<pre>{
+  "jsonPointer": "/a",
+  "obj": {
+    "a": {
+      "b": 2,
+      "c": 3
+    }
+  }
 } </pre>
 
     
     
 Output:
 <pre>{
-  "assigned": [
-    6,
-    7
-  ]
+  "b": 2,
+  "c": 3
 } </pre>
-
 
 
 ## Support

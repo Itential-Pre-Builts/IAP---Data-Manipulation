@@ -4,11 +4,11 @@
   ],
   "capabilities": [
     {
-      "capability": "The transformation allows IAP users to to run a set of mathematical aggregate functions on an array of numbers. The aggregate functions consist of Sum, Product, Maximum, Minimum, Range, Count, Arithmetic Mean, Geometric Mean, Harmonic Mean, Median, Mode, Standard Deviation, and Variance"
+      "capability": "The transformation allows IAP users to run a set of mathematical aggregate functions on an array of numbers. The aggregate functions consist of Sum, Product, Maximum, Minimum, Range, Count, Arithmetic Mean, Geometric Mean, Harmonic Mean, Median, Mode, Standard Deviation, and Variance"
     }
   ],
   "entryPoint": {
-    "name": "aggregateFunctions",
+    "name": "Aggregate Functions for Arrays - IAP",
     "type": "Transformation"
   },
   "inputs": [
@@ -124,9 +124,15 @@
       "exampleValue": "[1, 2, 3]"
     }
   ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"groupedArray\": [\r\n    1,\r\n    2,\r\n    3\r\n  ]\r\n}",
+      "exampleOutput": "{\r\n  \"sum\": 6,\r\n  \"maximum\": 3,\r\n  \"minimum\": 1,\r\n  \"range\": 2,\r\n  \"count\": 3,\r\n  \"arithmeticMean\": 2,\r\n  \"geometricMean\": 1.8171205928321397,\r\n  \"product\": 6,\r\n  \"harmonicMean\": 1.6363636363636365,\r\n  \"median\": 2,\r\n  \"mode\": [\r\n    1,\r\n    2,\r\n    3\r\n  ],\r\n  \"modeFrequency\": 1,\r\n  \"standardDeviation\": 0.816496580927726,\r\n  \"variance\": 0.6666666666666666,\r\n  \"valuesIgnored\": [],\r\n  \"valuesUsed\": [\r\n    1,\r\n    2,\r\n    3\r\n  ],\r\n  \"valuesUsed-converted\": [\r\n    1,\r\n    2,\r\n    3\r\n  ]\r\n}"
+    }
+  ],
   "queryOutput": {},
-  "name": "Aggregate Functions For Arrays - IAP",
-  "overview": "This transformation allows IAP users to to run a set of mathematical aggregate functions on an array of numbers",
-  "webName": "Aggregate Functions For Arrays - IAP",
+  "name": "Aggregate Functions for Arrays - IAP",
+  "overview": "Run a set of mathematical aggregate functions on an array of numbers",
+  "webName": "Aggregate Functions for Arrays - IAP",
   "assetType": "Transformation"
 }

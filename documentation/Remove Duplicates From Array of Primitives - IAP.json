@@ -1,0 +1,46 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to remove duplicates from an array of primitives"
+    }
+  ],
+  "entryPoint": {
+    "name": "Remove Duplicates - Non Objects - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "array",
+      "type": "array",
+      "required": "yes",
+      "description": "Array of primitives to remove duplicates from. An array can hold elements of various data types, including numbers, strings, boolean, null",
+      "exampleValue": "[\r\n  \"hello\",\r\n  \"world\",\r\n  \"hello\",\r\n  null,\r\n  true,\r\n  true,\r\n  null,\r\n  \"world\",\r\n  \"HeLLo\"\r\n]"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "uniqueArray",
+      "type": "array",
+      "description": "Array containing the elements from the input array without any duplicates",
+      "exampleValue": "[\r\n  \"hello\",\r\n  \"world\",\r\n  null,\r\n  true,\r\n  \"HeLLo\"\r\n]"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    \"hello\",\r\n    \"world\",\r\n    \"hello\",\r\n    null,\r\n    true,\r\n    true,\r\n    null,\r\n    \"world\",\r\n    \"HeLLo\"\r\n  ]\r\n}",
+      "exampleOutput": "[\r\n  \"hello\",\r\n  \"world\",\r\n  null,\r\n  true,\r\n  \"HeLLo\"\r\n]"
+    },
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    9,\r\n    8,\r\n    7.45,\r\n    77,\r\n    7,\r\n    7,\r\n    8,\r\n    9\r\n  ]\r\n}",
+      "exampleOutput": "[\r\n  9,\r\n  8,\r\n  7.45,\r\n  77,\r\n  7\r\n]"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Remove Duplicates - Non Objects - IAP",
+  "overview": "Remove duplicates from an array of primitives",
+  "webName": "Remove Duplicates - Non Objects - IAP",
+  "assetType": "Transformation"
+}

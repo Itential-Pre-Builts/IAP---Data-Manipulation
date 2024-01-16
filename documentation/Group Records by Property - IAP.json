@@ -1,0 +1,53 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to group records by a specific property"
+    }
+  ],
+  "entryPoint": {
+    "name": "Group Records by Property - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "array",
+      "type": "array",
+      "required": "yes",
+      "description": "An array of objects",
+      "exampleValue": "[\r\n  {\r\n    \"fruit\": \"apple\",\r\n    \"price\": \"42.2\",\r\n    \"type\": \"fruit\"\r\n  },\r\n  {\r\n    \"fruit\": \"banana\",\r\n    \"price\": \"10.1\",\r\n    \"type\": \"fruit\"\r\n  },\r\n  {\r\n    \"fruit\": \"potato\",\r\n    \"price\": \"20\",\r\n    \"type\": \"vegetable\"\r\n  }\r\n]"
+    },
+    {
+      "name": "groupByProperty",
+      "type": "string",
+      "required": "yes",
+      "description": "Property used to group the records",
+      "exampleValue": "type"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "output",
+      "type": "object",
+      "description": "The grouped data object where the keys are unique values of the desired property, and the values are arrays containing records with the same property value",
+      "exampleValue": "{\r\n  \"fruit\": [\r\n    {\r\n      \"fruit\": \"apple\",\r\n      \"price\": \"42.2\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"fruit\": \"banana\",\r\n      \"price\": \"10.1\",\r\n      \"type\": \"fruit\"\r\n    }\r\n  ],\r\n  \"vegetable\": [\r\n    {\r\n      \"fruit\": \"potato\",\r\n      \"price\": \"20\",\r\n      \"type\": \"vegetable\"\r\n    }\r\n  ]\r\n}"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"fruit\": \"apple\",\r\n      \"price\": \"42.2\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"fruit\": \"banana\",\r\n      \"price\": \"10.1\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"fruit\": \"potato\",\r\n      \"price\": \"20\",\r\n      \"type\": \"vegetable\"\r\n    }\r\n  ],\r\n  \"groupByProperty\": \"type\"\r\n}",
+      "exampleOutput": "{\r\n  \"fruit\": [\r\n    {\r\n      \"fruit\": \"apple\",\r\n      \"price\": \"42.2\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"fruit\": \"banana\",\r\n      \"price\": \"10.1\",\r\n      \"type\": \"fruit\"\r\n    }\r\n  ],\r\n  \"vegetable\": [\r\n    {\r\n      \"fruit\": \"potato\",\r\n      \"price\": \"20\",\r\n      \"type\": \"vegetable\"\r\n    }\r\n  ]\r\n}"
+    },
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"number\": 43,\r\n      \"president\": \"George W. Bush\",\r\n      \"took_office\": \"2001-01-20\",\r\n      \"left_office\": \"2009-01-20\",\r\n      \"party\": \"Republican\"\r\n    },\r\n    {\r\n      \"number\": 44,\r\n      \"president\": \"Barack Obama\",\r\n      \"took_office\": \"2009-01-20\",\r\n      \"left_office\": \"2017-01-20\",\r\n      \"party\": \"Democratic\"\r\n    },\r\n    {\r\n      \"number\": 45,\r\n      \"president\": \"Donald J. Trump\",\r\n      \"took_office\": \"2017-01-20\",\r\n      \"left_office\": null,\r\n      \"party\": \"Republican\"\r\n    }\r\n  ],\r\n  \"groupByProperty\": \"party\"\r\n}",
+      "exampleOutput": "{\r\n  \"Republican\": [\r\n    {\r\n      \"number\": 43,\r\n      \"president\": \"George W. Bush\",\r\n      \"took_office\": \"2001-01-20\",\r\n      \"left_office\": \"2009-01-20\",\r\n      \"party\": \"Republican\"\r\n    },\r\n    {\r\n      \"number\": 45,\r\n      \"president\": \"Donald J. Trump\",\r\n      \"took_office\": \"2017-01-20\",\r\n      \"left_office\": null,\r\n      \"party\": \"Republican\"\r\n    }\r\n  ],\r\n  \"Democratic\": [\r\n    {\r\n      \"number\": 44,\r\n      \"president\": \"Barack Obama\",\r\n      \"took_office\": \"2009-01-20\",\r\n      \"left_office\": \"2017-01-20\",\r\n      \"party\": \"Democratic\"\r\n    }\r\n  ]\r\n}"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Group Records by Property - IAP",
+  "overview": "Group records by a property",
+  "webName": "Group Records by Property - IAP",
+  "assetType": "Transformation"
+}

@@ -1,6 +1,6 @@
 {
   "_id": "5f2df1cbc707342a6caacb98",
-  "name": "aggregateFunctions",
+  "name": "Aggregate Functions for Arrays - IAP",
   "incoming": [
     {
       "$id": "groupedArray",
@@ -1232,10 +1232,10 @@
         {
           "id": 1,
           "type": "function",
-          "function": "doAggregation (1)",
+          "function": "doAggregation",
           "args": [
-            null,
-            null
+            "",
+            ""
           ],
           "view": {
             "row": 1,
@@ -1919,7 +1919,7 @@
           "method": "reduce",
           "args": [
             null,
-            "initializeObject (1)",
+            "initializeObject",
             null
           ],
           "view": {
@@ -2088,9 +2088,9 @@
         {
           "id": 22,
           "type": "function",
-          "function": "findMode (1)",
+          "function": "findMode",
           "args": [
-            null
+            ""
           ],
           "view": {
             "row": 1,
@@ -2243,7 +2243,7 @@
           "method": "reduce",
           "args": [
             null,
-            "findSumOfSquares (1)",
+            "findSumOfSquares",
             null,
             null
           ],
@@ -2539,7 +2539,7 @@
           "method": "reduce",
           "args": [
             null,
-            "findProduct (1)",
+            "findProduct",
             null
           ],
           "view": {
@@ -2730,7 +2730,7 @@
           "method": "reduce",
           "args": [
             null,
-            "reciprocalSum (1)",
+            "reciprocalSum",
             null
           ],
           "view": {
@@ -3504,12 +3504,12 @@
         }
       ],
       "functions": [],
-      "name": "doAggregation (1)",
+      "name": "doAggregation",
       "view": {
         "col": 1,
         "row": 5
       },
-      "id": "doAggregation (1)",
+      "id": "doAggregation",
       "comments": []
     },
     {
@@ -3656,12 +3656,12 @@
         }
       ],
       "functions": [],
-      "name": "initializeObject (1)",
+      "name": "initializeObject",
       "view": {
         "col": 2,
         "row": 5
       },
-      "id": "initializeObject (1)",
+      "id": "initializeObject",
       "comments": []
     },
     {
@@ -4616,12 +4616,12 @@
         }
       ],
       "functions": [],
-      "name": "findMode (1)",
+      "name": "findMode",
       "view": {
         "col": 5,
         "row": 5
       },
-      "id": "findMode (1)",
+      "id": "findMode",
       "comments": []
     },
     {
@@ -4819,12 +4819,12 @@
         }
       ],
       "functions": [],
-      "name": "findSumOfSquares (1)",
+      "name": "findSumOfSquares",
       "view": {
         "col": 3,
         "row": 5
       },
-      "id": "findSumOfSquares (1)",
+      "id": "findSumOfSquares",
       "comments": []
     },
     {
@@ -4943,12 +4943,12 @@
         }
       ],
       "functions": [],
-      "name": "findProduct (1)",
+      "name": "findProduct",
       "view": {
         "col": 1,
         "row": 5
       },
-      "id": "findProduct (1)",
+      "id": "findProduct",
       "comments": []
     },
     {
@@ -5098,12 +5098,12 @@
         }
       ],
       "functions": [],
-      "name": "reciprocalSum (1)",
+      "name": "reciprocalSum",
       "view": {
         "col": 2,
         "row": 8
       },
-      "id": "reciprocalSum (1)",
+      "id": "reciprocalSum",
       "comments": []
     }
   ],
@@ -5118,7 +5118,7 @@
     "provenance": "local_aaa",
     "username": "admin@pronghorn"
   },
-  "lastUpdated": "2024-01-04T18:50:20.027Z",
+  "lastUpdated": "2024-01-05T20:33:01.544Z",
   "lastUpdatedBy": {
     "_id": "652054b92c281c82e5b4c8b4",
     "provenance": "local_aaa",

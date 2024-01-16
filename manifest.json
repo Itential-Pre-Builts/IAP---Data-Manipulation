@@ -6,18 +6,180 @@
   "artifacts": [
     {
       "id": "5f2df1cbc707342a6caacb98",
-      "name": "aggregateFunctions",
+      "name": "Aggregate Functions for Arrays - IAP.json",
       "type": "transformation",
-      "location": "/bundles/transformations/aggregateFunctions.json",
+      "location": "/bundles/transformations/Aggregate Functions for Arrays - IAP.json",
       "properties": {
         "entryPoint": false
       }
     },
     {
       "id": "5f510ee4a1ff8106e83c1963",
-      "name": "allocateNewPair",
+      "name": "Allocate a Pair of Numbers - IAP",
       "type": "transformation",
-      "location": "/bundles/transformations/allocateNewPair.json",
+      "location": "/bundles/transformations/Allocate a Pair of Numbers - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f510edfa1ff8106e83c1962",
+      "name": "Allocate One Number - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Allocate One Number - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "618ad3eb24cba500df985c2c",
+      "name": "Chunk Array - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Chunk Array - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "62586de126766101bd69b3c8",
+      "name": "Clear Empty Keys - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Clear Empty Keys - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f0f6bb8fb031306c04df04b",
+      "name": "Convert CSV to JSON - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Convert CSV to JSON - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "619541edc165aa00de7d8bae",
+      "name": "Convert String to Special Cases - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Convert String to Special Cases - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f08c8b5fd7aaf755869ff35",
+      "name": "Filter Array of Objects by Key Value Pair - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Filter Array of Objects by Key Value Pair - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f1704ee3a0db540a50936a9",
+      "name": "Generate Random Integer Within Range - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Generate Random Integer Within Range - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f1704533a0db540a50936a8",
+      "name": "Get Random Element From Array - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Get Random Element From Array - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f08c7a5fd7aaf755869ff34",
+      "name": "Get Value From JSON Pointer - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Get Value From JSON Pointer - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f23ad4eeeb859a5db39951d",
+      "name": "Group Records by Property - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Group Records by Property - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f232737ebaff79cdeb87351",
+      "name": "Parse Number - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Parse Number - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f1e1c05655a0306dde634b1",
+      "name": "Remove Duplicates From Array of Arrays or Objects - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Remove Duplicates From Array of Arrays or Objects - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f1e1e7f655a0306dde634b2",
+      "name": "Remove Duplicates From Array of Primitives - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Remove Duplicates From Array of Primitives - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5eac37da33dc062d91b693d8",
+      "name": "Remove Element From Array by Index - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Remove Element From Array by Index - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "65a017ed554cea02601c8e9a",
+      "name": "Remove Element From Array by Value - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Remove Element From Array by Value - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5fab506868f92706c07f9b4b",
+      "name": "Separate Array of Objects by Key Value Pair - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Separate Array of Objects by Key Value Pair - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "65a0430a554cea02601c8e9c",
+      "name": "Split String into Array by Regex or Separator - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Split String into Array by Regex or Separator - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f18a1ce70147b22c8bebc9c",
+      "name": "Transpose Record by Creating Arrays for Each Property Within Groups - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Transpose Record by Creating Arrays for Each Property Within Groups - IAP.json",
       "properties": {
         "entryPoint": false
       }

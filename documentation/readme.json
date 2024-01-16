@@ -1,6 +1,6 @@
 {
   "name": "IAP - Data Manipulation",
-  "overview": "IAP Transformation Projects for Data Manipulation",
+  "overview": "This Transformation Project contains several transformation examples that are used for data manipulation in Itential Automation Platform (IAP)",
   "domains": [],
   "tags": [],
   "productLink": "",
@@ -25,7 +25,7 @@
   "vendorLink": "https://www.itential.com/",
   "faqLink": "",
   "contributeLink": "",
-  "webName": "IAP - Data Manipulation Examples with Transformation ",
+  "webName": "IAP - Transformation Examples for Data Manipulation",
   "useCases": [],
   "webLink": "",
   "demoLinks": []

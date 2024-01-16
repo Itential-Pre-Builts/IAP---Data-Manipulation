@@ -1,0 +1,181 @@
+{
+  "_id": "5eac37da33dc062d91b693d8",
+  "name": "Remove Element From Array by Index - IAP",
+  "incoming": [
+    {
+      "$id": "array",
+      "type": "array",
+      "items": {
+        "type": [
+          "array",
+          "boolean",
+          "number",
+          "integer",
+          "string",
+          "object",
+          "null"
+        ],
+        "examples": [
+          1
+        ]
+      }
+    },
+    {
+      "$id": "index",
+      "type": [
+        "number",
+        "integer"
+      ],
+      "examples": [
+        1
+      ]
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "newArray",
+      "type": [
+        "array",
+        "boolean",
+        "number",
+        "integer",
+        "string",
+        "object",
+        "null"
+      ]
+    },
+    {
+      "$id": "item",
+      "type": [
+        "array",
+        "boolean",
+        "number",
+        "integer",
+        "string",
+        "object",
+        "null"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": 2,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "array",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 3,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "index",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 1,
+      "type": "method",
+      "library": "Array",
+      "method": "splice",
+      "args": [
+        null,
+        null,
+        1
+      ],
+      "view": {
+        "row": 2,
+        "col": 1
+      }
+    },
+    {
+      "id": 12,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return/spliced"
+      },
+      "to": {
+        "location": "method",
+        "name": 4,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 13,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return/array"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "newArray",
+        "ptr": ""
+      }
+    },
+    {
+      "id": 4,
+      "type": "method",
+      "library": "Array",
+      "method": "getIndex",
+      "args": [
+        null,
+        0
+      ],
+      "view": {
+        "row": 2,
+        "col": 2
+      }
+    },
+    {
+      "id": 10,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 4,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "item",
+        "ptr": ""
+      }
+    }
+  ],
+  "functions": [],
+  "comments": [],
+  "view": {
+    "col": 2,
+    "row": 5
+  },
+  "created": "2024-01-08T20:49:46.848Z",
+  "createdBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2024-01-08T20:51:07.575Z",
+  "lastUpdatedBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "4.1.2-2023.1.10",
+  "tags": []
+}

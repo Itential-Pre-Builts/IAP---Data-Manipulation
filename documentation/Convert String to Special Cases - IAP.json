@@ -1,0 +1,60 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to convert a string separated by whitespace to camelCase, PascalCase, kebab-case, and snake_case"
+    }
+  ],
+  "entryPoint": {
+    "name": "Convert String to Special Cases - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "incomingString",
+      "type": "string",
+      "required": "yes",
+      "description": "A string separated by whitespace",
+      "exampleValue": "foo bar foobar"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "toCamelCase",
+      "type": "string",
+      "description": "Camel case which has no interventing spaces or underscores, and all words except the first one starting with a capital letter",
+      "exampleValue": "fooBarFoobar"
+    },
+    {
+      "name": "toSnakeCase",
+      "type": "string",
+      "description": "Snake case which has spaces replaced by underscores",
+      "exampleValue": "foo_bar_foobar"
+    },
+    {
+      "name": "toKebabCase",
+      "type": "string",
+      "description": "Kebab case which has spaces replaced by hyphens",
+      "exampleValue": "foo-bar-foobar"
+    },
+    {
+      "name": "toPascalCase",
+      "type": "string",
+      "description": "Pascal case which has all words starting with a capital letter",
+      "exampleValue": "FooBarFoobar"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"incomingString\": \"foo bar foobar\"\r\n}",
+      "exampleOutput": "{\r\n  \"toCamelCase\": \"fooBarFoobar\",\r\n  \"toSnakeCase\": \"foo_bar_foobar\",\r\n  \"toKebabCase\": \"foo-bar-foobar\",\r\n  \"toPascalCase\": \"FooBarFoobar\"\r\n}"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Convert String to Special Cases - IAP",
+  "overview": "Convert string to special cases including camelCase, PascalCase, kebab-case, and snake_case",
+  "webName": "Convert String to Special Cases - IAP",
+  "assetType": "Transformation"
+}

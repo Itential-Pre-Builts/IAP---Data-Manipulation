@@ -1,0 +1,70 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to remove an element from an array based on a certain value"
+    }
+  ],
+  "entryPoint": {
+    "name": "Remove Element From Array by Value - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "array",
+      "type": "array",
+      "required": "yes",
+      "description": "Array consisting of numbers, strings, booleans or null",
+      "exampleValue": "[\r\n  7,\r\n  9,\r\n  8,\r\n  7.45,\r\n  77,\r\n  7\r\n]"
+    },
+    {
+      "name": "value",
+      "type": "integer, number, string, null, boolean",
+      "required": "yes",
+      "description": "The value to be removed from the array",
+      "exampleValue": "7"
+    },
+    {
+      "name": "removeAll",
+      "type": "boolean",
+      "required": "yes",
+      "description": "Whether to remove only the first occurrence of the value or all the occurrences. A 'true' value results in the removal of all the occurrences of the value whereas a 'false' value results in the removal of that value at the first found index",
+      "exampleValue": "true"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "newArray",
+      "type": "array",
+      "description": "Modified array after removing elements",
+      "exampleValue": "[\r\n  9,\r\n  8,\r\n  7.45,\r\n  77\r\n]"
+    },
+    {
+      "name": "noOfRemovedItems",
+      "type": "boolean",
+      "description": "The number of the items that have been removed",
+      "exampleValue": "2"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    7,\r\n    9,\r\n    8,\r\n    7.45,\r\n    77,\r\n    7\r\n  ],\r\n  \"value\": 7,\r\n  \"removeAll\": true\r\n}",
+      "exampleOutput": "{\r\n  \"newArray\": [\r\n    9,\r\n    8,\r\n    7.45,\r\n    77\r\n  ],\r\n  \"noOfRemovedItems\": 2\r\n}"
+    },
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    7,\r\n    9,\r\n    8,\r\n    7.45,\r\n    77,\r\n    7\r\n  ],\r\n  \"value\": 7,\r\n  \"removeAll\": false\r\n}",
+      "exampleOutput": "{\r\n  \"newArray\": [\r\n    9,\r\n    8,\r\n    7.45,\r\n    77,\r\n    7\r\n  ],\r\n  \"noOfRemovedItems\": 1\r\n}"
+    },
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    7,\r\n    9,\r\n    8,\r\n    \"hi\"\r\n  ],\r\n  \"value\": \"hello\",\r\n  \"removeAll\": false\r\n}",
+      "exampleOutput": "{\r\n  \"newArray\": [\r\n    7,\r\n    9,\r\n    8,\r\n    \"hi\"\r\n  ],\r\n  \"noOfRemovedItems\": 0\r\n}"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Remove Element From Array by Value - IAP",
+  "overview": "Remove an element from an array by a value",
+  "webName": "Remove Element From Array by Value - IAP",
+  "assetType": "Transformation"
+}

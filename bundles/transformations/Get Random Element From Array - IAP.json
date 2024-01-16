@@ -1,0 +1,489 @@
+{
+  "_id": "5f1704533a0db540a50936a8",
+  "name": "Get Random Element From Array - IAP",
+  "incoming": [
+    {
+      "$id": "array",
+      "type": "array",
+      "items": {
+        "type": [
+          "array",
+          "boolean",
+          "number",
+          "integer",
+          "string",
+          "object",
+          "null"
+        ]
+      }
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "arrayWithoutElement",
+      "type": "array",
+      "items": {
+        "type": [
+          "array",
+          "boolean",
+          "number",
+          "integer",
+          "string",
+          "object",
+          "null"
+        ],
+        "examples": [
+          1
+        ]
+      }
+    },
+    {
+      "$id": "randomElement",
+      "type": [
+        "array",
+        "boolean",
+        "number",
+        "integer",
+        "string",
+        "object",
+        "null"
+      ]
+    },
+    {
+      "$id": "randomElementIndex",
+      "type": "integer",
+      "examples": [
+        8
+      ]
+    },
+    {
+      "$id": "poppedArrayLength",
+      "type": "integer",
+      "examples": [
+        2
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "type": "method",
+      "library": "Math",
+      "method": "random",
+      "args": [],
+      "view": {
+        "row": 1,
+        "col": 1
+      }
+    },
+    {
+      "id": 3,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "array",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 2,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 18,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "array",
+        "ptr": ""
+      },
+      "to": {
+        "location": "function",
+        "name": 16,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 2,
+      "type": "method",
+      "library": "Array",
+      "method": "length",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 1
+      }
+    },
+    {
+      "id": 5,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 4,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 14,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 2,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 4,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 4,
+      "type": "method",
+      "library": "Math",
+      "method": "multiply",
+      "args": [
+        null,
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 2
+      }
+    },
+    {
+      "id": 8,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 4,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 7,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 7,
+      "type": "method",
+      "library": "Math",
+      "method": "floor",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 3
+      }
+    },
+    {
+      "id": 17,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 7,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "function",
+        "name": 16,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 16,
+      "type": "function",
+      "function": "Remove Element From Array",
+      "args": [
+        "",
+        ""
+      ],
+      "view": {
+        "row": 1,
+        "col": 4
+      }
+    },
+    {
+      "id": 22,
+      "type": "assign",
+      "from": {
+        "location": "function",
+        "name": 16,
+        "ptr": "/return/newArray"
+      },
+      "to": {
+        "location": "method",
+        "name": 20,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 20,
+      "type": "method",
+      "library": "Array",
+      "method": "length",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 5
+      }
+    },
+    {
+      "id": 15,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 7,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "randomElementIndex",
+        "ptr": ""
+      }
+    },
+    {
+      "id": 19,
+      "type": "assign",
+      "from": {
+        "location": "function",
+        "name": 16,
+        "ptr": "/return/item"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "randomElement",
+        "ptr": ""
+      }
+    },
+    {
+      "id": 21,
+      "type": "assign",
+      "from": {
+        "location": "function",
+        "name": 16,
+        "ptr": "/return/newArray"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "arrayWithoutElement",
+        "ptr": ""
+      }
+    },
+    {
+      "id": 23,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 20,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "poppedArrayLength",
+        "ptr": ""
+      }
+    }
+  ],
+  "functions": [
+    {
+      "incoming": [
+        {
+          "$id": "array",
+          "type": "array",
+          "items": {
+            "type": [
+              "array",
+              "boolean",
+              "number",
+              "integer",
+              "string",
+              "object",
+              "null"
+            ],
+            "examples": [
+              1
+            ]
+          }
+        },
+        {
+          "$id": "index",
+          "type": [
+            "number",
+            "integer"
+          ],
+          "examples": [
+            1
+          ]
+        }
+      ],
+      "outgoing": [
+        {
+          "$id": "newArray",
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ]
+        },
+        {
+          "$id": "item",
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": 2,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "array",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 3,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "index",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 1,
+          "type": "method",
+          "library": "Array",
+          "method": "splice",
+          "args": [
+            null,
+            null,
+            1
+          ],
+          "view": {
+            "row": 2,
+            "col": 1
+          }
+        },
+        {
+          "id": 12,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return/spliced"
+          },
+          "to": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 4,
+          "type": "method",
+          "library": "Array",
+          "method": "getIndex",
+          "args": [
+            null,
+            0
+          ],
+          "view": {
+            "row": 2,
+            "col": 2
+          }
+        },
+        {
+          "id": 13,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return/array"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "newArray",
+            "ptr": ""
+          }
+        },
+        {
+          "id": 10,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "item",
+            "ptr": ""
+          }
+        }
+      ],
+      "functions": [],
+      "name": "removeElementFromArray",
+      "view": {
+        "col": 2,
+        "row": 5
+      },
+      "id": "Remove Element From Array",
+      "_id": "5eac37da33dc062d91b693d8",
+      "comments": []
+    }
+  ],
+  "comments": [],
+  "view": {
+    "col": 5,
+    "row": 5
+  },
+  "created": "2024-01-08T15:07:47.533Z",
+  "createdBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2024-01-08T15:21:26.738Z",
+  "lastUpdatedBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "4.1.2-2023.1.10",
+  "tags": []
+}

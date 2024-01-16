@@ -1,0 +1,1440 @@
+{
+  "_id": "5f232737ebaff79cdeb87351",
+  "name": "Parse Number - IAP",
+  "incoming": [
+    {
+      "$id": "keysToConvert",
+      "type": "array",
+      "items": {
+        "type": [
+          "string"
+        ],
+        "examples": []
+      }
+    },
+    {
+      "$id": "data",
+      "type": [
+        "array",
+        "boolean",
+        "number",
+        "integer",
+        "string",
+        "object",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "array",
+          "boolean",
+          "number",
+          "integer",
+          "string",
+          "object",
+          "null"
+        ],
+        "properties": {},
+        "required": []
+      }
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "output",
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": 7,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "data",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 5,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 12,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "data",
+        "ptr": ""
+      },
+      "to": {
+        "location": "declaration",
+        "name": 11,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 14,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "data",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 24,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "keysToConvert",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 23,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 27,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "keysToConvert",
+        "ptr": ""
+      },
+      "to": {
+        "location": "declaration",
+        "name": 26,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 29,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "keysToConvert",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 22,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 5,
+      "type": "method",
+      "library": "Array",
+      "method": "isArray",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 2
+      },
+      "summary": "Check if data is an array"
+    },
+    {
+      "id": 11,
+      "type": "declaration",
+      "library": "Array",
+      "method": "new Array",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 3,
+        "col": 2
+      },
+      "summary": "If data not an array, make it an array",
+      "polymorphIndex": 0
+    },
+    {
+      "id": 23,
+      "type": "method",
+      "library": "Array",
+      "method": "isArray",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 1
+      }
+    },
+    {
+      "id": 26,
+      "type": "declaration",
+      "library": "Array",
+      "method": "new Array",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 3,
+        "col": 1
+      },
+      "polymorphIndex": 0
+    },
+    {
+      "id": 8,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 5,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 13,
+      "type": "assign",
+      "from": {
+        "location": "declaration",
+        "name": 11,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/args/2/value"
+      }
+    },
+    {
+      "id": 18,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 5,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 17,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 25,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 23,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 22,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 28,
+      "type": "assign",
+      "from": {
+        "location": "declaration",
+        "name": 26,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 22,
+        "ptr": "/args/2/value"
+      }
+    },
+    {
+      "id": 6,
+      "type": "method",
+      "library": "Conditional",
+      "method": "ternary",
+      "args": [
+        null,
+        null,
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 3
+      },
+      "summary": "Pass the appropriate data array to map"
+    },
+    {
+      "id": 22,
+      "type": "method",
+      "library": "Conditional",
+      "method": "ternary",
+      "args": [
+        null,
+        null,
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 2
+      }
+    },
+    {
+      "id": 10,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 30,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 22,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/2/value"
+      }
+    },
+    {
+      "id": 1,
+      "type": "method",
+      "library": "Array",
+      "method": "map",
+      "args": [
+        null,
+        "ƒ_map_1",
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 4
+      },
+      "summary": "Run through each data element"
+    },
+    {
+      "id": 16,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 15,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 20,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 17,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 15,
+      "type": "method",
+      "library": "Array",
+      "method": "getIndex",
+      "args": [
+        null,
+        0
+      ],
+      "view": {
+        "row": 1,
+        "col": 5
+      },
+      "summary": "Get first value for non array run return"
+    },
+    {
+      "id": 19,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 15,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 17,
+        "ptr": "/args/2/value"
+      }
+    },
+    {
+      "id": 17,
+      "type": "method",
+      "library": "Conditional",
+      "method": "ternary",
+      "args": [
+        null,
+        null,
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 6
+      },
+      "summary": "If data was not array return"
+    },
+    {
+      "id": 21,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 17,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "output",
+        "ptr": ""
+      }
+    }
+  ],
+  "functions": [
+    {
+      "incoming": [
+        {
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "currentValue"
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "$id": "array"
+        },
+        {
+          "$id": "thisArg",
+          "type": "object",
+          "properties": {
+            "0_ternary return": {
+              "type": [
+                "array",
+                "boolean",
+                "number",
+                "integer",
+                "string",
+                "object",
+                "null"
+              ]
+            }
+          },
+          "isContext": true,
+          "isIndexed": true
+        }
+      ],
+      "outgoing": [
+        {
+          "title": "newValue",
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "editable": true,
+          "$id": "newValue"
+        }
+      ],
+      "steps": [
+        {
+          "id": 23,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 16,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 32,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 38,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 35,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 42,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 41,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 43,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 41,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 44,
+          "type": "declaration",
+          "library": "Object",
+          "method": "new Object",
+          "args": [
+            "{}"
+          ],
+          "view": {
+            "row": 2,
+            "col": 1
+          },
+          "summary": "Send empty object if element is null"
+        },
+        {
+          "id": 47,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 33,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 52,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 51,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 53,
+          "type": "declaration",
+          "library": "Array",
+          "method": "new Array",
+          "args": [],
+          "view": {
+            "row": 3,
+            "col": 1
+          },
+          "polymorphIndex": 0
+        },
+        {
+          "id": 57,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "thisArg",
+            "ptr": "/0_ternary return"
+          },
+          "to": {
+            "location": "method",
+            "name": 51,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 58,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "thisArg",
+            "ptr": "/0_ternary return"
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 67,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 66,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 1,
+          "type": "method",
+          "library": "Array",
+          "method": "length",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 3
+          },
+          "summary": "Get number of keys provided by user"
+        },
+        {
+          "id": 16,
+          "type": "method",
+          "library": "Number",
+          "method": "parseFloat",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 4,
+            "col": 2
+          },
+          "summary": "Convert element to number"
+        },
+        {
+          "id": 45,
+          "type": "assign",
+          "from": {
+            "location": "declaration",
+            "name": 44,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 41,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 33,
+          "type": "method",
+          "library": "Array",
+          "method": "isArray",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 2
+          },
+          "summary": "Check if element is array"
+        },
+        {
+          "id": 54,
+          "type": "assign",
+          "from": {
+            "location": "declaration",
+            "name": 53,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 51,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 66,
+          "type": "method",
+          "library": "RegExp",
+          "method": "test",
+          "args": [
+            "^[0-9]+$|^[0-9]+\\.[0-9]*$",
+            null
+          ],
+          "view": {
+            "row": 4,
+            "col": 4
+          }
+        },
+        {
+          "id": 8,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 2,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 36,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 16,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 35,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 37,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 33,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 35,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 68,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 66,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 25,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 2,
+          "type": "method",
+          "library": "Equality",
+          "method": "equality",
+          "args": [
+            null,
+            "0"
+          ],
+          "view": {
+            "row": 2,
+            "col": 4
+          },
+          "summary": "Check if user provided keys"
+        },
+        {
+          "id": 9,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 2,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 41,
+          "type": "method",
+          "library": "Conditional",
+          "method": "ternary",
+          "args": [
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 2
+          },
+          "summary": "Check for null element"
+        },
+        {
+          "id": 51,
+          "type": "method",
+          "library": "Conditional",
+          "method": "ternary",
+          "args": [
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 3
+          }
+        },
+        {
+          "id": 49,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 41,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 56,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 51,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 4,
+          "type": "method",
+          "library": "Object",
+          "method": "keys",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 4
+          },
+          "summary": "Get all keys in current object"
+        },
+        {
+          "id": 11,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 35,
+          "type": "method",
+          "library": "Conditional",
+          "method": "ternary",
+          "args": [
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 5
+          },
+          "summary": "If input is array send array else parsed number"
+        },
+        {
+          "id": 63,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 35,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 25,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 3,
+          "type": "method",
+          "library": "Conditional",
+          "method": "ternary",
+          "args": [
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 5
+          },
+          "summary": "If keys = 0 use all keys in current object"
+        },
+        {
+          "id": 15,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 5,
+          "type": "method",
+          "library": "Array",
+          "method": "reduce",
+          "args": [
+            null,
+            "ƒ_reduce_1",
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 6
+          },
+          "summary": "Run through the keys to convert"
+        },
+        {
+          "id": 62,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 25,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 25,
+          "type": "method",
+          "library": "Conditional",
+          "method": "ternary",
+          "args": [
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 7
+          },
+          "summary": "If not number send obj else number"
+        },
+        {
+          "id": 31,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 25,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "newValue",
+            "ptr": ""
+          }
+        }
+      ],
+      "functions": [],
+      "name": "iterateData",
+      "view": {
+        "col": 7,
+        "row": 6
+      },
+      "id": "ƒ_map_1",
+      "comments": []
+    },
+    {
+      "incoming": [
+        {
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "accumulator"
+        },
+        {
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "currentValue"
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "$id": "array"
+        },
+        {
+          "$id": "thisArg",
+          "type": "object",
+          "properties": {},
+          "isContext": true
+        }
+      ],
+      "outgoing": [
+        {
+          "title": "accumulator",
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "accumulator"
+        }
+      ],
+      "steps": [
+        {
+          "id": 2,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "accumulator",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 3,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 9,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 11,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "accumulator",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 1,
+          "type": "method",
+          "library": "Object",
+          "method": "getProperty",
+          "args": [
+            null,
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 1
+          },
+          "summary": "Get each value from object for key"
+        },
+        {
+          "id": 12,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 6,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 18,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 17,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 22,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 19,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 30,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 29,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 32,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 8,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 6,
+          "type": "method",
+          "library": "Number",
+          "method": "parseFloat",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 2
+          },
+          "summary": "Parse value into a number"
+        },
+        {
+          "id": 17,
+          "type": "method",
+          "library": "Array",
+          "method": "isArray",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 2
+          },
+          "summary": "Check if element is array"
+        },
+        {
+          "id": 29,
+          "type": "method",
+          "library": "RegExp",
+          "method": "test",
+          "args": [
+            "^[0-9]+$|^[0-9]+\\.[0-9]*$",
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 3
+          }
+        },
+        {
+          "id": 20,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 17,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 19,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 21,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 6,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 19,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 31,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 29,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 8,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 19,
+          "type": "method",
+          "library": "Conditional",
+          "method": "ternary",
+          "args": [
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 3
+          },
+          "summary": "If array send array, else send parsed output"
+        },
+        {
+          "id": 27,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 19,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 8,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 8,
+          "type": "method",
+          "library": "Conditional",
+          "method": "ternary",
+          "args": [
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 4
+          },
+          "summary": "If not number, return original value"
+        },
+        {
+          "id": 10,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 8,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 4,
+          "type": "method",
+          "library": "Object",
+          "method": "setProperty",
+          "args": [
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 5
+          },
+          "summary": "Set the value back in the object"
+        },
+        {
+          "id": 5,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "accumulator",
+            "ptr": ""
+          }
+        }
+      ],
+      "functions": [],
+      "name": "iterateHeaders",
+      "view": {
+        "col": 5,
+        "row": 5
+      },
+      "id": "ƒ_reduce_1",
+      "comments": []
+    }
+  ],
+  "comments": [],
+  "view": {
+    "col": 6,
+    "row": 6
+  },
+  "created": "2024-01-08T17:17:28.062Z",
+  "createdBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2024-01-08T19:37:08.193Z",
+  "lastUpdatedBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "4.1.2-2023.1.10",
+  "tags": []
+}

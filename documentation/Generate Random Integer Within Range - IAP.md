@@ -1,8 +1,8 @@
-# Allocate a Pair of Numbers - IAP
+# Generate Random Integer Within Range - IAP
 
 ## Table of Contents
 
-- [Allocate a Pair of Numbers - IAP](#allocate-a-pair-of-numbers---iap)
+- [Generate Random Integer Within Range - IAP](#generate-random-integer-within-range---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -21,17 +21,17 @@
 
 ## Overview
 
-Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+Generate a random integer within a range
 
 Capabilities include:
-- This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+- This transformation allows IAP users to generate a random integer within a provided range (inclusive of both min and max)
 
 
 ## Getting Started
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Allocate a Pair of Numbers - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Generate Random Integer Within Range - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>Allocate a Pair of Numbers - IAP</td>
+      <td>Generate Random Integer Within Range - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>
@@ -98,27 +98,17 @@ The following table lists the inputs to the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>allocated</td>
-      <td>array</td>
+      <td>minimum</td>
+      <td>integer</td>
       <td>yes</td>
-      <td>Array of already allocated integers</td>
-      <td><pre lang="json">[
-  1,
-  4,
-  5
-]</pre></td>
+      <td>Lower bound (inclusive) for the range between which a random integer will be generated</td>
+      <td><pre lang="json">2</pre></td>
     </tr>    <tr>
-      <td>startRange</td>
-      <td>number</td>
+      <td>maximum</td>
+      <td>integer</td>
       <td>yes</td>
-      <td>Lower bound (inclusive) for the range between which a pair of numbers is allocated</td>
+      <td>Upper bound (inclusive) for the range between which a random integer will be generated</td>
       <td><pre lang="json">5</pre></td>
-    </tr>    <tr>
-      <td>endRange</td>
-      <td>number</td>
-      <td>yes</td>
-      <td>Upper bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">8</pre></td>
     </tr>
   </tbody>
 </table>
@@ -140,13 +130,10 @@ The following table lists the outputs of the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>assigned</td>
-      <td>array, boolean</td>
-      <td>An array of the first availble consecutive pair if found. Otherwise, it is a boolean value</td>
-      <td><pre lang="json">[
-  6,
-  7
-]</pre></td>
+      <td>randomInteger</td>
+      <td>integer</td>
+      <td>Randomly generated integer</td>
+      <td><pre lang="json">2</pre></td>
     </tr>
   </tbody>
 </table>
@@ -167,24 +154,14 @@ No related documentation provided.
     
 Input:
 <pre>{
-  "allocated": [
-    1,
-    4,
-    5
-  ],
-  "startRange": 5,
-  "endRange": 8
+  "minimum": 2,
+  "maximum": 5
 } </pre>
 
     
     
 Output:
-<pre>{
-  "assigned": [
-    6,
-    7
-  ]
-} </pre>
+<pre>2</pre>
 
 
 

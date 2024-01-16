@@ -1,8 +1,8 @@
-# Allocate a Pair of Numbers - IAP
+# Remove Element From Array by Index - IAP
 
 ## Table of Contents
 
-- [Allocate a Pair of Numbers - IAP](#allocate-a-pair-of-numbers---iap)
+- [Remove Element From Array by Index - IAP](#remove-element-from-array-by-index---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -21,17 +21,17 @@
 
 ## Overview
 
-Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+Remove an element from an array by index
 
 Capabilities include:
-- This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+- This transformation allows IAP users to remove an element from an array by index
 
 
 ## Getting Started
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Allocate a Pair of Numbers - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Remove Element From Array by Index - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>Allocate a Pair of Numbers - IAP</td>
+      <td>Remove Element From Array by Index - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>
@@ -98,27 +98,23 @@ The following table lists the inputs to the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>allocated</td>
+      <td>array</td>
       <td>array</td>
       <td>yes</td>
-      <td>Array of already allocated integers</td>
+      <td>Array that has element to be removed</td>
       <td><pre lang="json">[
-  1,
-  4,
-  5
+  9,
+  8,
+  7.45,
+  77,
+  7
 ]</pre></td>
     </tr>    <tr>
-      <td>startRange</td>
-      <td>number</td>
+      <td>index</td>
+      <td>integer</td>
       <td>yes</td>
-      <td>Lower bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">5</pre></td>
-    </tr>    <tr>
-      <td>endRange</td>
-      <td>number</td>
-      <td>yes</td>
-      <td>Upper bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">8</pre></td>
+      <td>Index of the element to be removed</td>
+      <td><pre lang="json">1</pre></td>
     </tr>
   </tbody>
 </table>
@@ -140,11 +136,13 @@ The following table lists the outputs of the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>assigned</td>
-      <td>array, boolean</td>
-      <td>An array of the first availble consecutive pair if found. Otherwise, it is a boolean value</td>
+      <td>newArray</td>
+      <td>array</td>
+      <td>Modified array after removing an element at the specified index</td>
       <td><pre lang="json">[
-  6,
+  9,
+  7.45,
+  77,
   7
 ]</pre></td>
     </tr>
@@ -167,23 +165,98 @@ No related documentation provided.
     
 Input:
 <pre>{
-  "allocated": [
-    1,
-    4,
-    5
+  "array": [
+    9,
+    8,
+    7.45,
+    77,
+    7
   ],
-  "startRange": 5,
-  "endRange": 8
+  "index": 1
 } </pre>
 
     
     
 Output:
 <pre>{
-  "assigned": [
-    6,
+  "newArray": [
+    9,
+    7.45,
+    77,
     7
-  ]
+  ],
+  "item": 8
+} </pre>
+
+
+#### Example 2
+
+    
+Input:
+<pre>{
+  "array": [
+    {
+      "a": "a"
+    },
+    {
+      "b": "b"
+    },
+    {
+      "c": "a"
+    },
+    {
+      "d": {
+        "e": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "f": {
+        "g": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  ],
+  "index": 4
+} </pre>
+
+    
+    
+Output:
+<pre>{
+  "newArray": [
+    {
+      "a": "a"
+    },
+    {
+      "b": "b"
+    },
+    {
+      "c": "a"
+    },
+    {
+      "d": {
+        "e": [
+          1,
+          2
+        ]
+      }
+    }
+  ],
+  "item": {
+    "f": {
+      "g": [
+        1,
+        2,
+        3
+      ]
+    }
+  }
 } </pre>
 
 

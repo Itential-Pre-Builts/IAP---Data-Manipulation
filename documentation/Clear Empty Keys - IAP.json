@@ -1,0 +1,42 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to clear empty keys from a JSON input. Empty keys consist of empty objects, empty arrays, empty strings, and null values"
+    }
+  ],
+  "entryPoint": {
+    "name": "Clear Empty Keys - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "input",
+      "type": "object",
+      "required": "yes",
+      "description": "An object that needs to be cleaned",
+      "exampleValue": "{\r\n  \"name\": \"John\",\r\n  \"age\": \"30\",\r\n  \"address\": {},\r\n  \"hobbies\": []\r\n}"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "output",
+      "type": "object",
+      "description": "Clean object without empty keys",
+      "exampleValue": "{\r\n  \"name\": \"John\",\r\n  \"age\": \"30\"\r\n}"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"input\": {\r\n    \"name\": \"John\",\r\n    \"age\": \"30\",\r\n    \"address\": {},\r\n    \"hobbies\": []\r\n  }\r\n}",
+      "exampleOutput": "{\r\n  \"name\": \"John\",\r\n  \"age\": \"30\"\r\n}"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Clear Empty Keys - IAP",
+  "overview": "Clear empty keys from a JSON",
+  "webName": "Clear Empty Keys - IAP",
+  "assetType": "Transformation"
+}

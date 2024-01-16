@@ -1,0 +1,57 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to convert strings and strings within objects to numbers"
+    }
+  ],
+  "entryPoint": {
+    "name": "Parse Number - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "keysToConvert",
+      "type": "array",
+      "required": "yes",
+      "description": "The keys to be converted in the object if the data is an object or an array of objects. Set this attribute to [] if not applicable, or if all keys need to be converted",
+      "exampleValue": "[\"price\", \"aisle\"]"
+    },
+    {
+      "name": "data",
+      "type": "array, number, string, oject",
+      "required": "yes",
+      "description": "Data that have strings that need to be converted to number. For arrays and objects, the JST will convert strings in the first level only",
+      "exampleValue": "{\r\n  \"fruit\": \"apple\",\r\n  \"quantity\": \"30\",\r\n  \"price\": \"42.2\",\r\n  \"aisle\": \"23b\"\r\n}"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "output",
+      "type": "array, object, number, string",
+      "description": "Parsed data",
+      "exampleValue": "{\r\n  \"fruit\": \"apple\",\r\n  \"quantity\": \"30\",\r\n  \"price\": 42.2,\r\n  \"aisle\": \"23b\"\r\n}"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"keysToConvert\": [\r\n    \"price\",\r\n    \"aisle\"\r\n  ],\r\n  \"data\": {\r\n    \"fruit\": \"apple\",\r\n    \"quantity\": \"30\",\r\n    \"price\": \"42.2\",\r\n    \"aisle\": \"23b\"\r\n  }\r\n}",
+      "exampleOutput": "{\r\n  \"fruit\": \"apple\",\r\n  \"quantity\": \"30\",\r\n  \"price\": 42.2,\r\n  \"aisle\": \"23b\"\r\n}"
+    },
+    {
+      "exampleInput": "{\r\n  \"keysToConvert\": [],\r\n  \"data\": [\r\n    12,\r\n    true,\r\n    \"32.23\",\r\n    \"banana\",\r\n    [\r\n      \"43\"\r\n    ],\r\n    \"35\"\r\n  ]\r\n}",
+      "exampleOutput": "[\r\n  12,\r\n  true,\r\n  32.23,\r\n  \"banana\",\r\n  [\r\n    \"43\"\r\n  ],\r\n  35\r\n]"
+    },
+    {
+      "exampleInput": "{\r\n  \"keysToConvert\": [],\r\n  \"data\": [\r\n    {\r\n      \"FILE_SYSTEM\": \"net\/node0_RP0_CPU0\/harddisk\",\r\n      \"TOTAL_SIZE\": \"17538482176\",\r\n      \"TOTAL_FREE\": \"14333425152\"\r\n    },\r\n    {\r\n      \"FILE_SYSTEM\": \"net\/node0_RP1_CPU0\/harddisk\",\r\n      \"TOTAL_SIZE\": \"17538482175\",\r\n      \"TOTAL_FREE\": \"44222222\"\r\n    }\r\n  ]\r\n}",
+      "exampleOutput": "[\r\n  {\r\n    \"FILE_SYSTEM\": \"net\/node0_RP0_CPU0\/harddisk\",\r\n    \"TOTAL_SIZE\": 17538482176,\r\n    \"TOTAL_FREE\": 14333425152\r\n  },\r\n  {\r\n    \"FILE_SYSTEM\": \"net\/node0_RP1_CPU0\/harddisk\",\r\n    \"TOTAL_SIZE\": 17538482175,\r\n    \"TOTAL_FREE\": 44222222\r\n  }\r\n]"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Parse Number - IAP",
+  "overview": "Convert strings and strings within objects to numbers",
+  "webName": "Parse Number - IAP",
+  "assetType": "Transformation"
+}

@@ -2,12 +2,84 @@
   "readme": "/documentation/readme.json",
   "assets": [
     {
-      "name": "Aggregate Functions For Arrays - IAP",
-      "path": "/documentation/Aggregate Functions For Arrays - IAP.json"
+      "name": "Aggregate Functions for Arrays - IAP",
+      "path": "/documentation/Aggregate Functions for Arrays - IAP.json"
     },
     {
-      "name": "Allocate A Pair Of Numbers - IAP",
-      "path": "/documentation/Allocate A Pair Of Numbers - IAP.json"
+      "name": "Allocate a Pair of Numbers - IAP",
+      "path": "/documentation/Allocate a Pair of Numbers - IAP.json"
+    },
+    {
+      "name": "Allocate One Number - IAP",
+      "path": "/documentation/Allocate One Number - IAP.json"
+    },
+    {
+      "name": "Chunk Array - IAP",
+      "path": "/documentation/Chunk Array - IAP.json"
+    },
+    {
+      "name": "Clear Empty Keys - IAP",
+      "path": "/documentation/Clear Empty Keys - IAP.json"
+    },
+    {
+      "name": "Convert CSV to JSON - IAP",
+      "path": "/documentation/Convert CSV to JSON - IAP.json"
+    },
+    {
+      "name": "Convert String to Special Cases - IAP",
+      "path": "/documentation/Convert String to Special Cases - IAP.json"
+    },
+    {
+      "name": "Filter Array of Objects by Key Value Pair - IAP",
+      "path": "/documentation/Filter Array of Objects by Key Value Pair - IAP.json"
+    },
+    {
+      "name": "Generate Random Integer Within Range - IAP",
+      "path": "/documentation/Generate Random Integer Within Range - IAP.json"
+    },
+    {
+      "name": "Get Random Element From Array - IAP",
+      "path": "/documentation/Get Random Element From Array - IAP.json"
+    },
+    {
+      "name": "Get Value From JSON Pointer - IAP",
+      "path": "/documentation/Get Value From JSON Pointer - IAP.json"
+    },
+    {
+      "name": "Group Records by Property - IAP",
+      "path": "/documentation/Group Records by Property - IAP.json"
+    },
+    {
+      "name": "Parse Number - IAP",
+      "path": "/documentation/Parse Number - IAP.json"
+    },
+    {
+      "name": "Remove Duplicates From Array of Arrays or Objects - IAP",
+      "path": "/documentation/Remove Duplicates From Array of Arrays or Objects - IAP.json"
+    },
+    {
+      "name": "Remove Duplicates From Array of Primitives - IAP",
+      "path": "/documentation/Remove Duplicates From Array of Primitives - IAP.json"
+    },
+    {
+      "name": "Remove Element From Array by Index - IAP",
+      "path": "/documentation/Remove Element From Array by Index - IAP.json"
+    },
+    {
+      "name": "Remove Element From Array by Value - IAP",
+      "path": "/documentation/Remove Element From Array by Value - IAP.json"
+    },
+    {
+      "name": "Separate Array of Objects by Key Value Pair - IAP",
+      "path": "/documentation/Separate Array of Objects by Key Value Pair - IAP.json"
+    },
+    {
+      "name": "Split String into Array by Regex or Separator - IAP",
+      "path": "/documentation/Split String into Array by Regex or Separator - IAP.json"
+    },
+    {
+      "name": "Transpose Record by Creating Arrays for Each Property Within Groups - IAP",
+      "path": "/documentation/Transpose Record by Creating Arrays for Each Property Within Groups - IAP.json"
     }
   ]
 }

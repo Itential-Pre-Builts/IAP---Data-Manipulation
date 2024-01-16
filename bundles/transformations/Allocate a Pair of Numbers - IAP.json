@@ -1,6 +1,6 @@
 {
   "_id": "5f510ee4a1ff8106e83c1963",
-  "name": "allocateNewPair",
+  "name": "Allocate a Pair of Numbers - IAP",
   "description": "",
   "incoming": [
     {
@@ -40,10 +40,11 @@
       "type": "object",
       "properties": {
         "assigned": {
-          "type": "integer",
-          "examples": [
-            5
-          ]
+          "type": [
+            "array",
+            "boolean"
+          ],
+          "examples": []
         }
       },
       "required": []
@@ -1106,7 +1107,7 @@
         }
       ],
       "functions": [],
-      "name": "reduceFunction",
+      "name": "findAvailablePair",
       "view": {
         "col": 5,
         "row": 7

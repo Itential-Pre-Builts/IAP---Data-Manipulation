@@ -1,8 +1,8 @@
-# Allocate a Pair of Numbers - IAP
+# Convert CSV to JSON - IAP
 
 ## Table of Contents
 
-- [Allocate a Pair of Numbers - IAP](#allocate-a-pair-of-numbers---iap)
+- [Convert CSV to JSON - IAP](#convert-csv-to-json---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -21,17 +21,17 @@
 
 ## Overview
 
-Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+Convert CSV to JSON
 
 Capabilities include:
-- This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+- This transformation allows IAP users to convert a CSV into a JSON
 
 
 ## Getting Started
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Allocate a Pair of Numbers - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Convert CSV to JSON - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>Allocate a Pair of Numbers - IAP</td>
+      <td>Convert CSV to JSON - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>
@@ -98,27 +98,11 @@ The following table lists the inputs to the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>allocated</td>
-      <td>array</td>
+      <td>csv</td>
+      <td>string</td>
       <td>yes</td>
-      <td>Array of already allocated integers</td>
-      <td><pre lang="json">[
-  1,
-  4,
-  5
-]</pre></td>
-    </tr>    <tr>
-      <td>startRange</td>
-      <td>number</td>
-      <td>yes</td>
-      <td>Lower bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">5</pre></td>
-    </tr>    <tr>
-      <td>endRange</td>
-      <td>number</td>
-      <td>yes</td>
-      <td>Upper bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">8</pre></td>
+      <td>CSV to convert to JSON</td>
+      <td><pre lang="json">a,b,c,d,e,f\n1,2,3,4,5,7,8,9,0\n5,4,3,2,1\n1,2,3,4,5</pre></td>
     </tr>
   </tbody>
 </table>
@@ -140,12 +124,34 @@ The following table lists the outputs of the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>assigned</td>
-      <td>array, boolean</td>
-      <td>An array of the first availble consecutive pair if found. Otherwise, it is a boolean value</td>
+      <td>json</td>
+      <td>array</td>
+      <td>JSON format of the CSV</td>
       <td><pre lang="json">[
-  6,
-  7
+  {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5",
+    "f": "7"
+  },
+  {
+    "a": "5",
+    "b": "4",
+    "c": "3",
+    "d": "2",
+    "e": "1",
+    "f": ""
+  },
+  {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5",
+    "f": ""
+  }
 ]</pre></td>
     </tr>
   </tbody>
@@ -167,24 +173,38 @@ No related documentation provided.
     
 Input:
 <pre>{
-  "allocated": [
-    1,
-    4,
-    5
-  ],
-  "startRange": 5,
-  "endRange": 8
+  "csv": "a,b,c,d,e,f\n1,2,3,4,5,7,8,9,0\n5,4,3,2,1\n1,2,3,4,5"
 } </pre>
 
     
     
 Output:
-<pre>{
-  "assigned": [
-    6,
-    7
-  ]
-} </pre>
+<pre>[
+  {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5",
+    "f": "7"
+  },
+  {
+    "a": "5",
+    "b": "4",
+    "c": "3",
+    "d": "2",
+    "e": "1",
+    "f": ""
+  },
+  {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5",
+    "f": ""
+  }
+] </pre>
 
 
 

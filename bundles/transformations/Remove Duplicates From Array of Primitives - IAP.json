@@ -1,0 +1,126 @@
+{
+  "_id": "5f1e1e7f655a0306dde634b2",
+  "name": "Remove Duplicates From Array of Primitives - IAP",
+  "incoming": [
+    {
+      "$id": "array",
+      "type": "array",
+      "items": {
+        "type": [
+          "boolean",
+          "number",
+          "integer",
+          "string",
+          "null"
+        ]
+      }
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "uniqueArray",
+      "type": "array",
+      "items": {
+        "type": [
+          "boolean",
+          "number",
+          "integer",
+          "string",
+          "null"
+        ]
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": 2,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "array",
+        "ptr": ""
+      },
+      "to": {
+        "location": "declaration",
+        "name": 1,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 1,
+      "type": "declaration",
+      "library": "Set",
+      "method": "new Set",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 1
+      },
+      "summary": "Converting to Set removes duplicates"
+    },
+    {
+      "id": 4,
+      "type": "assign",
+      "from": {
+        "location": "declaration",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 3,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 3,
+      "type": "method",
+      "library": "Array",
+      "method": "from",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 2
+      },
+      "summary": "Convert Set back to Array"
+    },
+    {
+      "id": 5,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 3,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "uniqueArray",
+        "ptr": ""
+      }
+    }
+  ],
+  "functions": [],
+  "comments": [],
+  "view": {
+    "col": 2,
+    "row": 5
+  },
+  "created": "2024-01-08T19:43:04.316Z",
+  "createdBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2024-01-08T19:44:14.093Z",
+  "lastUpdatedBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "4.1.2-2023.1.10",
+  "tags": []
+}

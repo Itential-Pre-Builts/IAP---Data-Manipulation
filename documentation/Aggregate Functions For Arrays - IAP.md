@@ -1,8 +1,8 @@
-# Aggregate Functions For Arrays - IAP
+# Aggregate Functions for Arrays - IAP
 
 ## Table of Contents
 
-- [Aggregate Functions For Arrays - IAP](#aggregate-functions-for-arrays---iap)
+- [Aggregate Functions for Arrays - IAP](#aggregate-functions-for-arrays---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -21,17 +21,17 @@
 
 ## Overview
 
-This transformation allows IAP users to to run a set of mathematical aggregate functions on an array of numbers
+Run a set of mathematical aggregate functions on an array of numbers
 
 Capabilities include:
-- The transformation allows IAP users to to run a set of mathematical aggregate functions on an array of numbers. The aggregate functions consist of Sum, Product, Maximum, Minimum, Range, Count, Arithmetic Mean, Geometric Mean, Harmonic Mean, Median, Mode, Standard Deviation, and Variance
+- The transformation allows IAP users to run a set of mathematical aggregate functions on an array of numbers. The aggregate functions consist of Sum, Product, Maximum, Minimum, Range, Count, Arithmetic Mean, Geometric Mean, Harmonic Mean, Median, Mode, Standard Deviation, and Variance
 
 
 ## Getting Started
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Aggregate Functions For Arrays - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Aggregate Functions for Arrays - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>aggregateFunctions</td>
+      <td>Aggregate Functions for Arrays - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>
@@ -239,7 +239,52 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
-No example inputs or outputs found.
+#### Example 1
+
+    
+Input:
+<pre>{
+  "groupedArray": [
+    1,
+    2,
+    3
+  ]
+} </pre>
+
+    
+    
+Output:
+<pre>{
+  "sum": 6,
+  "maximum": 3,
+  "minimum": 1,
+  "range": 2,
+  "count": 3,
+  "arithmeticMean": 2,
+  "geometricMean": 1.8171205928321397,
+  "product": 6,
+  "harmonicMean": 1.6363636363636365,
+  "median": 2,
+  "mode": [
+    1,
+    2,
+    3
+  ],
+  "modeFrequency": 1,
+  "standardDeviation": 0.816496580927726,
+  "variance": 0.6666666666666666,
+  "valuesIgnored": [],
+  "valuesUsed": [
+    1,
+    2,
+    3
+  ],
+  "valuesUsed-converted": [
+    1,
+    2,
+    3
+  ]
+} </pre>
 
 
 

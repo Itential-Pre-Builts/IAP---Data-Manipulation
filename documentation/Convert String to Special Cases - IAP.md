@@ -1,8 +1,8 @@
-# Allocate a Pair of Numbers - IAP
+# Convert String to Special Cases - IAP
 
 ## Table of Contents
 
-- [Allocate a Pair of Numbers - IAP](#allocate-a-pair-of-numbers---iap)
+- [Convert String to Special Cases - IAP](#convert-string-to-special-cases---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -21,17 +21,17 @@
 
 ## Overview
 
-Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+Convert string to special cases including camelCase, PascalCase, kebab-case, and snake_case
 
 Capabilities include:
-- This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+- This transformation allows IAP users to convert a string separated by whitespace to camelCase, PascalCase, kebab-case, and snake_case
 
 
 ## Getting Started
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Allocate a Pair of Numbers - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Convert String to Special Cases - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>Allocate a Pair of Numbers - IAP</td>
+      <td>Convert String to Special Cases - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>
@@ -98,27 +98,11 @@ The following table lists the inputs to the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>allocated</td>
-      <td>array</td>
+      <td>incomingString</td>
+      <td>string</td>
       <td>yes</td>
-      <td>Array of already allocated integers</td>
-      <td><pre lang="json">[
-  1,
-  4,
-  5
-]</pre></td>
-    </tr>    <tr>
-      <td>startRange</td>
-      <td>number</td>
-      <td>yes</td>
-      <td>Lower bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">5</pre></td>
-    </tr>    <tr>
-      <td>endRange</td>
-      <td>number</td>
-      <td>yes</td>
-      <td>Upper bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">8</pre></td>
+      <td>A string separated by whitespace</td>
+      <td><pre lang="json">foo bar foobar</pre></td>
     </tr>
   </tbody>
 </table>
@@ -140,13 +124,25 @@ The following table lists the outputs of the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>assigned</td>
-      <td>array, boolean</td>
-      <td>An array of the first availble consecutive pair if found. Otherwise, it is a boolean value</td>
-      <td><pre lang="json">[
-  6,
-  7
-]</pre></td>
+      <td>toCamelCase</td>
+      <td>string</td>
+      <td>Camel case which has no interventing spaces or underscores, and all words except the first one starting with a capital letter</td>
+      <td><pre lang="json">fooBarFoobar</pre></td>
+    </tr>    <tr>
+      <td>toSnakeCase</td>
+      <td>string</td>
+      <td>Snake case which has spaces replaced by underscores</td>
+      <td><pre lang="json">foo_bar_foobar</pre></td>
+    </tr>    <tr>
+      <td>toKebabCase</td>
+      <td>string</td>
+      <td>Kebab case which has spaces replaced by hyphens</td>
+      <td><pre lang="json">foo-bar-foobar</pre></td>
+    </tr>    <tr>
+      <td>toPascalCase</td>
+      <td>string</td>
+      <td>Pascal case which has all words starting with a capital letter</td>
+      <td><pre lang="json">FooBarFoobar</pre></td>
     </tr>
   </tbody>
 </table>
@@ -167,23 +163,17 @@ No related documentation provided.
     
 Input:
 <pre>{
-  "allocated": [
-    1,
-    4,
-    5
-  ],
-  "startRange": 5,
-  "endRange": 8
+  "incomingString": "foo bar foobar"
 } </pre>
 
     
     
 Output:
 <pre>{
-  "assigned": [
-    6,
-    7
-  ]
+  "toCamelCase": "fooBarFoobar",
+  "toSnakeCase": "foo_bar_foobar",
+  "toKebabCase": "foo-bar-foobar",
+  "toPascalCase": "FooBarFoobar"
 } </pre>
 
 

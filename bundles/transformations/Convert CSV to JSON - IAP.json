@@ -1,0 +1,856 @@
+{
+  "_id": "5f0f6bb8fb031306c04df04b",
+  "name": "Convert CSV to JSON - IAP",
+  "incoming": [
+    {
+      "$id": "csv",
+      "type": "string",
+      "examples": [
+        "a,b,c,d,e,f\n1,2,3,4,5,7,8,9,0\n5,4,3,2,1\n1,2,3,4,5"
+      ]
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "json",
+      "type": "array",
+      "properties": {},
+      "required": []
+    }
+  ],
+  "steps": [
+    {
+      "id": 29,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "csv",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 28,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 32,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "csv",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 31,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 35,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "csv",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 27,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 28,
+      "type": "method",
+      "library": "String",
+      "method": "includes",
+      "args": [
+        null,
+        "\n",
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 1
+      }
+    },
+    {
+      "id": 31,
+      "type": "method",
+      "library": "String",
+      "method": "concat",
+      "args": [
+        null,
+        "\n"
+      ],
+      "view": {
+        "row": 2,
+        "col": 1
+      }
+    },
+    {
+      "id": 30,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 28,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 27,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 34,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 31,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 27,
+        "ptr": "/args/2/value"
+      }
+    },
+    {
+      "id": 27,
+      "type": "method",
+      "library": "Conditional",
+      "method": "ternary",
+      "args": [
+        null,
+        null,
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 2
+      }
+    },
+    {
+      "id": 36,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 27,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 1,
+      "type": "method",
+      "library": "String",
+      "method": "split",
+      "args": [
+        null,
+        "\n",
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 3
+      }
+    },
+    {
+      "id": 4,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 3,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 3,
+      "type": "method",
+      "library": "Array",
+      "method": "shift",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 4
+      }
+    },
+    {
+      "id": 15,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 3,
+        "ptr": "/return/array"
+      },
+      "to": {
+        "location": "method",
+        "name": 14,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 16,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 3,
+        "ptr": "/return/value"
+      },
+      "to": {
+        "location": "method",
+        "name": 14,
+        "ptr": "/args/2/value"
+      }
+    },
+    {
+      "id": 14,
+      "type": "method",
+      "library": "Array",
+      "method": "map",
+      "args": [
+        null,
+        "ƒ_map_1",
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 5
+      }
+    },
+    {
+      "id": 26,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 14,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "json",
+        "ptr": ""
+      }
+    }
+  ],
+  "functions": [
+    {
+      "incoming": [
+        {
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "currentValue"
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "$id": "array"
+        },
+        {
+          "$id": "thisArg",
+          "type": "object",
+          "properties": {
+            "0_shift return": {
+              "type": [
+                "array",
+                "boolean",
+                "number",
+                "integer",
+                "string",
+                "object",
+                "null"
+              ]
+            }
+          },
+          "isContext": true,
+          "isIndexed": true
+        }
+      ],
+      "outgoing": [
+        {
+          "title": "newValue",
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "editable": true,
+          "$id": "newValue"
+        }
+      ],
+      "steps": [
+        {
+          "id": 8,
+          "type": "declaration",
+          "library": "Object",
+          "method": "new Object",
+          "args": [
+            "{}"
+          ],
+          "view": {
+            "row": 2,
+            "col": 1
+          }
+        },
+        {
+          "id": 14,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "thisArg",
+            "ptr": "/0_shift return"
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 15,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 1,
+          "type": "method",
+          "library": "String",
+          "method": "split",
+          "args": [
+            null,
+            ",",
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 1
+          }
+        },
+        {
+          "id": 5,
+          "type": "method",
+          "library": "String",
+          "method": "split",
+          "args": [
+            null,
+            ",",
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 1
+          }
+        },
+        {
+          "id": 9,
+          "type": "assign",
+          "from": {
+            "location": "declaration",
+            "name": 8,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 4,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 7,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/3/value"
+          }
+        },
+        {
+          "id": 16,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 11,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 11,
+          "type": "method",
+          "library": "Array",
+          "method": "length",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 2
+          }
+        },
+        {
+          "id": 13,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 11,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/4/value"
+          }
+        },
+        {
+          "id": 3,
+          "type": "method",
+          "library": "Array",
+          "method": "reduce",
+          "args": [
+            null,
+            "ƒ_reduce_1",
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 3
+          }
+        },
+        {
+          "id": 10,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "newValue",
+            "ptr": ""
+          }
+        }
+      ],
+      "functions": [],
+      "name": "jsonBuilder",
+      "view": {
+        "col": 3,
+        "row": 4
+      },
+      "id": "ƒ_map_1",
+      "comments": []
+    },
+    {
+      "incoming": [
+        {
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "accumulator"
+        },
+        {
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "currentValue"
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "$id": "array"
+        },
+        {
+          "$id": "thisArg",
+          "type": "object",
+          "properties": {
+            "0_split return": {
+              "type": "array"
+            },
+            "1_length return": {
+              "type": "number"
+            }
+          },
+          "isContext": true,
+          "isIndexed": true
+        }
+      ],
+      "outgoing": [
+        {
+          "title": "accumulator",
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "accumulator"
+        }
+      ],
+      "steps": [
+        {
+          "id": 2,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "thisArg",
+            "ptr": "/0_split return"
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 6,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 7,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "accumulator",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 11,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "index",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 10,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 13,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "thisArg",
+            "ptr": "/1_length return"
+          },
+          "to": {
+            "location": "method",
+            "name": 12,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 21,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "index",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 23,
+          "type": "method",
+          "library": "String",
+          "method": "charAt",
+          "args": [
+            "0",
+            1
+          ],
+          "view": {
+            "row": 3,
+            "col": 2
+          }
+        },
+        {
+          "id": 10,
+          "type": "method",
+          "library": "Math",
+          "method": "add",
+          "args": [
+            null,
+            1
+          ],
+          "view": {
+            "row": 2,
+            "col": 1
+          }
+        },
+        {
+          "id": 24,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 23,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 15,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 1,
+          "type": "method",
+          "library": "Array",
+          "method": "getIndex",
+          "args": [
+            null,
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 1
+          }
+        },
+        {
+          "id": 14,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 10,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 12,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 17,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 15,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 12,
+          "type": "method",
+          "library": "Relational",
+          "method": "lessThanOrEqual",
+          "args": [
+            null,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 2
+          }
+        },
+        {
+          "id": 16,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 12,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 15,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 15,
+          "type": "method",
+          "library": "Conditional",
+          "method": "ternary",
+          "args": [
+            true,
+            null,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 3
+          }
+        },
+        {
+          "id": 22,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 15,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 4,
+          "type": "method",
+          "library": "Object",
+          "method": "setProperty",
+          "args": [
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 2
+          }
+        },
+        {
+          "id": 8,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "accumulator",
+            "ptr": ""
+          }
+        }
+      ],
+      "functions": [],
+      "name": "objectBuilder",
+      "view": {
+        "col": 3,
+        "row": 5
+      },
+      "id": "ƒ_reduce_1",
+      "comments": []
+    }
+  ],
+  "comments": [],
+  "view": {
+    "col": 5,
+    "row": 4
+  },
+  "created": "2024-01-07T21:26:42.391Z",
+  "createdBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2024-01-07T23:10:39.387Z",
+  "lastUpdatedBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "4.1.2-2023.1.10",
+  "tags": []
+}

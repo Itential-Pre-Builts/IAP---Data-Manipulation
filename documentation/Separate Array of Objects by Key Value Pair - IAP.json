@@ -1,0 +1,66 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to separate an array of objects into an array of matching items and an array of non-matching items by providing a key and value that needs to be matched"
+    }
+  ],
+  "entryPoint": {
+    "name": "Separate Array of Objects by Key Value Pair - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "dataArray",
+      "type": "array",
+      "required": "yes",
+      "description": "An array of objects that needs separation",
+      "exampleValue": "[\r\n  {\r\n    \"city\": \"Atlanta\",\r\n    \"state\": \"GA\"\r\n  },\r\n  {\r\n    \"city\": \"Sandy Springs\",\r\n    \"state\": \"GA\"\r\n  },\r\n  {\r\n    \"city\": \"Dallas\",\r\n    \"state\": \"TX\"\r\n  },\r\n  {\r\n    \"city\": \"Orlando\",\r\n    \"state\": \"FL\"\r\n  }\r\n]"
+    },
+    {
+      "name": "key",
+      "type": "string",
+      "required": "yes",
+      "description": "The property that needs to be matched",
+      "exampleValue": "state"
+    },
+    {
+      "name": "value",
+      "type": "array, boolean, null, object, number, string",
+      "required": "yes",
+      "description": "The value of the property that needs to be matched",
+      "exampleValue": "GA"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "matchingItems",
+      "type": "array",
+      "description": "Array of the matching objects",
+      "exampleValue": "[\r\n  {\r\n    \"city\": \"Atlanta\",\r\n    \"state\": \"GA\"\r\n  },\r\n  {\r\n    \"city\": \"Sandy Springs\",\r\n    \"state\": \"GA\"\r\n  }\r\n]\r\n"
+    },
+    {
+      "name": "nonmatchingItems",
+      "type": "array",
+      "description": "Array of the non-matching objects",
+      "exampleValue": "[\r\n  {\r\n    \"city\": \"Dallas\",\r\n    \"state\": \"TX\"\r\n  },\r\n  {\r\n    \"city\": \"Orlando\",\r\n    \"state\": \"FL\"\r\n  }\r\n]"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"dataArray\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"key\": \"state\",\r\n  \"value\": \"GA\"\r\n}",
+      "exampleOutput": "{\r\n  \"matchingItems\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    }\r\n  ],\r\n  \"nonmatchingItems\": [\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ]\r\n}"
+    },
+    {
+      "exampleInput": "{\r\n  \"dataArray\": [\r\n    {\r\n      \"store\": \"Costco\",\r\n      \"item\": \"orange\"\r\n    },\r\n    {\r\n      \"store\": \"Costco\",\r\n      \"item\": \"milk\"\r\n    },\r\n    {\r\n      \"store\": \"Kroger\",\r\n      \"item\": \"yam\"\r\n    },\r\n    {\r\n      \"store\": \"CVS\",\r\n      \"item\": \"batteries\"\r\n    }\r\n  ],\r\n  \"key\": \"store\",\r\n  \"value\": \"Walmart\"\r\n}",
+      "exampleOutput": "{\r\n  \"matchingItems\": [],\r\n  \"nonmatchingItems\": [\r\n    {\r\n      \"store\": \"Costco\",\r\n      \"item\": \"orange\"\r\n    },\r\n    {\r\n      \"store\": \"Costco\",\r\n      \"item\": \"milk\"\r\n    },\r\n    {\r\n      \"store\": \"Kroger\",\r\n      \"item\": \"yam\"\r\n    },\r\n    {\r\n      \"store\": \"CVS\",\r\n      \"item\": \"batteries\"\r\n    }\r\n  ]\r\n}"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Separate Array of Objects by Key Value Pair - IAP",
+  "overview": "Separate an array of objects by a key value pair",
+  "webName": "Separate Array of Objects by Key Value Pair - IAP",
+  "assetType": "Transformation"
+}

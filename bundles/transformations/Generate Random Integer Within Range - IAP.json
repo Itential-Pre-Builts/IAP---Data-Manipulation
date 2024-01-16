@@ -1,0 +1,232 @@
+{
+  "_id": "5f1704ee3a0db540a50936a9",
+  "name": "Generate Random Integer Within Range - IAP",
+  "incoming": [
+    {
+      "$id": "minimum",
+      "type": "integer",
+      "examples": [
+        2
+      ]
+    },
+    {
+      "$id": "maximum",
+      "type": "integer",
+      "examples": [
+        2
+      ]
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "randomInteger",
+      "type": "integer",
+      "examples": [
+        2
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "type": "method",
+      "library": "Math",
+      "method": "random",
+      "args": [],
+      "view": {
+        "row": 1,
+        "col": 1
+      }
+    },
+    {
+      "id": 4,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "maximum",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 3,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 5,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "minimum",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 3,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 10,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "minimum",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 8,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 2,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 3,
+      "type": "method",
+      "library": "Math",
+      "method": "subtract",
+      "args": [
+        null,
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 1
+      }
+    },
+    {
+      "id": 7,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 3,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 2,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 2,
+      "type": "method",
+      "library": "Math",
+      "method": "multiply",
+      "args": [
+        null,
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 2
+      }
+    },
+    {
+      "id": 9,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 2,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 6,
+      "type": "method",
+      "library": "Math",
+      "method": "add",
+      "args": [
+        null,
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 3
+      }
+    },
+    {
+      "id": 21,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 20,
+        "ptr": "/args/0/value"
+      },
+      "context": "#"
+    },
+    {
+      "id": 20,
+      "type": "method",
+      "library": "Math",
+      "method": "round",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 4
+      },
+      "context": "#"
+    },
+    {
+      "id": 22,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 20,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "randomInteger",
+        "ptr": ""
+      },
+      "context": "#"
+    }
+  ],
+  "functions": [],
+  "comments": [],
+  "view": {
+    "col": 4,
+    "row": 5
+  },
+  "created": "2024-01-08T14:33:33.968Z",
+  "createdBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2024-01-08T15:06:39.197Z",
+  "lastUpdatedBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "4.1.2-2023.1.10",
+  "tags": []
+}

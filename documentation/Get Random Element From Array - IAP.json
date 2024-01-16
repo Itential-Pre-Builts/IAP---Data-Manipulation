@@ -1,0 +1,60 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to get a random element from an array"
+    }
+  ],
+  "entryPoint": {
+    "name": "Get Random Element From Array - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "array",
+      "type": "array",
+      "required": "yes",
+      "description": "Array from which a random element has to be selected",
+      "exampleValue": "[\r\n  {\"city\":\"Atlanta\", \"state\":\"GA\"},\r\n  {\"city\":\"Sandy Springs\", \"state\":\"GA\"},\r\n  {\"city\":\"Dallas\", \"state\":\"TX\"},\r\n  {\"city\":\"Orlando\", \"state\":\"FL\"}\r\n]"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "arrayWithoutElement",
+      "type": "array",
+      "description": "Array without the randomly selected element",
+      "exampleValue": "[\r\n  {\r\n    \"city\": \"Sandy Springs\",\r\n    \"state\": \"GA\"\r\n  },\r\n  {\r\n    \"city\": \"Dallas\",\r\n    \"state\": \"TX\"\r\n  },\r\n  {\r\n    \"city\": \"Orlando\",\r\n    \"state\": \"FL\"\r\n  }\r\n]"
+    },
+    {
+      "name": "randomElement",
+      "type": "number, string, boolean, array, object",
+      "description": "Randomly selected element",
+      "exampleValue": "{\r\n  \"city\": \"Atlanta\",\r\n  \"state\": \"GA\"\r\n}"
+    },
+    {
+      "name": "randomElementIndex",
+      "type": "integer",
+      "description": "Index of the randomly selected element",
+      "exampleValue": "0"
+    },
+    {
+      "name": "poppedArrayLength",
+      "type": "integer",
+      "description": "Length of the array without the randomly selected element",
+      "exampleValue": "3"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ]\r\n}",
+      "exampleOutput": "{\r\n  \"arrayWithoutElement\": [\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"randomElement\": {\r\n    \"city\": \"Atlanta\",\r\n    \"state\": \"GA\"\r\n  },\r\n  \"randomElementIndex\": 0,\r\n  \"poppedArrayLength\": 3\r\n}"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Get Random Element From Array - IAP",
+  "overview": "Get a random element from array",
+  "webName": "Get Random Element From Array - IAP",
+  "assetType": "Transformation"
+}

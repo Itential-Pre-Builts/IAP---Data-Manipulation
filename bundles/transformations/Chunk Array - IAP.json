@@ -1,0 +1,549 @@
+{
+  "_id": "618ad3eb24cba500df985c2c",
+  "name": "Chunk Array - IAP",
+  "description": "",
+  "incoming": [
+    {
+      "$id": "originalArray",
+      "type": "array"
+    },
+    {
+      "$id": "chunkSize",
+      "type": "number"
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "splitArray",
+      "type": "array"
+    }
+  ],
+  "steps": [
+    {
+      "id": 3,
+      "type": "method",
+      "library": "Array",
+      "method": "length",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 1
+      }
+    },
+    {
+      "id": 4,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "originalArray",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 3,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 5,
+      "type": "method",
+      "library": "Math",
+      "method": "divide",
+      "args": [
+        null,
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 1
+      }
+    },
+    {
+      "id": 6,
+      "type": "method",
+      "library": "Math",
+      "method": "ceil",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 2
+      }
+    },
+    {
+      "id": 7,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 3,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 5,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 8,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "chunkSize",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 5,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 9,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 5,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 10,
+      "type": "declaration",
+      "library": "Array",
+      "method": "new Array",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 2
+      },
+      "polymorphIndex": 1
+    },
+    {
+      "id": 11,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "declaration",
+        "name": 10,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 12,
+      "type": "method",
+      "library": "Array",
+      "method": "reduce",
+      "args": [
+        null,
+        "splitArrayReducer",
+        [],
+        null,
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 3
+      }
+    },
+    {
+      "id": 14,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "originalArray",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 12,
+        "ptr": "/args/3/value"
+      }
+    },
+    {
+      "id": 18,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 12,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "splitArray",
+        "ptr": ""
+      }
+    },
+    {
+      "id": 21,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "chunkSize",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 12,
+        "ptr": "/args/4/value"
+      }
+    },
+    {
+      "id": 22,
+      "type": "method",
+      "library": "Array",
+      "method": "fill",
+      "args": [
+        null,
+        [],
+        null,
+        null
+      ],
+      "view": {
+        "row": 3,
+        "col": 2
+      }
+    },
+    {
+      "id": 23,
+      "type": "assign",
+      "from": {
+        "location": "declaration",
+        "name": 10,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 22,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 24,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 22,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 12,
+        "ptr": "/args/0/value"
+      }
+    }
+  ],
+  "functions": [
+    {
+      "incoming": [
+        {
+          "$id": "accumulator",
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ]
+        },
+        {
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "currentValue"
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "optional": true,
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "$id": "array",
+          "optional": true
+        },
+        {
+          "$id": "thisArg",
+          "type": "object",
+          "properties": {
+            "0_originalArray": {
+              "$id": "originalArray",
+              "type": "array"
+            },
+            "1_chunkSize": {
+              "$id": "chunkSize",
+              "type": "number"
+            }
+          },
+          "isContext": true,
+          "isThis": true,
+          "isIndexed": true
+        }
+      ],
+      "outgoing": [
+        {
+          "title": "accumulator",
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "accumulator"
+        }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "type": "method",
+          "library": "Math",
+          "method": "multiply",
+          "args": [
+            null,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 1
+          }
+        },
+        {
+          "id": 2,
+          "type": "method",
+          "library": "Math",
+          "method": "add",
+          "args": [
+            null,
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 1
+          }
+        },
+        {
+          "id": 3,
+          "type": "method",
+          "library": "Array",
+          "method": "slice",
+          "args": [
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 2
+          }
+        },
+        {
+          "id": 4,
+          "type": "method",
+          "library": "Array",
+          "method": "push",
+          "args": [
+            null,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 3
+          }
+        },
+        {
+          "id": 5,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "index",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 6,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "thisArg",
+            "ptr": "/1_chunkSize"
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 7,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 2,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 8,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "thisArg",
+            "ptr": "/1_chunkSize"
+          },
+          "to": {
+            "location": "method",
+            "name": 2,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 9,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "thisArg",
+            "ptr": "/0_originalArray"
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 10,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 11,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 2,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 13,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "accumulator",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 14,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "accumulator",
+            "ptr": ""
+          }
+        },
+        {
+          "id": 15,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 4,
+            "ptr": "/args/1/value"
+          }
+        }
+      ],
+      "functions": [],
+      "name": "splitArrayReducer",
+      "view": {
+        "col": 3,
+        "row": 4
+      },
+      "id": "splitArrayReducer",
+      "comments": []
+    }
+  ],
+  "comments": [],
+  "view": {
+    "col": 3,
+    "row": 5
+  },
+  "created": "2024-01-05T21:36:14.025Z",
+  "createdBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2024-01-05T21:36:37.854Z",
+  "lastUpdatedBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "4.1.2-2023.1.10",
+  "tags": []
+}

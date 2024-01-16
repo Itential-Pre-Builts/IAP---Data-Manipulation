@@ -1,0 +1,49 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to get a value from an object based on the JSON Pointer"
+    }
+  ],
+  "entryPoint": {
+    "name": "Get Value From JSON Pointer - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "jsonPointer",
+      "type": "string",
+      "required": "yes",
+      "description": "A string that provides a reference to a specific value within a JSON document",
+      "exampleValue": "/a/b"
+    },
+    {
+      "name": "obj",
+      "type": "object",
+      "required": "yes",
+      "description": "Object to get value from",
+      "exampleValue": "{\r\n  \"a\": {\r\n    \"b\": 2,\r\n    \"c\": 3\r\n  }\r\n}"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "value",
+      "type": "array, boolean, string, number, object, null",
+      "description": "The value obtained using JSON pointer",
+      "exampleValue": "2"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"jsonPointer\": \"\/a\/b\",\r\n  \"obj\": {\r\n    \"a\": {\r\n      \"b\": 2,\r\n      \"c\": 3\r\n    }\r\n  }\r\n}",
+      "exampleOutput": "2"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Get Value From JSON Pointer - IAP",
+  "overview": "Get a value from an object using JSON Pointer",
+  "webName": "Get Value From JSON Pointer - IAP",
+  "assetType": "Transformation"
+}

@@ -1,0 +1,53 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to transpose the record by creating arrays for each property within the groups"
+    }
+  ],
+  "entryPoint": {
+    "name": "Transpose Record by Creating Arrays for Each Property Within Groups - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "array",
+      "type": "array",
+      "required": "yes",
+      "description": "An array of objects",
+      "exampleValue": "[\r\n  {\r\n    \"item\": \"apple\",\r\n    \"price\": \"42.2\",\r\n    \"type\": \"fruit\"\r\n  },\r\n  {\r\n    \"item\": \"banana\",\r\n    \"price\": \"10.1\",\r\n    \"type\": \"fruit\"\r\n  },\r\n  {\r\n    \"item\": \"potato\",\r\n    \"price\": \"20\",\r\n    \"type\": \"vegetable\"\r\n  }\r\n]"
+    },
+    {
+      "name": "groupByProperty",
+      "type": "string",
+      "required": "yes",
+      "description": "A property by which to group the input array",
+      "exampleValue": "type"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "output",
+      "type": "object",
+      "description": "An object containing a list of objects organized by the groupByProperty value. Each property within the groups is transformed into an array",
+      "exampleValue": "{\r\n  \"fruit\": {\r\n    \"item\": [\r\n      \"apple\",\r\n      \"banana\"\r\n    ],\r\n    \"price\": [\r\n      \"42.2\",\r\n      \"10.1\"\r\n    ]\r\n  },\r\n  \"vegetable\": {\r\n    \"item\": [\r\n      \"potato\"\r\n    ],\r\n    \"price\": [\r\n      \"20\"\r\n    ]\r\n  }\r\n}"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"item\": \"apple\",\r\n      \"price\": \"42.2\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"item\": \"banana\",\r\n      \"price\": \"10.1\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"item\": \"potato\",\r\n      \"price\": \"20\",\r\n      \"type\": \"vegetable\"\r\n    }\r\n  ],\r\n  \"groupByProperty\": \"type\"\r\n}",
+      "exampleOutput": "{\r\n  \"fruit\": {\r\n    \"item\": [\r\n      \"apple\",\r\n      \"banana\"\r\n    ],\r\n    \"price\": [\r\n      \"42.2\",\r\n      \"10.1\"\r\n    ]\r\n  },\r\n  \"vegetable\": {\r\n    \"item\": [\r\n      \"potato\"\r\n    ],\r\n    \"price\": [\r\n      \"20\"\r\n    ]\r\n  }\r\n}"
+    },
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"number\": 43,\r\n      \"president\": \"George W. Bush\",\r\n      \"took_office\": \"2001-01-20\",\r\n      \"left_office\": \"2009-01-20\",\r\n      \"party\": \"Republican\"\r\n    },\r\n    {\r\n      \"number\": 44,\r\n      \"president\": \"Barack Obama\",\r\n      \"took_office\": \"2009-01-20\",\r\n      \"left_office\": \"2017-01-20\",\r\n      \"party\": \"Democratic\"\r\n    },\r\n    {\r\n      \"number\": 45,\r\n      \"president\": \"Donald J. Trump\",\r\n      \"took_office\": \"2017-01-20\",\r\n      \"left_office\": null,\r\n      \"party\": \"Republican\"\r\n    },\r\n    {\r\n      \"number\": 47,\r\n      \"president\": \"Joe Biden\",\r\n      \"took_office\": \"2021-01-20\",\r\n      \"left_office\": null\r\n    }\r\n  ],\r\n  \"groupByProperty\": \"party\"\r\n}",
+      "exampleOutput": "{\r\n  \"Republican\": {\r\n    \"number\": [\r\n      43,\r\n      45\r\n    ],\r\n    \"president\": [\r\n      \"George W. Bush\",\r\n      \"Donald J. Trump\"\r\n    ],\r\n    \"took_office\": [\r\n      \"2001-01-20\",\r\n      \"2017-01-20\"\r\n    ],\r\n    \"left_office\": [\r\n      \"2009-01-20\",\r\n      null\r\n    ]\r\n  },\r\n  \"Democratic\": {\r\n    \"number\": [\r\n      44\r\n    ],\r\n    \"president\": [\r\n      \"Barack Obama\"\r\n    ],\r\n    \"took_office\": [\r\n      \"2009-01-20\"\r\n    ],\r\n    \"left_office\": [\r\n      \"2017-01-20\"\r\n    ]\r\n  },\r\n  \"undefined\": {\r\n    \"number\": [\r\n      47\r\n    ],\r\n    \"president\": [\r\n      \"Joe Biden\"\r\n    ],\r\n    \"took_office\": [\r\n      \"2021-01-20\"\r\n    ],\r\n    \"left_office\": [\r\n      null\r\n    ]\r\n  }\r\n}"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Transpose Record by Creating Arrays for Each Property Within Groups - IAP",
+  "overview": "Transpose the record by creating arrays for each property within the groups",
+  "webName": "Transpose Record by Creating Arrays for Each Property Within Groups - IAP",
+  "assetType": "Transformation"
+}

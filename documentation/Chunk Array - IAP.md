@@ -1,8 +1,8 @@
-# Allocate a Pair of Numbers - IAP
+# Chunk Array - IAP
 
 ## Table of Contents
 
-- [Allocate a Pair of Numbers - IAP](#allocate-a-pair-of-numbers---iap)
+- [Chunk Array - IAP](#chunk-array---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -21,17 +21,17 @@
 
 ## Overview
 
-Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+Split an array into a smaller sized groups given a desired chunk size
 
 Capabilities include:
-- This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+- This transformation allows IAP users to split an array into a smaller sized groups given a desired chunk size
 
 
 ## Getting Started
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Allocate a Pair of Numbers - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Chunk Array - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>Allocate a Pair of Numbers - IAP</td>
+      <td>Chunk Array - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>
@@ -98,27 +98,23 @@ The following table lists the inputs to the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>allocated</td>
+      <td>originalArray</td>
       <td>array</td>
       <td>yes</td>
-      <td>Array of already allocated integers</td>
+      <td>An array that needs to be splitted in chunks</td>
       <td><pre lang="json">[
-  1,
-  4,
-  5
-]</pre></td>
+    1,
+    2,
+    3,
+    "a",
+    "b"
+  ]</pre></td>
     </tr>    <tr>
-      <td>startRange</td>
+      <td>chunkSize</td>
       <td>number</td>
       <td>yes</td>
-      <td>Lower bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">5</pre></td>
-    </tr>    <tr>
-      <td>endRange</td>
-      <td>number</td>
-      <td>yes</td>
-      <td>Upper bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">8</pre></td>
+      <td>The size of each chunk when splitting an array</td>
+      <td><pre lang="json">3</pre></td>
     </tr>
   </tbody>
 </table>
@@ -140,12 +136,19 @@ The following table lists the outputs of the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>assigned</td>
-      <td>array, boolean</td>
-      <td>An array of the first availble consecutive pair if found. Otherwise, it is a boolean value</td>
+      <td>splitArray</td>
+      <td>array</td>
+      <td>The array that has been splitted in chunks</td>
       <td><pre lang="json">[
-  6,
-  7
+  [
+    1,
+    2,
+    3
+  ],
+  [
+    "a",
+    "b"
+  ]
 ]</pre></td>
     </tr>
   </tbody>
@@ -167,24 +170,30 @@ No related documentation provided.
     
 Input:
 <pre>{
-  "allocated": [
+  "originalArray": [
     1,
-    4,
-    5
+    2,
+    3,
+    "a",
+    "b"
   ],
-  "startRange": 5,
-  "endRange": 8
+  "chunkSize": 3
 } </pre>
 
     
     
 Output:
-<pre>{
-  "assigned": [
-    6,
-    7
+<pre>[
+  [
+    1,
+    2,
+    3
+  ],
+  [
+    "a",
+    "b"
   ]
-} </pre>
+] </pre>
 
 
 

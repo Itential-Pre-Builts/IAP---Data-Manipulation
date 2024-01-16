@@ -1,0 +1,49 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to split an array into a smaller sized groups given a desired chunk size"
+    }
+  ],
+  "entryPoint": {
+    "name": "Chunk Array - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "originalArray",
+      "type": "array",
+      "required": "yes",
+      "description": "An array that needs to be splitted in chunks",
+      "exampleValue": "[1, 2, 3, \"a\", \"b\"]"
+    },
+    {
+      "name": "chunkSize",
+      "type": "number",
+      "required": "yes",
+      "description": "The size of each chunk when splitting an array",
+      "exampleValue": "3"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "splitArray",
+      "type": "array",
+      "description": "The array that has been splitted in chunks",
+      "exampleValue": "[[1, 2, 3], [\"a\", \"b\"]]"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"originalArray\": [\r\n    1,\r\n    2,\r\n    3,\r\n    \"a\",\r\n    \"b\"\r\n  ],\r\n  \"chunkSize\": 3\r\n}",
+      "exampleOutput": "[\r\n  [\r\n    1,\r\n    2,\r\n    3\r\n  ],\r\n  [\r\n    \"a\",\r\n    \"b\"\r\n  ]\r\n]"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Chunk Array - IAP",
+  "overview": "Split an array into a smaller sized groups given a desired chunk size",
+  "webName": "Chunk Array - IAP",
+  "assetType": "Transformation"
+}

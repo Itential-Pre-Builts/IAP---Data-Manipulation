@@ -1,8 +1,8 @@
-# Allocate a Pair of Numbers - IAP
+# Clear Empty Keys - IAP
 
 ## Table of Contents
 
-- [Allocate a Pair of Numbers - IAP](#allocate-a-pair-of-numbers---iap)
+- [Clear Empty Keys - IAP](#clear-empty-keys---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -21,17 +21,17 @@
 
 ## Overview
 
-Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+Clear empty keys from a JSON input
 
 Capabilities include:
-- This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+- This transformation allows IAP users to clear empty keys from a JSON input. Empty keys consist of empty objects, empty arrays, empty strings, and null values.
 
 
 ## Getting Started
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Allocate a Pair of Numbers - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Clear Empty Keys - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>Allocate a Pair of Numbers - IAP</td>
+      <td>Clear Empty Keys - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>
@@ -98,27 +98,16 @@ The following table lists the inputs to the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>allocated</td>
-      <td>array</td>
+      <td>input</td>
+      <td>object</td>
       <td>yes</td>
-      <td>Array of already allocated integers</td>
-      <td><pre lang="json">[
-  1,
-  4,
-  5
-]</pre></td>
-    </tr>    <tr>
-      <td>startRange</td>
-      <td>number</td>
-      <td>yes</td>
-      <td>Lower bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">5</pre></td>
-    </tr>    <tr>
-      <td>endRange</td>
-      <td>number</td>
-      <td>yes</td>
-      <td>Upper bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">8</pre></td>
+      <td>An array that needs to be splitted in chunks</td>
+      <td><pre lang="json">{
+  "name": "John",
+  "age": "30",
+  "address": {},
+  "hobbies": []
+}</pre></td>
     </tr>
   </tbody>
 </table>
@@ -140,13 +129,13 @@ The following table lists the outputs of the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>assigned</td>
-      <td>array, boolean</td>
-      <td>An array of the first availble consecutive pair if found. Otherwise, it is a boolean value</td>
-      <td><pre lang="json">[
-  6,
-  7
-]</pre></td>
+      <td>output</td>
+      <td>object</td>
+      <td>Clean object without empty keys</td>
+      <td><pre lang="json">{
+  "name": "John",
+  "age": "30"
+}</pre></td>
     </tr>
   </tbody>
 </table>
@@ -167,23 +156,20 @@ No related documentation provided.
     
 Input:
 <pre>{
-  "allocated": [
-    1,
-    4,
-    5
-  ],
-  "startRange": 5,
-  "endRange": 8
+  "input": {
+    "name": "John",
+    "age": "30",
+    "address": {},
+    "hobbies": []
+  }
 } </pre>
 
     
     
 Output:
 <pre>{
-  "assigned": [
-    6,
-    7
-  ]
+  "name": "John",
+  "age": "30"
 } </pre>
 
 

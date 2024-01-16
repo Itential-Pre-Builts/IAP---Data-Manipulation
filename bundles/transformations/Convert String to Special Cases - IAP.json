@@ -1,0 +1,1005 @@
+{
+  "_id": "619541edc165aa00de7d8bae",
+  "name": "Convert String to Special Cases - IAP",
+  "description": "",
+  "incoming": [
+    {
+      "$id": "incomingString",
+      "type": "string",
+      "examples": [
+        "foo bar foobar"
+      ]
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "toCamelCase",
+      "type": "string",
+      "examples": [
+        "fooBarFoobar"
+      ]
+    },
+    {
+      "$id": "toSnakeCase",
+      "type": "string"
+    },
+    {
+      "$id": "toKebabCase",
+      "type": "string"
+    },
+    {
+      "$id": "toPascalCase",
+      "type": "string"
+    }
+  ],
+  "steps": [
+    {
+      "id": 31,
+      "type": "declaration",
+      "library": "String",
+      "method": "new String",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 2
+      }
+    },
+    {
+      "id": 39,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "incomingString",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 38,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 32,
+      "type": "assign",
+      "from": {
+        "location": "declaration",
+        "name": 31,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 27,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 38,
+      "type": "method",
+      "library": "String",
+      "method": "toLowerCase",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 1
+      }
+    },
+    {
+      "id": 43,
+      "type": "assign",
+      "from": {
+        "location": "declaration",
+        "name": 31,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 35,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 40,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 38,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 1,
+      "type": "method",
+      "library": "String",
+      "method": "split",
+      "args": [
+        null,
+        " ",
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 1
+      }
+    },
+    {
+      "id": 4,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 3,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 41,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 33,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 42,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 34,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 45,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 44,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 3,
+      "type": "method",
+      "library": "Array",
+      "method": "map",
+      "args": [
+        null,
+        "camelCaseFunction"
+      ],
+      "view": {
+        "row": 1,
+        "col": 2
+      }
+    },
+    {
+      "id": 33,
+      "type": "method",
+      "library": "Array",
+      "method": "join",
+      "args": [
+        null,
+        "_"
+      ],
+      "view": {
+        "row": 2,
+        "col": 3
+      }
+    },
+    {
+      "id": 34,
+      "type": "method",
+      "library": "Array",
+      "method": "join",
+      "args": [
+        null,
+        "-"
+      ],
+      "view": {
+        "row": 3,
+        "col": 3
+      }
+    },
+    {
+      "id": 44,
+      "type": "method",
+      "library": "Array",
+      "method": "map",
+      "args": [
+        null,
+        "pascalCaseFunction"
+      ],
+      "view": {
+        "row": 3,
+        "col": 2
+      }
+    },
+    {
+      "id": 30,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 3,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 27,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 46,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 44,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 35,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 27,
+      "type": "method",
+      "library": "Array",
+      "method": "join",
+      "args": [
+        null,
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 3
+      }
+    },
+    {
+      "id": 35,
+      "type": "method",
+      "library": "Array",
+      "method": "join",
+      "args": [
+        null,
+        null
+      ],
+      "view": {
+        "row": 4,
+        "col": 3
+      }
+    },
+    {
+      "id": 36,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 33,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "toSnakeCase",
+        "ptr": ""
+      }
+    },
+    {
+      "id": 37,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 34,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "toKebabCase",
+        "ptr": ""
+      }
+    },
+    {
+      "id": 29,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 27,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "toCamelCase",
+        "ptr": ""
+      }
+    },
+    {
+      "id": 47,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 35,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "toPascalCase",
+        "ptr": ""
+      }
+    }
+  ],
+  "functions": [
+    {
+      "incoming": [
+        {
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "currentValue"
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "optional": true,
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "$id": "array",
+          "optional": true
+        },
+        {
+          "$id": "thisArg",
+          "type": "object",
+          "properties": {},
+          "isContext": true,
+          "isThis": true,
+          "isIndexed": true
+        }
+      ],
+      "outgoing": [
+        {
+          "title": "newValue",
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "editable": true,
+          "$id": "newValue"
+        }
+      ],
+      "steps": [
+        {
+          "id": 2,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "index",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 5,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 10,
+          "type": "declaration",
+          "library": "String",
+          "method": "new String",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 1
+          }
+        },
+        {
+          "id": 12,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 11,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 1,
+          "type": "method",
+          "library": "Relational",
+          "method": "greaterThan",
+          "args": [
+            null,
+            0
+          ],
+          "view": {
+            "row": 1,
+            "col": 2
+          }
+        },
+        {
+          "id": 13,
+          "type": "assign",
+          "from": {
+            "location": "declaration",
+            "name": 10,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 11,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 23,
+          "type": "assign",
+          "from": {
+            "location": "declaration",
+            "name": 10,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 21,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 4,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 11,
+          "type": "method",
+          "library": "String",
+          "method": "split",
+          "args": [
+            null,
+            null,
+            255
+          ],
+          "view": {
+            "row": 2,
+            "col": 2
+          }
+        },
+        {
+          "id": 15,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 11,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 14,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 20,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 11,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 18,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 14,
+          "type": "method",
+          "library": "Array",
+          "method": "getIndex",
+          "args": [
+            null,
+            0
+          ],
+          "view": {
+            "row": 3,
+            "col": 3
+          }
+        },
+        {
+          "id": 17,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 14,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 16,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 16,
+          "type": "method",
+          "library": "String",
+          "method": "toUpperCase",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 4
+          }
+        },
+        {
+          "id": 19,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 16,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 18,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 18,
+          "type": "method",
+          "library": "Array",
+          "method": "setIndex",
+          "args": [
+            null,
+            0,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 5
+          }
+        },
+        {
+          "id": 22,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 18,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 21,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 21,
+          "type": "method",
+          "library": "Array",
+          "method": "join",
+          "args": [
+            null,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 6
+          }
+        },
+        {
+          "id": 24,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 21,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 3,
+          "type": "method",
+          "library": "Conditional",
+          "method": "ternary",
+          "args": [
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 7
+          }
+        },
+        {
+          "id": 9,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "newValue",
+            "ptr": ""
+          }
+        }
+      ],
+      "functions": [],
+      "name": "camelCaseFunction",
+      "view": {
+        "col": 7,
+        "row": 5
+      },
+      "id": "camelCaseFunction",
+      "comments": []
+    },
+    {
+      "incoming": [
+        {
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "$id": "currentValue"
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "optional": true,
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "$id": "array",
+          "optional": true
+        },
+        {
+          "$id": "thisArg",
+          "type": "object",
+          "properties": {},
+          "isContext": true,
+          "isIndexed": true
+        }
+      ],
+      "outgoing": [
+        {
+          "title": "newValue",
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "editable": true,
+          "$id": "newValue"
+        }
+      ],
+      "steps": [
+        {
+          "id": 10,
+          "type": "declaration",
+          "library": "String",
+          "method": "new String",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 1
+          }
+        },
+        {
+          "id": 12,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 11,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 13,
+          "type": "assign",
+          "from": {
+            "location": "declaration",
+            "name": 10,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 11,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 23,
+          "type": "assign",
+          "from": {
+            "location": "declaration",
+            "name": 10,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 21,
+            "ptr": "/args/1/value"
+          }
+        },
+        {
+          "id": 11,
+          "type": "method",
+          "library": "String",
+          "method": "split",
+          "args": [
+            null,
+            null,
+            255
+          ],
+          "view": {
+            "row": 2,
+            "col": 2
+          }
+        },
+        {
+          "id": 15,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 11,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 14,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 20,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 11,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 18,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 14,
+          "type": "method",
+          "library": "Array",
+          "method": "getIndex",
+          "args": [
+            null,
+            0
+          ],
+          "view": {
+            "row": 3,
+            "col": 3
+          }
+        },
+        {
+          "id": 17,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 14,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 16,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 16,
+          "type": "method",
+          "library": "String",
+          "method": "toUpperCase",
+          "args": [
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 4
+          }
+        },
+        {
+          "id": 19,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 16,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 18,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 18,
+          "type": "method",
+          "library": "Array",
+          "method": "setIndex",
+          "args": [
+            null,
+            0,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 5
+          }
+        },
+        {
+          "id": 22,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 18,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 21,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 21,
+          "type": "method",
+          "library": "Array",
+          "method": "join",
+          "args": [
+            null,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 6
+          }
+        },
+        {
+          "id": 24,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 21,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "newValue",
+            "ptr": ""
+          }
+        }
+      ],
+      "functions": [],
+      "name": "pascalCaseFunction",
+      "view": {
+        "col": 6,
+        "row": 5
+      },
+      "id": "pascalCaseFunction",
+      "comments": []
+    }
+  ],
+  "comments": [],
+  "view": {
+    "col": 3,
+    "row": 5
+  },
+  "created": "2024-01-08T23:08:11.123Z",
+  "createdBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2024-01-09T14:22:31.809Z",
+  "lastUpdatedBy": {
+    "_id": "652054b92c281c82e5b4c8b4",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "4.1.2-2023.1.10",
+  "tags": []
+}

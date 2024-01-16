@@ -1,0 +1,42 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to convert a CSV into a JSON"
+    }
+  ],
+  "entryPoint": {
+    "name": "Convert CSV to JSON - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "csv",
+      "type": "string",
+      "required": "yes",
+      "description": "CSV to convert to JSON",
+      "exampleValue": "a,b,c,d,e,f\n1,2,3,4,5,7,8,9,0\n5,4,3,2,1\n1,2,3,4,5"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "json",
+      "type": "array",
+      "description": "JSON format of the CSV",
+      "exampleValue": "[\r\n  {\r\n    \"a\": \"1\",\r\n    \"b\": \"2\",\r\n    \"c\": \"3\",\r\n    \"d\": \"4\",\r\n    \"e\": \"5\",\r\n    \"f\": \"7\"\r\n  },\r\n  {\r\n    \"a\": \"5\",\r\n    \"b\": \"4\",\r\n    \"c\": \"3\",\r\n    \"d\": \"2\",\r\n    \"e\": \"1\",\r\n    \"f\": \"\"\r\n  },\r\n  {\r\n    \"a\": \"1\",\r\n    \"b\": \"2\",\r\n    \"c\": \"3\",\r\n    \"d\": \"4\",\r\n    \"e\": \"5\",\r\n    \"f\": \"\"\r\n  }\r\n]"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"csv\": \"a,b,c,d,e,f\\n1,2,3,4,5,7,8,9,0\\n5,4,3,2,1\\n1,2,3,4,5\"\r\n}",
+      "exampleOutput": "[\r\n  {\r\n    \"a\": \"1\",\r\n    \"b\": \"2\",\r\n    \"c\": \"3\",\r\n    \"d\": \"4\",\r\n    \"e\": \"5\",\r\n    \"f\": \"7\"\r\n  },\r\n  {\r\n    \"a\": \"5\",\r\n    \"b\": \"4\",\r\n    \"c\": \"3\",\r\n    \"d\": \"2\",\r\n    \"e\": \"1\",\r\n    \"f\": \"\"\r\n  },\r\n  {\r\n    \"a\": \"1\",\r\n    \"b\": \"2\",\r\n    \"c\": \"3\",\r\n    \"d\": \"4\",\r\n    \"e\": \"5\",\r\n    \"f\": \"\"\r\n  }\r\n]"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Convert CSV to JSON - IAP",
+  "overview": "Convert CSV into JSON",
+  "webName": "Convert CSV to JSON - IAP",
+  "assetType": "Transformation"
+}

@@ -1,8 +1,8 @@
-# Allocate a Pair of Numbers - IAP
+# Remove Duplicates From Array of Primitives - IAP
 
 ## Table of Contents
 
-- [Allocate a Pair of Numbers - IAP](#allocate-a-pair-of-numbers---iap)
+- [Remove Duplicates From Array of Primitives - IAP](#remove-duplicates-from-array-of-primitives---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -21,17 +21,17 @@
 
 ## Overview
 
-Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+Remove duplicates from an array of primitives
 
 Capabilities include:
-- This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+- This transformation allows IAP users to remove duplicates from an array of primitives
 
 
 ## Getting Started
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Allocate a Pair of Numbers - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Remove Duplicates From Array of Primitives - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>Allocate a Pair of Numbers - IAP</td>
+      <td>Remove Duplicates From Array of Primitives - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>
@@ -98,27 +98,21 @@ The following table lists the inputs to the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>allocated</td>
+      <td>array</td>
       <td>array</td>
       <td>yes</td>
-      <td>Array of already allocated integers</td>
+      <td>Array of primitives to remove duplicates from. An array can hold elements of various data types, including numbers, strings, boolean, null</td>
       <td><pre lang="json">[
-  1,
-  4,
-  5
+  "hello",
+  "world",
+  "hello",
+  null,
+  true,
+  true,
+  null,
+  "world",
+  "HeLLo"
 ]</pre></td>
-    </tr>    <tr>
-      <td>startRange</td>
-      <td>number</td>
-      <td>yes</td>
-      <td>Lower bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">5</pre></td>
-    </tr>    <tr>
-      <td>endRange</td>
-      <td>number</td>
-      <td>yes</td>
-      <td>Upper bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">8</pre></td>
     </tr>
   </tbody>
 </table>
@@ -140,12 +134,15 @@ The following table lists the outputs of the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>assigned</td>
-      <td>array, boolean</td>
-      <td>An array of the first availble consecutive pair if found. Otherwise, it is a boolean value</td>
+      <td>uniqueArray</td>
+      <td>array</td>
+      <td>Array containing the elements from the input array without any duplicates</td>
       <td><pre lang="json">[
-  6,
-  7
+  "hello",
+  "world",
+  null,
+  true,
+  "HeLLo"
 ]</pre></td>
     </tr>
   </tbody>
@@ -167,24 +164,58 @@ No related documentation provided.
     
 Input:
 <pre>{
-  "allocated": [
-    1,
-    4,
-    5
-  ],
-  "startRange": 5,
-  "endRange": 8
+  "array": [
+    "hello",
+    "world",
+    "hello",
+    null,
+    true,
+    true,
+    null,
+    "world",
+    "HeLLo"
+  ]
 } </pre>
 
     
     
 Output:
+<pre>[
+  "hello",
+  "world",
+  null,
+  true,
+  "HeLLo"
+] </pre>
+
+
+#### Example 2
+
+    
+Input:
 <pre>{
-  "assigned": [
-    6,
-    7
+  "array": [
+    9,
+    8,
+    7.45,
+    77,
+    7,
+    7,
+    8,
+    9
   ]
 } </pre>
+
+    
+    
+Output:
+<pre>[
+  9,
+  8,
+  7.45,
+  77,
+  7
+] </pre>
 
 
 

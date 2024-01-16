@@ -1,0 +1,67 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to split a string into an array by regex or another string"
+    }
+  ],
+  "entryPoint": {
+    "name": "Split String into Array by Regex or Separator - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "inputString",
+      "type": "string",
+      "required": "yes",
+      "description": "String to be splitted into array",
+      "exampleValue": "Hello123world-456,2024"
+    },
+    {
+      "name": "separatorString",
+      "type": "string",
+      "required": "yes",
+      "description": "String used as a separator. If \"separatorString\" and \"separatorRegex\" are included, \"separatorString\" is used by default and the \"separatorRegex\" is ignored",
+      "exampleValue": "o"
+    },
+    {
+      "name": "separatorRegex",
+      "type": "string",
+      "required": "yes",
+      "description": "Regex pattern used as a separator. If \"separatorString\" and \"separatorRegex\" are included, \"separatorString\" is used by default and the \"separatorRegex\" is ignored",
+      "exampleValue": "/\\d+/gm"
+    },
+    {
+      "name": "limit",
+      "type": "integer, null",
+      "required": "no",
+      "description": "A non-negative integer specifying a limit on the number of substrings to be included in the array",
+      "exampleValue": "2"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "splitArray",
+      "type": "array",
+      "description": "Array of substrings",
+      "exampleValue": "[\r\n  \"Hello\",\r\n  \"world-\",\r\n  \",\",\r\n  \"\"\r\n]"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"inputString\": \"Hello123world-456,2024\",\r\n  \"separatorString\": \"\",\r\n  \"separatorRegex\": \"\/\\d+\/gm\",\r\n  \"limit\": null\r\n}",
+      "exampleOutput": "[\r\n  \"Hello\",\r\n  \"world-\",\r\n  \",\",\r\n  \"\"\r\n]"
+    },
+    {
+      "exampleInput": "{\r\n  \"inputString\": \"Hello123world-456,2024\",\r\n  \"separatorString\": \"o\",\r\n  \"separatorRegex\": \"\/\\d+\/gm\",\r\n  \"limit\": 2\r\n}",
+      "exampleOutput": "[\r\n  \"Hell\",\r\n  \"123w\"\r\n]"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Split String into Array by Regex or Separator - IAP",
+  "overview": "Split a string into an array by regex or another string",
+  "webName": "Split String into Array by Regex or Separator - IAP",
+  "assetType": "Transformation"
+}

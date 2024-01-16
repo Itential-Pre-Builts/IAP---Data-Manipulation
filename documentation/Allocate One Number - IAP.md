@@ -1,8 +1,8 @@
-# Allocate a Pair of Numbers - IAP
+# Allocate One Number - IAP
 
 ## Table of Contents
 
-- [Allocate a Pair of Numbers - IAP](#allocate-a-pair-of-numbers---iap)
+- [Allocate One Number - IAP](#allocate-one-number---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -21,17 +21,17 @@
 
 ## Overview
 
-Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+Find the first number from an array of already allocated integers given a starting integer and an ending integer
 
 Capabilities include:
-- This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+- This transformation allows IAP users to find the first available number from an array of already allocated integers given a starting integer and an ending integer
 
 
 ## Getting Started
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Allocate a Pair of Numbers - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Allocate One Number - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>Allocate a Pair of Numbers - IAP</td>
+      <td>Allocate One Number - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>
@@ -111,13 +111,13 @@ The following table lists the inputs to the Transformation Project:
       <td>startRange</td>
       <td>number</td>
       <td>yes</td>
-      <td>Lower bound (inclusive) for the range between which a pair of numbers is allocated</td>
+      <td>Lower bound (inclusive) for the range between which a number is allocated</td>
       <td><pre lang="json">5</pre></td>
     </tr>    <tr>
       <td>endRange</td>
       <td>number</td>
       <td>yes</td>
-      <td>Upper bound (inclusive) for the range between which a pair of numbers is allocated</td>
+      <td>Upper bound (exclusive) for the range between which a number is allocated</td>
       <td><pre lang="json">8</pre></td>
     </tr>
   </tbody>
@@ -141,12 +141,9 @@ The following table lists the outputs of the Transformation Project:
   <tbody>
     <tr>
       <td>assigned</td>
-      <td>array, boolean</td>
-      <td>An array of the first availble consecutive pair if found. Otherwise, it is a boolean value</td>
-      <td><pre lang="json">[
-  6,
-  7
-]</pre></td>
+      <td>integer, boolean</td>
+      <td>The first available number if found. Otherwise it is a boolean value</td>
+      <td><pre lang="json">6</pre></td>
     </tr>
   </tbody>
 </table>
@@ -180,10 +177,7 @@ Input:
     
 Output:
 <pre>{
-  "assigned": [
-    6,
-    7
-  ]
+  "assigned": 6
 } </pre>
 
 

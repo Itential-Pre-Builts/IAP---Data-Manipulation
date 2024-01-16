@@ -1,0 +1,59 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to remove an element from an array by index"
+    }
+  ],
+  "entryPoint": {
+    "name": "Remove Element From Array by Index - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "array",
+      "type": "array",
+      "required": "yes",
+      "description": "Array that has element to be removed",
+      "exampleValue": "[\r\n  9,\r\n  8,\r\n  7.45,\r\n  77,\r\n  7\r\n]"
+    },
+    {
+      "name": "index",
+      "type": "integer",
+      "required": "yes",
+      "description": "Index of the element to be removed",
+      "exampleValue": "1"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "newArray",
+      "type": "array",
+      "description": "Modified array after removing an element at the specified index",
+      "exampleValue": "[\r\n  9,\r\n  7.45,\r\n  77,\r\n  7\r\n]"
+    },
+    {
+      "name": "item",
+      "type": "array, boolean, number, integer, string, object, null",
+      "description": "The item that was removed from the array",
+      "exampleValue": "8"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    9,\r\n    8,\r\n    7.45,\r\n    77,\r\n    7\r\n  ],\r\n  \"index\": 1\r\n}",
+      "exampleOutput": "{\r\n  \"newArray\": [\r\n    9,\r\n    7.45,\r\n    77,\r\n    7\r\n  ],\r\n  \"item\": 8\r\n}"
+    },
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"a\": \"a\"\r\n    },\r\n    {\r\n      \"b\": \"b\"\r\n    },\r\n    {\r\n      \"c\": \"a\"\r\n    },\r\n    {\r\n      \"d\": {\r\n        \"e\": [\r\n          1,\r\n          2\r\n        ]\r\n      }\r\n    },\r\n    {\r\n      \"f\": {\r\n        \"g\": [\r\n          1,\r\n          2,\r\n          3\r\n        ]\r\n      }\r\n    }\r\n  ],\r\n  \"index\": 4\r\n}",
+      "exampleOutput": "{\r\n  \"newArray\": [\r\n    {\r\n      \"a\": \"a\"\r\n    },\r\n    {\r\n      \"b\": \"b\"\r\n    },\r\n    {\r\n      \"c\": \"a\"\r\n    },\r\n    {\r\n      \"d\": {\r\n        \"e\": [\r\n          1,\r\n          2\r\n        ]\r\n      }\r\n    }\r\n  ],\r\n  \"item\": {\r\n    \"f\": {\r\n      \"g\": [\r\n        1,\r\n        2,\r\n        3\r\n      ]\r\n    }\r\n  }\r\n}"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Remove Element From Array by Index - IAP",
+  "overview": "Remove an element from an array by index",
+  "webName": "Remove Element From Array by Index - IAP",
+  "assetType": "Transformation"
+}

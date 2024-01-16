@@ -1,8 +1,8 @@
-# Allocate a Pair of Numbers - IAP
+# Split String into Array by Regex or Separator - IAP
 
 ## Table of Contents
 
-- [Allocate a Pair of Numbers - IAP](#allocate-a-pair-of-numbers---iap)
+- [Split String into Array by Regex or Separator - IAP](#split-string-into-array-by-regex-or-separator---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -21,17 +21,17 @@
 
 ## Overview
 
-Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+Split a string into an array by regex or another string
 
 Capabilities include:
-- This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
+- This transformation allows IAP users to split a string into an array by regex or another string
 
 
 ## Getting Started
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Allocate a Pair of Numbers - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Split String into Array by Regex or Separator - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>Allocate a Pair of Numbers - IAP</td>
+      <td>Split String into Array by Regex or Separator - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>
@@ -98,28 +98,30 @@ The following table lists the inputs to the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>allocated</td>
-      <td>array</td>
+      <td>inputString</td>
+      <td>string</td>
       <td>yes</td>
-      <td>Array of already allocated integers</td>
-      <td><pre lang="json">[
-  1,
-  4,
-  5
-]</pre></td>
+      <td>String to be splitted into array</td>
+      <td><pre lang="json">Hello123world-456,2024</pre></td>
     </tr>    <tr>
-      <td>startRange</td>
-      <td>number</td>
+      <td>separatorString</td>
+      <td>string</td>
       <td>yes</td>
-      <td>Lower bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">5</pre></td>
+      <td>String used as a separator. If separatorString and separatorRegex are included, separatorString is used by default and the separatorRegex is ignored</td>
+      <td><pre lang="json">o</pre></td>
     </tr>    <tr>
-      <td>endRange</td>
-      <td>number</td>
+      <td>separatorRegex</td>
+      <td>array, boolean, null, object, number, string</td>
       <td>yes</td>
-      <td>Upper bound (inclusive) for the range between which a pair of numbers is allocated</td>
-      <td><pre lang="json">8</pre></td>
-    </tr>
+      <td>Regex pattern used as a separator. If separatorString and separatorRegex are included, separatorString is used by default and the separatorRegex is ignored</td>
+      <td><pre lang="json">/\\d+/gm</pre></td>
+    </tr>    <tr>
+      <td>limit</td>
+      <td>integer, null</td>
+      <td>no</td>
+      <td>A non-negative integer specifying a limit on the number of substrings to be included in the array</td>
+      <td><pre lang="json">2</pre></td>
+    </tr>    
   </tbody>
 </table>
 
@@ -140,14 +142,16 @@ The following table lists the outputs of the Transformation Project:
   </thead>
   <tbody>
     <tr>
-      <td>assigned</td>
-      <td>array, boolean</td>
-      <td>An array of the first availble consecutive pair if found. Otherwise, it is a boolean value</td>
+      <td>splitArray</td>
+      <td>array</td>
+      <td>Array of substrings</td>
       <td><pre lang="json">[
-  6,
-  7
+  "Hello",
+  "world-",
+  ",",
+  ""
 ]</pre></td>
-    </tr>
+    </tr>  
   </tbody>
 </table>
 
@@ -167,24 +171,41 @@ No related documentation provided.
     
 Input:
 <pre>{
-  "allocated": [
-    1,
-    4,
-    5
-  ],
-  "startRange": 5,
-  "endRange": 8
+  "inputString": "Hello123world-456,2024",
+  "separatorString": "",
+  "separatorRegex": "/\d+/gm",
+  "limit": null
 } </pre>
 
     
     
 Output:
+<pre>[
+  "Hello",
+  "world-",
+  ",",
+  ""
+] </pre>
+
+
+#### Example 2
+
+    
+Input:
 <pre>{
-  "assigned": [
-    6,
-    7
-  ]
+  "inputString": "Hello123world-456,2024",
+  "separatorString": "o",
+  "separatorRegex": "/\d+/gm",
+  "limit": 2
 } </pre>
+
+    
+    
+Output:
+<pre>[
+  "Hell",
+  "123w"
+] </pre>
 
 
 

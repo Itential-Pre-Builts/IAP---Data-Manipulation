@@ -1,0 +1,49 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to generate a random integer within a provided range (inclusive of both min and max)"
+    }
+  ],
+  "entryPoint": {
+    "name": "Generate Random Integer Within Range - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "minimum",
+      "type": "integer",
+      "required": "yes",
+      "description": "Lower bound (inclusive) for the range between which a random integer will be generated",
+      "exampleValue": "2"
+    },
+    {
+      "name": "maximum",
+      "type": "integer",
+      "required": "yes",
+      "description": "Upper bound (inclusive) for the range between which a random integer will be generated",
+      "exampleValue": "5"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "randomInteger",
+      "type": "integer",
+      "description": "Randomly generated integer",
+      "exampleValue": "2"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"minimum\": 2,\r\n  \"maximum\": 5\r\n}",
+      "exampleOutput": "2"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Generate Random Integer Within Range - IAP",
+  "overview": "Generate a random integer within a range",
+  "webName": "Generate Random Integer Within Range - IAP",
+  "assetType": "Transformation"
+}

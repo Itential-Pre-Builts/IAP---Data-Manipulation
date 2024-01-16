@@ -1,0 +1,73 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to filter an array of objects by providing a key and a value to match on, and the option to discard the matching items from the array"
+    }
+  ],
+  "entryPoint": {
+    "name": "Filter Array of Objects by Key Value Pair - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "filterableArray",
+      "type": "array",
+      "required": "yes",
+      "description": "An array of objects",
+      "exampleValue": "[\r\n  {\"city\":\"Atlanta\", \"state\":\"GA\"},\r\n  {\"city\":\"Sandy Springs\", \"state\":\"GA\"},\r\n  {\"city\":\"Dallas\", \"state\":\"TX\"},\r\n  {\"city\":\"Orlando\", \"state\":\"FL\"}\r\n]"
+    },
+    {
+      "name": "keyToFilterOn",
+      "type": "string",
+      "required": "yes",
+      "description": "Key to match on",
+      "exampleValue": "state"
+    },
+    {
+      "name": "valueToFind",
+      "type": "string, number, boolean, array, object",
+      "required": "yes",
+      "description": "Value of the key to match on",
+      "exampleValue": "GA"
+    },
+    {
+      "name": "discardMatching",
+      "type": "boolean",
+      "required": "yes",
+      "description": "Whether to remove matching items from the array or not",
+      "exampleValue": "true"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "filteredArray",
+      "type": "array",
+      "description": "Either an array of matching items if discardMatching is set to false, or an array of unmatching items if discardMatching is set to true",
+      "exampleValue": "[\r\n  {\r\n    \"city\": \"Dallas\",\r\n    \"state\": \"TX\"\r\n  },\r\n  {\r\n    \"city\": \"Orlando\",\r\n    \"state\": \"FL\"\r\n  }\r\n]"
+    },
+    {
+      "name": "firstFilteredElement",
+      "type": "object",
+      "description": "First item in the filtered array",
+      "exampleValue": "{\r\n  \"city\": \"Dallas\",\r\n  \"state\": \"TX\"\r\n}"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"filterableArray\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"keyToFilterOn\": \"state\",\r\n  \"valueToFind\": \"GA\",\r\n  \"discardMatching\": true\r\n}",
+      "exampleOutput": "{\r\n  \"filteredArray\": [\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"firstFilteredElement\": {\r\n    \"city\": \"Dallas\",\r\n    \"state\": \"TX\"\r\n  }\r\n}"
+    },
+    {
+      "exampleInput": "{\r\n  \"filterableArray\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"keyToFilterOn\": \"state\",\r\n  \"valueToFind\": \"GA\",\r\n  \"discardMatching\": false\r\n}",
+      "exampleOutput": "{\r\n  \"filteredArray\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    }\r\n  ],\r\n  \"firstFilteredElement\": {\r\n    \"city\": \"Atlanta\",\r\n    \"state\": \"GA\"\r\n  }\r\n}"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Filter Array of Objects by Key Value Pair - IAP",
+  "overview": "Filter array of objects by key value pair",
+  "webName": "Filter Array of Objects by Key Value Pair - IAP",
+  "assetType": "Transformation"
+}

@@ -1,0 +1,46 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to remove duplicates from an array of objects or array of arrays"
+    }
+  ],
+  "entryPoint": {
+    "name": "Remove Duplicates From Array of Arrays or Objects - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "array",
+      "type": "array",
+      "required": "yes",
+      "description": "An array of objects or an array of arrays",
+      "exampleValue": "[\r\n  {\r\n    \"a\": \"a\"\r\n  },\r\n  {\r\n    \"a\": \"b\"\r\n  },\r\n  {\r\n    \"a\": \"a\"\r\n  },\r\n  {\r\n    \"a\": {\r\n      \"a\": [\r\n        1,\r\n        2,\r\n        3\r\n      ]\r\n    }\r\n  },\r\n  {\r\n    \"a\": {\r\n      \"a\": [\r\n        1,\r\n        2,\r\n        3\r\n      ]\r\n    }\r\n  }\r\n]"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "uniqueArray",
+      "type": "array",
+      "description": "Array containing the elements from the input array without any duplicates",
+      "exampleValue": "[\r\n  {\r\n    \"a\": \"a\"\r\n  },\r\n  {\r\n    \"a\": \"b\"\r\n  },\r\n  {\r\n    \"a\": {\r\n      \"a\": [\r\n        1,\r\n        2,\r\n        3\r\n      ]\r\n    }\r\n  }\r\n]"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"a\": \"a\"\r\n    },\r\n    {\r\n      \"a\": \"b\"\r\n    },\r\n    {\r\n      \"a\": \"a\"\r\n    },\r\n    {\r\n      \"a\": {\r\n        \"a\": [\r\n          1,\r\n          2,\r\n          3\r\n        ]\r\n      }\r\n    },\r\n    {\r\n      \"a\": {\r\n        \"a\": [\r\n          1,\r\n          2,\r\n          3\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",
+      "exampleOutput": "[\r\n  {\r\n    \"a\": \"a\"\r\n  },\r\n  {\r\n    \"a\": \"b\"\r\n  },\r\n  {\r\n    \"a\": {\r\n      \"a\": [\r\n        1,\r\n        2,\r\n        3\r\n      ]\r\n    }\r\n  }\r\n]"
+    },
+    {
+      "exampleInput": "{\r\n  \"array\": [\r\n    [\r\n      [\r\n        1\r\n      ],\r\n      [\r\n        1\r\n      ],\r\n      [\r\n        2\r\n      ]\r\n    ],\r\n    [\r\n      1,\r\n      2\r\n    ],\r\n    [\r\n      2,\r\n      1\r\n    ],\r\n    [\r\n      3,\r\n      4,\r\n      5\r\n    ],\r\n    [\r\n      1,\r\n      2\r\n    ],\r\n    [\r\n      [\r\n        1\r\n      ],\r\n      [\r\n        1\r\n      ],\r\n      [\r\n        2\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        1\r\n      ],\r\n      [\r\n        1\r\n      ],\r\n      [\r\n        1\r\n      ]\r\n    ]\r\n  ]\r\n}",
+      "exampleOutput": "[\r\n  [\r\n    [\r\n      1\r\n    ],\r\n    [\r\n      1\r\n    ],\r\n    [\r\n      2\r\n    ]\r\n  ],\r\n  [\r\n    1,\r\n    2\r\n  ],\r\n  [\r\n    2,\r\n    1\r\n  ],\r\n  [\r\n    3,\r\n    4,\r\n    5\r\n  ],\r\n  [\r\n    [\r\n      1\r\n    ],\r\n    [\r\n      1\r\n    ],\r\n    [\r\n      1\r\n    ]\r\n  ]\r\n]"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Remove Duplicates From Array of Arrays or Objects - IAP",
+  "overview": "Remove duplicates from an array of objects or array of arrays",
+  "webName": "Remove Duplicates From Array of Arrays or Objects - IAP",
+  "assetType": "Transformation"
+}

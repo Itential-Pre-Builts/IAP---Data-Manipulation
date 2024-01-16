@@ -1,0 +1,56 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to find the first available number from an array of already allocated integers given a starting integer and an ending integer"
+    }
+  ],
+  "entryPoint": {
+    "name": "Allocate One Number - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "allocated",
+      "type": "array",
+      "required": "yes",
+      "description": "Array of already allocated integers",
+      "exampleValue": "[1, 4, 5]"
+    },
+    {
+      "name": "startRange",
+      "type": "number",
+      "required": "yes",
+      "description": "Lower bound (inclusive) for the range between which a number is allocated",
+      "exampleValue": "5"
+    },
+    {
+      "name": "endRange",
+      "type": "number",
+      "required": "yes",
+      "description": "Upper bound (exclusive) for the range between which a number is allocated",
+      "exampleValue": "8"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "assigned",
+      "type": "integer, boolean",
+      "description": "The first available number if found. Otherwise it is a boolean value",
+      "exampleValue": "6"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"allocated\": [\r\n    1,\r\n    4,\r\n    5\r\n  ],\r\n  \"startRange\": 5,\r\n  \"endRange\": 8\r\n}",
+      "exampleOutput": "{\r\n  \"assigned\": 6\r\n}"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Allocate One Number - IAP",
+  "overview": "Find the first available number from an array of already allocated integers given a starting integer and an ending integer",
+  "webName": "Allocate One Number - IAP",
+  "assetType": "Transformation"
+}
