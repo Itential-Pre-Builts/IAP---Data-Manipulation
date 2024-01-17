@@ -103,12 +103,12 @@ The following table lists the inputs to the Transformation Project:
       <td>yes</td>
       <td>An array that needs to be splitted in chunks</td>
       <td><pre lang="json">[
-    1,
-    2,
-    3,
-    "a",
-    "b"
-  ]</pre></td>
+  1,
+  2,
+  3,
+  "a",
+  "b"
+]</pre></td>
     </tr>    <tr>
       <td>chunkSize</td>
       <td>number</td>
@@ -165,6 +165,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -195,6 +196,8 @@ Output:
   ]
 ] </pre>
 
+    
+  
 
 
 ## Support

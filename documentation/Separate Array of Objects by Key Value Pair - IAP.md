@@ -128,11 +128,11 @@ The following table lists the inputs to the Transformation Project:
       <td><pre lang="json">state</pre></td>
     </tr>    <tr>
       <td>value</td>
-      <td>array, boolean, null, object, number, string</td>
+      <td>['array', 'boolean', 'null', 'object', 'number', 'string']</td>
       <td>yes</td>
       <td>The value of the property that needs to be matched</td>
       <td><pre lang="json">GA</pre></td>
-    </tr>    
+    </tr>
   </tbody>
 </table>
 
@@ -195,6 +195,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -248,7 +249,8 @@ Output:
   ]
 } </pre>
 
-
+    
+  
 #### Example 2
 
     
@@ -301,6 +303,8 @@ Output:
   ]
 } </pre>
 
+    
+  
 
 
 ## Support

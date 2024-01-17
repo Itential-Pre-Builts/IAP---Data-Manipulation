@@ -21,7 +21,7 @@
 
 ## Overview
 
-Get a value from an object based on the JSON Pointer
+Get a value from an object using JSON Pointer
 
 Capabilities include:
 - This transformation allows IAP users to get a value from an object based on the JSON Pointer
@@ -154,6 +154,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -171,30 +172,10 @@ Input:
     
     
 Output:
-<pre>2</pre>
-
-
-#### Example 2
+<pre>2 </pre>
 
     
-Input:
-<pre>{
-  "jsonPointer": "/a",
-  "obj": {
-    "a": {
-      "b": 2,
-      "c": 3
-    }
-  }
-} </pre>
-
-    
-    
-Output:
-<pre>{
-  "b": 2,
-  "c": 3
-} </pre>
+  
 
 
 ## Support

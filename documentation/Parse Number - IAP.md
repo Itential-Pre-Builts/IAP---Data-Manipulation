@@ -102,10 +102,13 @@ The following table lists the inputs to the Transformation Project:
       <td>array</td>
       <td>yes</td>
       <td>The keys to be converted in the object if the data is an object or an array of objects. Set this attribute to [] if not applicable, or if all keys need to be converted</td>
-      <td><pre lang="json">["price", "aisle"]</pre></td>
+      <td><pre lang="json">[
+  "price",
+  "aisle"
+]</pre></td>
     </tr>    <tr>
       <td>data</td>
-      <td>array, number, string, oject</td>
+      <td>['array', 'number', 'string', 'object']</td>
       <td>yes</td>
       <td>Data that have strings that need to be converted to number. For arrays and objects, the JST will convert strings in the first level only</td>
       <td><pre lang="json">{
@@ -136,7 +139,7 @@ The following table lists the outputs of the Transformation Project:
   <tbody>
     <tr>
       <td>output</td>
-      <td>array, object, number, string</td>
+      <td>['array', 'object', 'number', 'string']</td>
       <td>Parsed data</td>
       <td><pre lang="json">{
   "fruit": "apple",
@@ -159,6 +162,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -186,7 +190,8 @@ Output:
   "aisle": "23b"
 } </pre>
 
-
+    
+  
 #### Example 2
 
     
@@ -219,7 +224,8 @@ Output:
   35
 ] </pre>
 
-
+    
+  
 #### Example 3
 
     
@@ -256,6 +262,8 @@ Output:
   }
 ] </pre>
 
+    
+  
 
 
 ## Support

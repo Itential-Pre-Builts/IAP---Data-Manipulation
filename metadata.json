@@ -2,9 +2,9 @@
   "name": "IAP - Data Manipulation",
   "webName": "IAP - Transformation Examples for Data Manipulation",
   "type": "Transformation Project",
-  "vendor": "Itential",
-  "product": "Transformation",
-  "method": "",
+  "vendor": "IAP",
+  "product": "Data Manipulation",
+  "method": "REST",
   "osVersions": [],
   "apiVersions": [],
   "iapVersions": [
@@ -14,7 +14,17 @@
   "tags": [],
   "useCases": [],
   "deprecated": {
-    "isDeprecated": false
+    "isDeprecated": false,
+    "deprecatedOn": "",
+    "endOfLife": "",
+    "replacedBy": {
+      "name": "",
+      "overview": "",
+      "repoLink": "",
+      "docLink": "",
+      "webLink": "",
+      "isProductFeature": false
+    }
   },
   "brokerSince": "",
   "documentation": {
@@ -29,16 +39,14 @@
     "webLink": "",
     "vendorLink": "https://www.itential.com/",
     "productLink": "",
-    "apiLinks": [
-      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
-    ]
+    "apiLinks": []
   },
   "assets": [
     {
       "name": "Aggregate Functions for Arrays - IAP",
       "webName": "Aggregate Functions for Arrays - IAP",
       "assetType": "Transformation",
-      "overview": "The transformation allows IAP users to run a set of mathematical aggregate functions on an array of numbers. The aggregate functions consist of Sum, Product, Maximum, Minimum, Range, Count, Arithmetic Mean, Geometric Mean, Harmonic Mean, Median, Mode, Standard Deviation, and Variance",
+      "overview": "Run a set of mathematical aggregate functions on an array of numbers",
       "iapVersions": [
         "2023.1"
       ],
@@ -49,7 +57,7 @@
       "name": "Allocate a Pair of Numbers - IAP",
       "webName": "Allocate a Pair of Numbers - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer",
+      "overview": "Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer",
       "iapVersions": [
         "2023.1"
       ],
@@ -60,7 +68,7 @@
       "name": "Allocate One Number - IAP",
       "webName": "Allocate One Number - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to find the first available number from an array of already allocated integers given a starting integer and an ending integer",
+      "overview": "Find the first available number from an array of already allocated integers given a starting integer and an ending integer",
       "iapVersions": [
         "2023.1"
       ],
@@ -71,7 +79,7 @@
       "name": "Chunk Array - IAP",
       "webName": "Chunk Array - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to split an array into a smaller sized groups given a desired chunk size",
+      "overview": "Split an array into a smaller sized groups given a desired chunk size",
       "iapVersions": [
         "2023.1"
       ],
@@ -82,7 +90,7 @@
       "name": "Clear Empty Keys - IAP",
       "webName": "Clear Empty Keys - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to clear empty keys from a JSON input. Empty keys consist of empty objects, empty arrays, empty strings, and null values",
+      "overview": "Clear empty keys from a JSON",
       "iapVersions": [
         "2023.1"
       ],
@@ -93,7 +101,7 @@
       "name": "Convert CSV to JSON - IAP",
       "webName": "Convert CSV to JSON - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to convert a CSV into a JSON",
+      "overview": "Convert CSV into JSON",
       "iapVersions": [
         "2023.1"
       ],
@@ -104,7 +112,7 @@
       "name": "Convert String to Special Cases - IAP",
       "webName": "Convert String to Special Cases - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to convert a string separated by whitespace to camelCase, PascalCase, kebab-case, and snake_case",
+      "overview": "Convert string to special cases including camelCase, PascalCase, kebab-case, and snake_case",
       "iapVersions": [
         "2023.1"
       ],
@@ -115,7 +123,7 @@
       "name": "Filter Array of Objects by Key Value Pair - IAP",
       "webName": "Filter Array of Objects by Key Value Pair - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to filter an array of objects by providing a key and a value to match on, and the option to discard the matching items from the array",
+      "overview": "Filter array of objects by key value pair",
       "iapVersions": [
         "2023.1"
       ],
@@ -126,7 +134,7 @@
       "name": "Generate Random Integer Within Range - IAP",
       "webName": "Generate Random Integer Within Range - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to generate a random integer within a provided range (inclusive of both min and max)",
+      "overview": "Generate a random integer within a range",
       "iapVersions": [
         "2023.1"
       ],
@@ -137,7 +145,7 @@
       "name": "Get Random Element From Array - IAP",
       "webName": "Get Random Element From Array - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to get a random element from an array",
+      "overview": "Get a random element from array",
       "iapVersions": [
         "2023.1"
       ],
@@ -148,18 +156,18 @@
       "name": "Get Value From JSON Pointer - IAP",
       "webName": "Get Value From JSON Pointer - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to get a value from an object based on the JSON Pointer",
+      "overview": "Get a value from an object using JSON Pointer",
       "iapVersions": [
         "2023.1"
       ],
-      "exampleInput": "{\r\n  \"jsonPointer\": \"\/a\/b\",\r\n  \"obj\": {\r\n    \"a\": {\r\n      \"b\": 2,\r\n      \"c\": 3\r\n    }\r\n  }\r\n}",
+      "exampleInput": "{\r\n  \"jsonPointer\": \"/a/b\",\r\n  \"obj\": {\r\n    \"a\": {\r\n      \"b\": 2,\r\n      \"c\": 3\r\n    }\r\n  }\r\n}",
       "exampleOutput": "2"
     },
     {
       "name": "Group Records by Property - IAP",
       "webName": "Group Records by Property - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to group records by a specific property",
+      "overview": "Group records by a property",
       "iapVersions": [
         "2023.1"
       ],
@@ -170,7 +178,7 @@
       "name": "Parse Number - IAP",
       "webName": "Parse Number - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to convert strings and strings within objects to numbers",
+      "overview": "Convert strings and strings within objects to numbers",
       "iapVersions": [
         "2023.1"
       ],
@@ -181,7 +189,7 @@
       "name": "Remove Duplicates From Array of Arrays or Objects - IAP",
       "webName": "Remove Duplicates From Array of Arrays or Objects - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to remove duplicates from an array of objects or array of arrays",
+      "overview": "Remove duplicates from an array of objects or array of arrays",
       "iapVersions": [
         "2023.1"
       ],
@@ -189,10 +197,10 @@
       "exampleOutput": "[\r\n  {\r\n    \"a\": \"a\"\r\n  },\r\n  {\r\n    \"a\": \"b\"\r\n  },\r\n  {\r\n    \"a\": {\r\n      \"a\": [\r\n        1,\r\n        2,\r\n        3\r\n      ]\r\n    }\r\n  }\r\n]"
     },
     {
-      "name": "Remove Duplicates From Array of Primitives - IAP",
-      "webName": "Remove Duplicates From Array of Primitives - IAP",
+      "name": "Remove Duplicates - Non Objects - IAP",
+      "webName": "Remove Duplicates - Non Objects - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to remove duplicates from an array of primitives",
+      "overview": "Remove duplicates from an array of primitives",
       "iapVersions": [
         "2023.1"
       ],
@@ -203,7 +211,7 @@
       "name": "Remove Element From Array by Index - IAP",
       "webName": "Remove Element From Array by Index - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to remove an element from an array by index",
+      "overview": "Remove an element from an array by index",
       "iapVersions": [
         "2023.1"
       ],
@@ -214,7 +222,7 @@
       "name": "Remove Element From Array by Value - IAP",
       "webName": "Remove Element From Array by Value - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to remove an element from an array based on a certain value",
+      "overview": "Remove an element from an array by a value",
       "iapVersions": [
         "2023.1"
       ],
@@ -225,7 +233,7 @@
       "name": "Separate Array of Objects by Key Value Pair - IAP",
       "webName": "Separate Array of Objects by Key Value Pair - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to separate an array of objects into an array of matching items and an array of non-matching items by providing a key and value that needs to be matched",
+      "overview": "Separate an array of objects by a key value pair",
       "iapVersions": [
         "2023.1"
       ],
@@ -236,18 +244,18 @@
       "name": "Split String into Array by Regex or Separator - IAP",
       "webName": "Split String into Array by Regex or Separator - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to split a string into an array by regex or another string",
+      "overview": "Split a string into an array by regex or another string",
       "iapVersions": [
         "2023.1"
       ],
-      "exampleInput": "{\r\n  \"inputString\": \"Hello123world-456,2024\",\r\n  \"separatorString\": \"o\",\r\n  \"separatorRegex\": \"\/\\d+\/gm\",\r\n  \"limit\": 2\r\n}",
-      "exampleOutput": "[\r\n  \"Hell\",\r\n  \"123w\"\r\n]"
+      "exampleInput": "{\r\n  \"inputString\": \"Hello123world-456,2024\",\r\n  \"separatorString\": \"\",\r\n  \"separatorRegex\": \"/\\d+/gm\",\r\n  \"limit\": null\r\n}",
+      "exampleOutput": "[\r\n  \"Hello\",\r\n  \"world-\",\r\n  \",\",\r\n  \"\"\r\n]"
     },
     {
       "name": "Transpose Record by Creating Arrays for Each Property Within Groups - IAP",
       "webName": "Transpose Record by Creating Arrays for Each Property Within Groups - IAP",
       "assetType": "Transformation",
-      "overview": "This transformation allows IAP users to transpose the record by creating arrays for each property within the groups",
+      "overview": "Transpose the record by creating arrays for each property within the groups",
       "iapVersions": [
         "2023.1"
       ],

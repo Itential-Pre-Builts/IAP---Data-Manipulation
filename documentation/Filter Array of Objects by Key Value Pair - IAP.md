@@ -103,10 +103,22 @@ The following table lists the inputs to the Transformation Project:
       <td>yes</td>
       <td>An array of objects</td>
       <td><pre lang="json">[
-  {"city":"Atlanta", "state":"GA"},
-  {"city":"Sandy Springs", "state":"GA"},
-  {"city":"Dallas", "state":"TX"},
-  {"city":"Orlando", "state":"FL"}
+  {
+    "city": "Atlanta",
+    "state": "GA"
+  },
+  {
+    "city": "Sandy Springs",
+    "state": "GA"
+  },
+  {
+    "city": "Dallas",
+    "state": "TX"
+  },
+  {
+    "city": "Orlando",
+    "state": "FL"
+  }
 ]</pre></td>
     </tr>    <tr>
       <td>keyToFilterOn</td>
@@ -116,7 +128,7 @@ The following table lists the inputs to the Transformation Project:
       <td><pre lang="json">state</pre></td>
     </tr>    <tr>
       <td>valueToFind</td>
-      <td>string, number, boolean, array, object, null</td>
+      <td>['string', 'number', 'boolean', 'array', 'object', 'null']</td>
       <td>yes</td>
       <td>Value of the key to match on</td>
       <td><pre lang="json">GA</pre></td>
@@ -183,6 +195,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -231,7 +244,8 @@ Output:
   }
 } </pre>
 
-
+    
+  
 #### Example 2
 
     
@@ -280,6 +294,8 @@ Output:
   }
 } </pre>
 
+    
+  
 
 
 ## Support

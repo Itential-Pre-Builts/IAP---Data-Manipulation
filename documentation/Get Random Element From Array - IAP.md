@@ -103,10 +103,22 @@ The following table lists the inputs to the Transformation Project:
       <td>yes</td>
       <td>Array from which a random element has to be selected</td>
       <td><pre lang="json">[
-  {"city":"Atlanta", "state":"GA"},
-  {"city":"Sandy Springs", "state":"GA"},
-  {"city":"Dallas", "state":"TX"},
-  {"city":"Orlando", "state":"FL"}
+  {
+    "city": "Atlanta",
+    "state": "GA"
+  },
+  {
+    "city": "Sandy Springs",
+    "state": "GA"
+  },
+  {
+    "city": "Dallas",
+    "state": "TX"
+  },
+  {
+    "city": "Orlando",
+    "state": "FL"
+  }
 ]</pre></td>
     </tr>
   </tbody>
@@ -148,7 +160,7 @@ The following table lists the outputs of the Transformation Project:
 ]</pre></td>
     </tr>    <tr>
       <td>randomElement</td>
-      <td>number, string, boolean, array, object, null</td>
+      <td>['number', 'string', 'boolean', 'array', 'object', 'null']</td>
       <td>Randomly selected element</td>
       <td><pre lang="json">{
   "city": "Atlanta",
@@ -157,11 +169,8 @@ The following table lists the outputs of the Transformation Project:
     </tr>    <tr>
       <td>randomElementIndex</td>
       <td>integer</td>
-      <td>Randomly selected element</td>
-      <td><pre lang="json">{
-  "city": "Atlanta",
-  "state": "GA"
-}</pre></td>
+      <td>Index of the randomly selected element</td>
+      <td><pre lang="json">0</pre></td>
     </tr>    <tr>
       <td>poppedArrayLength</td>
       <td>integer</td>
@@ -182,6 +191,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -233,6 +243,8 @@ Output:
   "poppedArrayLength": 3
 } </pre>
 
+    
+  
 
 
 ## Support

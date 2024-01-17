@@ -141,7 +141,7 @@ The following table lists the outputs of the Transformation Project:
   <tbody>
     <tr>
       <td>assigned</td>
-      <td>array, boolean</td>
+      <td>['array', 'boolean']</td>
       <td>An array of the first availble consecutive pair if found. Otherwise, it will be false</td>
       <td><pre lang="json">[
   6,
@@ -162,6 +162,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -186,7 +187,8 @@ Output:
   ]
 } </pre>
 
-
+    
+  
 #### Example 2
 
     
@@ -209,6 +211,8 @@ Output:
   "assigned": false
 } </pre>
 
+    
+  
 
 
 ## Support

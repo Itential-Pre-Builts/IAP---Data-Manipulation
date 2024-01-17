@@ -149,6 +149,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -161,8 +162,10 @@ Input:
     
     
 Output:
-<pre>2</pre>
+<pre>2 </pre>
 
+    
+  
 
 
 ## Support

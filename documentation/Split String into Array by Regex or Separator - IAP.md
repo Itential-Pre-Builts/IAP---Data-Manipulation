@@ -107,21 +107,21 @@ The following table lists the inputs to the Transformation Project:
       <td>separatorString</td>
       <td>string</td>
       <td>yes</td>
-      <td>String used as a separator. If separatorString and separatorRegex are included, separatorString is used by default and the separatorRegex is ignored</td>
+      <td>String used as a separator. If "separatorString" and "separatorRegex" are included, "separatorString" is used by default and the "separatorRegex" is ignored</td>
       <td><pre lang="json">o</pre></td>
     </tr>    <tr>
       <td>separatorRegex</td>
-      <td>array, boolean, null, object, number, string</td>
+      <td>string</td>
       <td>yes</td>
-      <td>Regex pattern used as a separator. If separatorString and separatorRegex are included, separatorString is used by default and the separatorRegex is ignored</td>
-      <td><pre lang="json">/\\d+/gm</pre></td>
+      <td>Regex pattern used as a separator. If "separatorString" and "separatorRegex" are included, "separatorString" is used by default and the "separatorRegex" is ignored</td>
+      <td><pre lang="json">/\d+/gm</pre></td>
     </tr>    <tr>
       <td>limit</td>
-      <td>integer, null</td>
+      <td>['integer', 'null']</td>
       <td>no</td>
       <td>A non-negative integer specifying a limit on the number of substrings to be included in the array</td>
       <td><pre lang="json">2</pre></td>
-    </tr>    
+    </tr>
   </tbody>
 </table>
 
@@ -151,7 +151,7 @@ The following table lists the outputs of the Transformation Project:
   ",",
   ""
 ]</pre></td>
-    </tr>  
+    </tr>
   </tbody>
 </table>
 
@@ -166,6 +166,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -187,7 +188,8 @@ Output:
   ""
 ] </pre>
 
-
+    
+  
 #### Example 2
 
     
@@ -207,6 +209,8 @@ Output:
   "123w"
 ] </pre>
 
+    
+  
 
 
 ## Support

@@ -1,8 +1,8 @@
-# Remove Duplicates From Array of Primitives - IAP
+# Remove Duplicates - Non Objects - IAP
 
 ## Table of Contents
 
-- [Remove Duplicates From Array of Primitives - IAP](#remove-duplicates-from-array-of-primitives---iap)
+- [Remove Duplicates - Non Objects - IAP](#remove-duplicates---non-objects---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -31,7 +31,7 @@ Capabilities include:
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Remove Duplicates From Array of Primitives - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Remove Duplicates - Non Objects - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>Remove Duplicates From Array of Primitives - IAP</td>
+      <td>Remove Duplicates - Non Objects - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>
@@ -159,6 +159,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -188,7 +189,8 @@ Output:
   "HeLLo"
 ] </pre>
 
-
+    
+  
 #### Example 2
 
     
@@ -217,6 +219,8 @@ Output:
   7
 ] </pre>
 
+    
+  
 
 
 ## Support

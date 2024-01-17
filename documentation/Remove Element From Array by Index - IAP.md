@@ -147,7 +147,7 @@ The following table lists the outputs of the Transformation Project:
 ]</pre></td>
     </tr>    <tr>
       <td>item</td>
-      <td>array, boolean, number, string, object, null</td>
+      <td>['array', 'boolean', 'number', 'string', 'object', 'null']</td>
       <td>The item that was removed from the array</td>
       <td><pre lang="json">8</pre></td>
     </tr>
@@ -165,6 +165,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -193,7 +194,8 @@ Output:
   "item": 8
 } </pre>
 
-
+    
+  
 #### Example 2
 
     
@@ -264,6 +266,8 @@ Output:
   }
 } </pre>
 
+    
+  
 
 
 ## Support

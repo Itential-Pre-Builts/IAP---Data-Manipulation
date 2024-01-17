@@ -21,7 +21,7 @@
 
 ## Overview
 
-Remove an element from an array based on a certain value
+Remove an element from an array by a value
 
 Capabilities include:
 - This transformation allows IAP users to remove an element from an array based on a certain value
@@ -112,7 +112,7 @@ The following table lists the inputs to the Transformation Project:
 ]</pre></td>
     </tr>    <tr>
       <td>value</td>
-      <td>number, string, null, boolean</td>
+      <td>['number', 'string', 'null', 'boolean']</td>
       <td>yes</td>
       <td>The value to be removed from the array</td>
       <td><pre lang="json">7</pre></td>
@@ -122,7 +122,7 @@ The following table lists the inputs to the Transformation Project:
       <td>yes</td>
       <td>Whether to remove only the first occurrence of the value or all the occurrences. A 'true' value results in the removal of all the occurrences of the value whereas a 'false' value results in the removal of that value at the first found index</td>
       <td><pre lang="json">true</pre></td>
-    </tr>    
+    </tr>
   </tbody>
 </table>
 
@@ -154,7 +154,7 @@ The following table lists the outputs of the Transformation Project:
 ]</pre></td>
     </tr>    <tr>
       <td>noOfRemovedItems</td>
-      <td>integer</td>
+      <td>boolean</td>
       <td>The number of the items that have been removed</td>
       <td><pre lang="json">2</pre></td>
     </tr>
@@ -172,6 +172,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -202,7 +203,8 @@ Output:
   "noOfRemovedItems": 2
 } </pre>
 
-
+    
+  
 #### Example 2
 
     
@@ -234,7 +236,8 @@ Output:
   "noOfRemovedItems": 1
 } </pre>
 
-
+    
+  
 #### Example 3
 
     
@@ -263,6 +266,8 @@ Output:
   "noOfRemovedItems": 0
 } </pre>
 
+    
+  
 
 
 ## Support

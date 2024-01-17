@@ -2,7 +2,7 @@
 
 ## Overview
 
-IAP Transformation Projects for Data Manipulation
+This Transformation Project contains several transformation examples that are used for data manipulation in Itential Automation Platform (IAP)
 
 
 ## Transformations
@@ -21,7 +21,7 @@ IAP Transformation Projects for Data Manipulation
       <td>Run a set of mathematical aggregate functions on an array of numbers</td>
     </tr>    <tr>
       <td><a href='https://gitlab.com/itentialopensource/pre-built-automations/staging/iap-data-manipulation/-/blob/master/documentation/Allocate a Pair of Numbers - IAP.md' target='_blank'>Allocate a Pair of Numbers - IAP</a></td>
-      <td>Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and a given ending integer</td>
+      <td>Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer</td>
     </tr>    <tr>
       <td><a href='https://gitlab.com/itentialopensource/pre-built-automations/staging/iap-data-manipulation/-/blob/master/documentation/Allocate One Number - IAP.md' target='_blank'>Allocate One Number - IAP</a></td>
       <td>Find the first available number from an array of already allocated integers given a starting integer and an ending integer</td>

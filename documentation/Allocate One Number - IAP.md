@@ -21,7 +21,7 @@
 
 ## Overview
 
-Find the first number from an array of already allocated integers given a starting integer and an ending integer
+Find the first available number from an array of already allocated integers given a starting integer and an ending integer
 
 Capabilities include:
 - This transformation allows IAP users to find the first available number from an array of already allocated integers given a starting integer and an ending integer
@@ -141,7 +141,7 @@ The following table lists the outputs of the Transformation Project:
   <tbody>
     <tr>
       <td>assigned</td>
-      <td>integer, boolean</td>
+      <td>['integer', 'boolean']</td>
       <td>The first available number if found. Otherwise, it will be false</td>
       <td><pre lang="json">6</pre></td>
     </tr>
@@ -159,6 +159,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -180,7 +181,8 @@ Output:
   "assigned": 6
 } </pre>
 
-
+    
+  
 #### Example 2
 
     
@@ -200,6 +202,8 @@ Output:
   "assigned": false
 } </pre>
 
+    
+  
 
 
 ## Support

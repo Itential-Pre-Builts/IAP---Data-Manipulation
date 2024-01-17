@@ -21,10 +21,10 @@
 
 ## Overview
 
-Clear empty keys from a JSON input
+Clear empty keys from a JSON
 
 Capabilities include:
-- This transformation allows IAP users to clear empty keys from a JSON input. Empty keys consist of empty objects, empty arrays, empty strings, and null values.
+- This transformation allows IAP users to clear empty keys from a JSON input. Empty keys consist of empty objects, empty arrays, empty strings, and null values
 
 
 ## Getting Started
@@ -101,7 +101,7 @@ The following table lists the inputs to the Transformation Project:
       <td>input</td>
       <td>object</td>
       <td>yes</td>
-      <td>An array that needs to be splitted in chunks</td>
+      <td>An object that needs to be cleaned</td>
       <td><pre lang="json">{
   "name": "John",
   "age": "30",
@@ -151,6 +151,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -172,6 +173,8 @@ Output:
   "age": "30"
 } </pre>
 
+    
+  
 
 
 ## Support

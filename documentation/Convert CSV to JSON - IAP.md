@@ -21,7 +21,7 @@
 
 ## Overview
 
-Convert CSV to JSON
+Convert CSV into JSON
 
 Capabilities include:
 - This transformation allows IAP users to convert a CSV into a JSON
@@ -102,7 +102,10 @@ The following table lists the inputs to the Transformation Project:
       <td>string</td>
       <td>yes</td>
       <td>CSV to convert to JSON</td>
-      <td><pre lang="json">a,b,c,d,e,f\n1,2,3,4,5,7,8,9,0\n5,4,3,2,1\n1,2,3,4,5</pre></td>
+      <td><pre lang="json">a,b,c,d,e,f
+1,2,3,4,5,7,8,9,0
+5,4,3,2,1
+1,2,3,4,5</pre></td>
     </tr>
   </tbody>
 </table>
@@ -168,6 +171,7 @@ No related documentation provided.
 
 ### Example Inputs and Outputs
 
+  
 #### Example 1
 
     
@@ -206,6 +210,8 @@ Output:
   }
 ] </pre>
 
+    
+  
 
 
 ## Support
