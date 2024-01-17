@@ -197,8 +197,8 @@
       "exampleOutput": "[\r\n  {\r\n    \"a\": \"a\"\r\n  },\r\n  {\r\n    \"a\": \"b\"\r\n  },\r\n  {\r\n    \"a\": {\r\n      \"a\": [\r\n        1,\r\n        2,\r\n        3\r\n      ]\r\n    }\r\n  }\r\n]"
     },
     {
-      "name": "Remove Duplicates - Non Objects - IAP",
-      "webName": "Remove Duplicates - Non Objects - IAP",
+      "name": "Remove Duplicates From Array of Primitives - IAP",
+      "webName": "Remove Duplicates From Array of Primitives - IAP",
       "assetType": "Transformation",
       "overview": "Remove duplicates from an array of primitives",
       "iapVersions": [
