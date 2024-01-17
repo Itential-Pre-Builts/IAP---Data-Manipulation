@@ -36,9 +36,15 @@
     },
     {
       "name": "item",
-      "type": "array, boolean, number, integer, string, object, null",
+      "type": ["array", "boolean", "number", "string", "object", "null"],
       "description": "The item that was removed from the array",
       "exampleValue": "8"
+    }
+  ],
+  "apiLinks": [
+    {
+      "title": "Mozilla Developer Network JavaScript Reference",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
     }
   ],
   "exampleInputsAndOutputs": [

@@ -35,6 +35,12 @@
       "exampleValue": "2"
     }
   ],
+  "apiLinks": [
+    {
+      "title": "Mozilla Developer Network JavaScript Reference",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
+    }
+  ],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"jsonPointer\": \"\/a\/b\",\r\n  \"obj\": {\r\n    \"a\": {\r\n      \"b\": 2,\r\n      \"c\": 3\r\n    }\r\n  }\r\n}",

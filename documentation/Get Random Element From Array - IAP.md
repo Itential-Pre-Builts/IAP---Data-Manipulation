@@ -148,7 +148,7 @@ The following table lists the outputs of the Transformation Project:
 ]</pre></td>
     </tr>    <tr>
       <td>randomElement</td>
-      <td>number, string, boolean, array, object</td>
+      <td>number, string, boolean, array, object, null</td>
       <td>Randomly selected element</td>
       <td><pre lang="json">{
   "city": "Atlanta",

@@ -21,7 +21,7 @@
     },
     {
       "name": "data",
-      "type": "array, number, string, oject",
+      "type": ["array", "number", "string", "object"],
       "required": "yes",
       "description": "Data that have strings that need to be converted to number. For arrays and objects, the JST will convert strings in the first level only",
       "exampleValue": "{\r\n  \"fruit\": \"apple\",\r\n  \"quantity\": \"30\",\r\n  \"price\": \"42.2\",\r\n  \"aisle\": \"23b\"\r\n}"
@@ -30,9 +30,15 @@
   "outputs": [
     {
       "name": "output",
-      "type": "array, object, number, string",
+      "type": ["array", "object", "number", "string"],
       "description": "Parsed data",
       "exampleValue": "{\r\n  \"fruit\": \"apple\",\r\n  \"quantity\": \"30\",\r\n  \"price\": 42.2,\r\n  \"aisle\": \"23b\"\r\n}"
+    }
+  ],
+  "apiLinks": [
+    {
+      "title": "Mozilla Developer Network JavaScript Reference",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
     }
   ],
   "exampleInputsAndOutputs": [

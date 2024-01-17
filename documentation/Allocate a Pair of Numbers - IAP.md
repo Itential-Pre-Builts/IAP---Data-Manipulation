@@ -109,13 +109,13 @@ The following table lists the inputs to the Transformation Project:
 ]</pre></td>
     </tr>    <tr>
       <td>startRange</td>
-      <td>number</td>
+      <td>integer</td>
       <td>yes</td>
       <td>Lower bound (inclusive) for the range between which a pair of numbers is allocated</td>
       <td><pre lang="json">5</pre></td>
     </tr>    <tr>
       <td>endRange</td>
-      <td>number</td>
+      <td>integer</td>
       <td>yes</td>
       <td>Upper bound (inclusive) for the range between which a pair of numbers is allocated</td>
       <td><pre lang="json">8</pre></td>
@@ -142,7 +142,7 @@ The following table lists the outputs of the Transformation Project:
     <tr>
       <td>assigned</td>
       <td>array, boolean</td>
-      <td>An array of the first availble consecutive pair if found. Otherwise, it is a boolean value</td>
+      <td>An array of the first availble consecutive pair if found. Otherwise, it will be false</td>
       <td><pre lang="json">[
   6,
   7
@@ -184,6 +184,29 @@ Output:
     6,
     7
   ]
+} </pre>
+
+
+#### Example 2
+
+    
+Input:
+<pre>{
+  "allocated": [
+    1,
+    4,
+    5,
+    7
+  ],
+  "startRange": 5,
+  "endRange": 8
+} </pre>
+
+    
+    
+Output:
+<pre>{
+  "assigned": false
 } </pre>
 
 

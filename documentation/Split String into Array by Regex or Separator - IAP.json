@@ -35,7 +35,7 @@
     },
     {
       "name": "limit",
-      "type": "integer, null",
+      "type": ["integer", "null"],
       "required": "no",
       "description": "A non-negative integer specifying a limit on the number of substrings to be included in the array",
       "exampleValue": "2"
@@ -47,6 +47,12 @@
       "type": "array",
       "description": "Array of substrings",
       "exampleValue": "[\r\n  \"Hello\",\r\n  \"world-\",\r\n  \",\",\r\n  \"\"\r\n]"
+    }
+  ],
+  "apiLinks": [
+    {
+      "title": "Mozilla Developer Network JavaScript Reference",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
     }
   ],
   "exampleInputsAndOutputs": [

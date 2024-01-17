@@ -116,7 +116,7 @@ The following table lists the inputs to the Transformation Project:
       <td><pre lang="json">state</pre></td>
     </tr>    <tr>
       <td>valueToFind</td>
-      <td>string, number, boolean, array, object</td>
+      <td>string, number, boolean, array, object, null</td>
       <td>yes</td>
       <td>Value of the key to match on</td>
       <td><pre lang="json">GA</pre></td>

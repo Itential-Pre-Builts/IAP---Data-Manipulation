@@ -145,6 +145,11 @@ The following table lists the outputs of the Transformation Project:
   77,
   7
 ]</pre></td>
+    </tr>    <tr>
+      <td>item</td>
+      <td>array, boolean, number, string, object, null</td>
+      <td>The item that was removed from the array</td>
+      <td><pre lang="json">8</pre></td>
     </tr>
   </tbody>
 </table>

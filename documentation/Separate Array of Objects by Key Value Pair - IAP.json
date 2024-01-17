@@ -28,7 +28,7 @@
     },
     {
       "name": "value",
-      "type": "array, boolean, null, object, number, string",
+      "type": ["array", "boolean", "null", "object", "number", "string"],
       "required": "yes",
       "description": "The value of the property that needs to be matched",
       "exampleValue": "GA"
@@ -46,6 +46,12 @@
       "type": "array",
       "description": "Array of the non-matching objects",
       "exampleValue": "[\r\n  {\r\n    \"city\": \"Dallas\",\r\n    \"state\": \"TX\"\r\n  },\r\n  {\r\n    \"city\": \"Orlando\",\r\n    \"state\": \"FL\"\r\n  }\r\n]"
+    }
+  ],
+  "apiLinks": [
+    {
+      "title": "Mozilla Developer Network JavaScript Reference",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
     }
   ],
   "exampleInputsAndOutputs": [

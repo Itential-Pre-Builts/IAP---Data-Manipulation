@@ -21,7 +21,7 @@
     },
     {
       "name": "value",
-      "type": "integer, number, string, null, boolean",
+      "type": ["number", "string", "null", "boolean"],
       "required": "yes",
       "description": "The value to be removed from the array",
       "exampleValue": "7"
@@ -46,6 +46,12 @@
       "type": "boolean",
       "description": "The number of the items that have been removed",
       "exampleValue": "2"
+    }
+  ],
+  "apiLinks": [
+    {
+      "title": "Mozilla Developer Network JavaScript Reference",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
     }
   ],
   "exampleInputsAndOutputs": [

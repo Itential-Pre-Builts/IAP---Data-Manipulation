@@ -21,14 +21,14 @@
     },
     {
       "name": "startRange",
-      "type": "number",
+      "type": "integer",
       "required": "yes",
       "description": "Lower bound (inclusive) for the range between which a pair of numbers is allocated",
       "exampleValue": "5"
     },
     {
       "name": "endRange",
-      "type": "number",
+      "type": "integer",
       "required": "yes",
       "description": "Upper bound (inclusive) for the range between which a pair of numbers is allocated",
       "exampleValue": "8"
@@ -37,15 +37,25 @@
   "outputs": [
     {
       "name": "assigned",
-      "type": "array, boolean",
-      "description": "An array of the first availble consecutive pair if found. Otherwise, it is a boolean value",
+      "type": ["array", "boolean"],
+      "description": "An array of the first availble consecutive pair if found. Otherwise, it will be false",
       "exampleValue": "[6, 7]"
+    }
+  ],
+  "apiLinks": [
+    {
+      "title": "Mozilla Developer Network JavaScript Reference",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
     }
   ],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"allocated\": [\r\n    1,\r\n    4,\r\n    5\r\n  ],\r\n  \"startRange\": 5,\r\n  \"endRange\": 8\r\n}",
       "exampleOutput": "{\r\n  \"assigned\": [\r\n    6,\r\n    7\r\n  ]\r\n}"
+    },
+    {
+      "exampleInput": "{\r\n  \"allocated\": [\r\n    1,\r\n    4,\r\n    5,\r\n    7\r\n  ],\r\n  \"startRange\": 5,\r\n  \"endRange\": 8\r\n}",
+      "exampleOutput": "{\r\n  \"assigned\": false\r\n}"
     }
   ],
   "queryOutput": {},

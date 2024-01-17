@@ -112,7 +112,7 @@ The following table lists the inputs to the Transformation Project:
 ]</pre></td>
     </tr>    <tr>
       <td>value</td>
-      <td>integer, number, string, null, boolean</td>
+      <td>number, string, null, boolean</td>
       <td>yes</td>
       <td>The value to be removed from the array</td>
       <td><pre lang="json">7</pre></td>

@@ -28,6 +28,12 @@
       "exampleValue": "[\r\n  {\r\n    \"a\": \"1\",\r\n    \"b\": \"2\",\r\n    \"c\": \"3\",\r\n    \"d\": \"4\",\r\n    \"e\": \"5\",\r\n    \"f\": \"7\"\r\n  },\r\n  {\r\n    \"a\": \"5\",\r\n    \"b\": \"4\",\r\n    \"c\": \"3\",\r\n    \"d\": \"2\",\r\n    \"e\": \"1\",\r\n    \"f\": \"\"\r\n  },\r\n  {\r\n    \"a\": \"1\",\r\n    \"b\": \"2\",\r\n    \"c\": \"3\",\r\n    \"d\": \"4\",\r\n    \"e\": \"5\",\r\n    \"f\": \"\"\r\n  }\r\n]"
     }
   ],
+  "apiLinks": [
+    {
+      "title": "Mozilla Developer Network JavaScript Reference",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
+    }
+  ],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"csv\": \"a,b,c,d,e,f\\n1,2,3,4,5,7,8,9,0\\n5,4,3,2,1\\n1,2,3,4,5\"\r\n}",

@@ -27,7 +27,8 @@
         "number",
         "boolean",
         "array",
-        "object"
+        "object",
+        "null"
       ],
       "default": "valueToFind",
       "examples": [

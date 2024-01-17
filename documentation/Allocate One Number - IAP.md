@@ -109,13 +109,13 @@ The following table lists the inputs to the Transformation Project:
 ]</pre></td>
     </tr>    <tr>
       <td>startRange</td>
-      <td>number</td>
+      <td>integer</td>
       <td>yes</td>
       <td>Lower bound (inclusive) for the range between which a number is allocated</td>
       <td><pre lang="json">5</pre></td>
     </tr>    <tr>
       <td>endRange</td>
-      <td>number</td>
+      <td>integer</td>
       <td>yes</td>
       <td>Upper bound (exclusive) for the range between which a number is allocated</td>
       <td><pre lang="json">8</pre></td>
@@ -142,7 +142,7 @@ The following table lists the outputs of the Transformation Project:
     <tr>
       <td>assigned</td>
       <td>integer, boolean</td>
-      <td>The first available number if found. Otherwise it is a boolean value</td>
+      <td>The first available number if found. Otherwise, it will be false</td>
       <td><pre lang="json">6</pre></td>
     </tr>
   </tbody>
@@ -178,6 +178,26 @@ Input:
 Output:
 <pre>{
   "assigned": 6
+} </pre>
+
+
+#### Example 2
+
+    
+Input:
+<pre>{
+  "allocated": [
+    1
+  ],
+  "startRange": 2,
+  "endRange": 2
+} </pre>
+
+    
+    
+Output:
+<pre>{
+  "assigned": false
 } </pre>
 
 

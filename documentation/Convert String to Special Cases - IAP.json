@@ -46,6 +46,12 @@
       "exampleValue": "FooBarFoobar"
     }
   ],
+  "apiLinks": [
+    {
+      "title": "Mozilla Developer Network JavaScript Reference",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
+    }
+  ],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"incomingString\": \"foo bar foobar\"\r\n}",

@@ -28,7 +28,7 @@
     },
     {
       "name": "valueToFind",
-      "type": "string, number, boolean, array, object",
+      "type": ["string", "number", "boolean", "array", "object", "null"],
       "required": "yes",
       "description": "Value of the key to match on",
       "exampleValue": "GA"
@@ -53,6 +53,12 @@
       "type": "object",
       "description": "First item in the filtered array",
       "exampleValue": "{\r\n  \"city\": \"Dallas\",\r\n  \"state\": \"TX\"\r\n}"
+    }
+  ],
+  "apiLinks": [
+    {
+      "title": "Mozilla Developer Network JavaScript Reference",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
     }
   ],
   "exampleInputsAndOutputs": [

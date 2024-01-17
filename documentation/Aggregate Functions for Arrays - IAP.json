@@ -22,8 +22,8 @@
   ],
   "outputs": [
     {
-      "type": "number",
       "name": "sum",
+      "type": "number",
       "description": "Summation of the items in the array",
       "exampleValue": "6"
     },
@@ -122,6 +122,12 @@
       "type": "array",
       "description": "The parsed form of all items in valuesUsed",
       "exampleValue": "[1, 2, 3]"
+    }
+  ],
+  "apiLinks": [
+    {
+      "title": "Mozilla Developer Network JavaScript Reference",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
     }
   ],
   "exampleInputsAndOutputs": [
