@@ -1,8 +1,8 @@
-# Remove Duplicates - Non Objects - IAP
+# Remove Duplicates From Array of Primitives - IAP
 
 ## Table of Contents
 
-- [Remove Duplicates - Non Objects - IAP](#remove-duplicates---non-objects---iap)
+- [Remove Duplicates From Array of Primitives - IAP](#remove-duplicates-from-array-of-primitives---iap)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Getting Started](#getting-started)
@@ -31,7 +31,7 @@ Capabilities include:
 
 ### Supported IAP Versions
 
-Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Remove Duplicates - Non Objects - IAP** has been tested with:
+Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Remove Duplicates From Array of Primitives - IAP** has been tested with:
 
 
 - IAP **2023.1**
@@ -76,7 +76,7 @@ The primary IAP component to run this Transformation Project is listed below:
     </tr>
   </thead>
   <tbody>
-      <td>Remove Duplicates - Non Objects - IAP</td>
+      <td>Remove Duplicates From Array of Primitives - IAP</td>
       <td>Transformation</td>
     </tr>
   </tbody>

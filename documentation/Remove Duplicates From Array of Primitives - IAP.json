@@ -8,7 +8,7 @@
     }
   ],
   "entryPoint": {
-    "name": "Remove Duplicates - Non Objects - IAP",
+    "name": "Remove Duplicates From Array of Primitives - IAP",
     "type": "Transformation"
   },
   "inputs": [
@@ -45,8 +45,8 @@
     }
   ],
   "queryOutput": {},
-  "name": "Remove Duplicates - Non Objects - IAP",
+  "name": "Remove Duplicates From Array of Primitives - IAP",
   "overview": "Remove duplicates from an array of primitives",
-  "webName": "Remove Duplicates - Non Objects - IAP",
+  "webName": "Remove Duplicates From Array of Primitives - IAP",
   "assetType": "Transformation"
 }
