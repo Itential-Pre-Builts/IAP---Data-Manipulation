@@ -2,9 +2,9 @@
   "name": "IAP - Data Manipulation",
   "webName": "IAP Data Manipulation Transformations",
   "type": "Transformation Project",
-  "vendor": "",
-  "product": "",
-  "method": "REST",
+  "vendor": "Itential",
+  "product": "IAP",
+  "method": "",
   "osVersions": [],
   "apiVersions": [],
   "iapVersions": [
