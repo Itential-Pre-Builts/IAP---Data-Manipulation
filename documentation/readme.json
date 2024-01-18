@@ -4,28 +4,17 @@
   "domains": [],
   "tags": [],
   "productLink": "",
-  "apiLinks": [],
   "storeLink": "",
   "docLink": "",
   "issueLink": "",
   "deprecated": {
-    "isDeprecated": false,
-    "deprecatedOn": "",
-    "endOfLife": "",
-    "replacedBy": {
-      "name": "",
-      "overview": "",
-      "repoLink": "",
-      "docLink": "",
-      "webLink": "",
-      "isProductFeature": false
-    }
+    "isDeprecated": false
   },
   "type": "Transformation Project",
   "vendorLink": "https://www.itential.com/",
   "faqLink": "",
   "contributeLink": "",
-  "webName": "IAP - Transformation Examples for Data Manipulation",
+  "webName": "IAP Data Manipulation Transformations",
   "useCases": [],
   "webLink": "",
   "demoLinks": []
