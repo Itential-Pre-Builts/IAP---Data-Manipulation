@@ -19,7 +19,7 @@
   "brokerSince": "",
   "documentation": {
     "storeLink": "",
-    "repoLink": "https://gitlab.com/itentialopensource/pre-built-automations/staging/iap-data-manipulation",
+    "repoLink": "https://gitlab.com/itentialopensource/pre-built-automations/iap-data-manipulation",
     "npmLink": "https://www.npmjs.com/package/@itentialopensource/iap-data-manipulation",
     "docLink": "",
     "demoLinks": [],
