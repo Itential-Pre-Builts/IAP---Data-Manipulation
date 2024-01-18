@@ -30,12 +30,7 @@
     "webLink": "",
     "vendorLink": "https://www.itential.com/",
     "productLink": "",
-    "apiLinks": [
-      {
-        "title": "Mozilla Developer Network JavaScript Reference",
-        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
-      }
-    ]
+    "apiLinks": []
   },
   "assets": [
     {
