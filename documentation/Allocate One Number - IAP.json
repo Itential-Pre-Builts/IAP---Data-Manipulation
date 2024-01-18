@@ -42,12 +42,7 @@
       "exampleValue": "6"
     }
   ],
-  "apiLinks": [
-    {
-      "title": "Mozilla Developer Network JavaScript Reference",
-      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
-    }
-  ],
+  "apiLinks": [],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"allocated\": [\r\n    1,\r\n    4,\r\n    5\r\n  ],\r\n  \"startRange\": 5,\r\n  \"endRange\": 8\r\n}",

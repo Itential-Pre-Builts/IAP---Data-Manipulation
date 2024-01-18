@@ -1,6 +1,6 @@
 import { PrebuiltRunner, TransformationRunner } from '@itential-tools/iap-cypress-testing-library/testRunner/testRunners';
 
-function initializeWorkflowRunner(transformation, importTransformation) {
+function initializeTransformationRunner(transformation, importTransformation) {
   const transformationRunner = new TransformationRunner(transformation.name);
 
   if (importTransformation) {
@@ -124,7 +124,7 @@ describe('Default: Cypress Tests', function () {
   describe('Aggregate Functions for Arrays - IAP', function() {
     it('It should return the expected results', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(AggregateFunctionsforArraysIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(AggregateFunctionsforArraysIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "groupedArray": [
@@ -176,7 +176,7 @@ describe('Default: Cypress Tests', function () {
   describe('Allocate a Pair of Numbers - IAP', function() {
     it('It should return the next available pair', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(AllocateaPairofNumbersIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(AllocateaPairofNumbersIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "allocated": [
@@ -202,7 +202,7 @@ describe('Default: Cypress Tests', function () {
     });
     it('It should return false if there is no available pair', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(AllocateaPairofNumbersIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(AllocateaPairofNumbersIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "allocated": [
@@ -229,7 +229,7 @@ describe('Default: Cypress Tests', function () {
   describe('Allocate One Number - IAP', function() {
     it('It should return 2 for the next available number', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(AllocateOneNumberIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(AllocateOneNumberIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "allocated": [
@@ -250,7 +250,7 @@ describe('Default: Cypress Tests', function () {
     });
     it('It should return false if there is no number available', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(AllocateOneNumberIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(AllocateOneNumberIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "allocated": [
@@ -274,7 +274,7 @@ describe('Default: Cypress Tests', function () {
   describe('Chunk Array - IAP', function() {
     it('It should return the expected results - the original array splitted into chunks', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(ChunkArrayIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(ChunkArrayIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "originalArray": [
@@ -309,7 +309,7 @@ describe('Default: Cypress Tests', function () {
   describe('Clear Empty Keys - IAP', function() {
     it('It should remove the keys that have empty objects, empty array, empty string, and null values', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(ClearEmptyKeysIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(ClearEmptyKeysIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "input": {
@@ -337,7 +337,7 @@ describe('Default: Cypress Tests', function () {
   describe('Convert CSV to JSON - IAP', function() {
     it('It should return the expected results - CSV string is converted to JSON', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(ConvertCSVtoJSONIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(ConvertCSVtoJSONIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "csv": "a,b,c,d,e,f\n1,2,3,4,5,7,8,9,0\n5,4,3,2,1\n1,2,3,4,5"
@@ -380,7 +380,7 @@ describe('Default: Cypress Tests', function () {
   describe('Convert String to Special Cases - IAP', function() {
     it('It should return the expected results - the original string is converted to special cases', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(ConvertStringtoSpecialCasesIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(ConvertStringtoSpecialCasesIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "incomingString": "foo bar foobar"
@@ -403,7 +403,7 @@ describe('Default: Cypress Tests', function () {
   describe('Filter Array of Objects by Key Value Pair - IAP', function() {
     it('It should return the expected results - the output array contains non-matching objects if discardMatching is set to true', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(FilterArrayofObjectsbyKeyValuePairIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(FilterArrayofObjectsbyKeyValuePairIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "filterableArray": [
@@ -453,7 +453,7 @@ describe('Default: Cypress Tests', function () {
     });
     it('It should return the expected results - the output array contains matching objects if discardMatching is set to false', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(FilterArrayofObjectsbyKeyValuePairIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(FilterArrayofObjectsbyKeyValuePairIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "filterableArray": [
@@ -506,7 +506,7 @@ describe('Default: Cypress Tests', function () {
   describe('Generate Random Integer Within Range - IAP', function() {
     it('It should return the expected results - inclusive of both min and max', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(GenerateRandomIntegerWithinRangeIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(GenerateRandomIntegerWithinRangeIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "minimum": 2,
@@ -525,7 +525,7 @@ describe('Default: Cypress Tests', function () {
   describe('Get Random Element From Array - IAP', function() {
     it('It should return the expected results', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(GetRandomElementFromArrayIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(GetRandomElementFromArrayIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "array": [
@@ -556,7 +556,7 @@ describe('Default: Cypress Tests', function () {
   describe('Get Value From JSON Pointer - IAP', function() {
     it('It should return the expected results with a valid JSON pointer', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(GetValueFromJSONPointerIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(GetValueFromJSONPointerIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "jsonPointer": "/a/b",
@@ -580,7 +580,7 @@ describe('Default: Cypress Tests', function () {
   describe('Group Records by Property - IAP', function() {
     it('It should return the expected results which has each group represented as an array', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(GroupRecordsbyPropertyIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(GroupRecordsbyPropertyIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "array": [
@@ -647,7 +647,7 @@ describe('Default: Cypress Tests', function () {
   describe('Parse Number - IAP', function() {
     it('It should parse number of the provided keys', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(ParseNumberIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(ParseNumberIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "keysToConvert": [
@@ -676,7 +676,7 @@ describe('Default: Cypress Tests', function () {
     });
     it('It should parse number of all keys if keysToConvert is not provided', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(ParseNumberIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(ParseNumberIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "keysToConvert": [],
@@ -705,7 +705,7 @@ describe('Default: Cypress Tests', function () {
   describe('Remove Duplicates From Array of Arrays or Objects - IAP', function() {
     it('It should return the expected results if the input is an array of objects', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(RemoveDuplicatesFromArrayofArraysorObjectsIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(RemoveDuplicatesFromArrayofArraysorObjectsIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "array": [
@@ -764,7 +764,7 @@ describe('Default: Cypress Tests', function () {
     });
     it('It should return the expected results if the input is an array of arrays', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(RemoveDuplicatesFromArrayofArraysorObjectsIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(RemoveDuplicatesFromArrayofArraysorObjectsIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "array": [
@@ -869,7 +869,7 @@ describe('Default: Cypress Tests', function () {
   describe('Remove Duplicates From Array of Primitives - IAP', function() {
     it('It should return the expected results which has all duplicates removed', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(RemoveDuplicatesFromArrayofPrimitivesIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(RemoveDuplicatesFromArrayofPrimitivesIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "array": [
@@ -903,7 +903,7 @@ describe('Default: Cypress Tests', function () {
   describe('Remove Element From Array by Index - IAP', function() {
     it('It should return the expected results if the input is an array of primitives', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(RemoveElementFromArraybyIndexIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(RemoveElementFromArraybyIndexIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "array": [
@@ -933,7 +933,7 @@ describe('Default: Cypress Tests', function () {
     });
     it('It should return the expected results if the input is an array of objects', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(RemoveElementFromArraybyIndexIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(RemoveElementFromArraybyIndexIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "array": [
@@ -1005,7 +1005,7 @@ describe('Default: Cypress Tests', function () {
     });
     it('It should remove 0 element from the array if the input index is not available', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(RemoveElementFromArraybyIndexIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(RemoveElementFromArraybyIndexIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "array": [
@@ -1081,7 +1081,7 @@ describe('Default: Cypress Tests', function () {
   describe('Remove Element From Array by Value - IAP', function() {
     it('It should remove all elements in the array by value if removeAll is set to true', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(RemoveElementFromArraybyValueIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(RemoveElementFromArraybyValueIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "array": [
@@ -1113,7 +1113,7 @@ describe('Default: Cypress Tests', function () {
     });
     it('It should remove the first occurrence of the value if removeAll is set to false', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(RemoveElementFromArraybyValueIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(RemoveElementFromArraybyValueIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "array": [
@@ -1146,7 +1146,7 @@ describe('Default: Cypress Tests', function () {
     });
     it('It should remove 0 element if the provided value is not found in the array', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(RemoveElementFromArraybyValueIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(RemoveElementFromArraybyValueIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "array": [
@@ -1179,7 +1179,7 @@ describe('Default: Cypress Tests', function () {
   describe('Separate Array of Objects by Key Value Pair - IAP', function() {
     it('It should return the expected results which separates the array into matching and nonMatching arrays', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(SeparateArrayofObjectsbyKeyValuePairIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(SeparateArrayofObjectsbyKeyValuePairIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "dataArray": [
@@ -1237,7 +1237,7 @@ describe('Default: Cypress Tests', function () {
   describe('Split String into Array by Regex or Separator - IAP', function() {
     it('It should split string into an array if the string used as a separator is provided', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(SplitStringintoArraybyRegexorSeparatorIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(SplitStringintoArraybyRegexorSeparatorIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "inputString": "Hello123world-456,2024",
@@ -1258,7 +1258,7 @@ describe('Default: Cypress Tests', function () {
     });
     it('It should split string into an array by regex if the regex used as a separator is provided', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(SplitStringintoArraybyRegexorSeparatorIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(SplitStringintoArraybyRegexorSeparatorIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "inputString": "Hello123world-456,2024",
@@ -1284,7 +1284,7 @@ describe('Default: Cypress Tests', function () {
   describe('Transpose Record by Creating Arrays for Each Property Within Groups - IAP', function() {
     it('It should return the expected results - each property within the groups is transformed into an array', function () {
       const importTransformation = true;
-      const transformationRunner = initializeWorkflowRunner(TransposeRecordbyCreatingArraysforEachPropertyWithinGroupsIAP, importTransformation);
+      const transformationRunner = initializeTransformationRunner(TransposeRecordbyCreatingArraysforEachPropertyWithinGroupsIAP, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "array": [

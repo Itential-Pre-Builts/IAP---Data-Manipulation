@@ -49,12 +49,7 @@
       "exampleValue": "[\r\n  \"Hello\",\r\n  \"world-\",\r\n  \",\",\r\n  \"\"\r\n]"
     }
   ],
-  "apiLinks": [
-    {
-      "title": "Mozilla Developer Network JavaScript Reference",
-      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
-    }
-  ],
+  "apiLinks": [],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"inputString\": \"Hello123world-456,2024\",\r\n  \"separatorString\": \"\",\r\n  \"separatorRegex\": \"\/\\d+\/gm\",\r\n  \"limit\": null\r\n}",

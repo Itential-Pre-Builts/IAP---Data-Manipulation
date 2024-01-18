@@ -124,12 +124,7 @@
       "exampleValue": "[1, 2, 3]"
     }
   ],
-  "apiLinks": [
-    {
-      "title": "Mozilla Developer Network JavaScript Reference",
-      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
-    }
-  ],
+  "apiLinks": [],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"groupedArray\": [\r\n    1,\r\n    2,\r\n    3\r\n  ]\r\n}",

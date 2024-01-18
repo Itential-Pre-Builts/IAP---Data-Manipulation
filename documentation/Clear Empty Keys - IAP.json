@@ -28,12 +28,7 @@
       "exampleValue": "{\r\n  \"name\": \"John\",\r\n  \"age\": \"30\"\r\n}"
     }
   ],
-  "apiLinks": [
-    {
-      "title": "Mozilla Developer Network JavaScript Reference",
-      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
-    }
-  ],
+  "apiLinks": [],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"input\": {\r\n    \"name\": \"John\",\r\n    \"age\": \"30\",\r\n    \"address\": {},\r\n    \"hobbies\": []\r\n  }\r\n}",

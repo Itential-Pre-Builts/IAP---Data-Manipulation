@@ -28,12 +28,7 @@
       "exampleValue": "[\r\n  {\r\n    \"a\": \"a\"\r\n  },\r\n  {\r\n    \"a\": \"b\"\r\n  },\r\n  {\r\n    \"a\": {\r\n      \"a\": [\r\n        1,\r\n        2,\r\n        3\r\n      ]\r\n    }\r\n  }\r\n]"
     }
   ],
-  "apiLinks": [
-    {
-      "title": "Mozilla Developer Network JavaScript Reference",
-      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
-    }
-  ],
+  "apiLinks": [],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"a\": \"a\"\r\n    },\r\n    {\r\n      \"a\": \"b\"\r\n    },\r\n    {\r\n      \"a\": \"a\"\r\n    },\r\n    {\r\n      \"a\": {\r\n        \"a\": [\r\n          1,\r\n          2,\r\n          3\r\n        ]\r\n      }\r\n    },\r\n    {\r\n      \"a\": {\r\n        \"a\": [\r\n          1,\r\n          2,\r\n          3\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",

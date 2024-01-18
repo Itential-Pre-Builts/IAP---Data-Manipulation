@@ -35,12 +35,7 @@
       "exampleValue": "{\r\n  \"fruit\": {\r\n    \"item\": [\r\n      \"apple\",\r\n      \"banana\"\r\n    ],\r\n    \"price\": [\r\n      \"42.2\",\r\n      \"10.1\"\r\n    ]\r\n  },\r\n  \"vegetable\": {\r\n    \"item\": [\r\n      \"potato\"\r\n    ],\r\n    \"price\": [\r\n      \"20\"\r\n    ]\r\n  }\r\n}"
     }
   ],
-  "apiLinks": [
-    {
-      "title": "Mozilla Developer Network JavaScript Reference",
-      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
-    }
-  ],
+  "apiLinks": [],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"item\": \"apple\",\r\n      \"price\": \"42.2\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"item\": \"banana\",\r\n      \"price\": \"10.1\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"item\": \"potato\",\r\n      \"price\": \"20\",\r\n      \"type\": \"vegetable\"\r\n    }\r\n  ],\r\n  \"groupByProperty\": \"type\"\r\n}",

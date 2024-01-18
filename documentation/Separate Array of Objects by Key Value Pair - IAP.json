@@ -48,12 +48,7 @@
       "exampleValue": "[\r\n  {\r\n    \"city\": \"Dallas\",\r\n    \"state\": \"TX\"\r\n  },\r\n  {\r\n    \"city\": \"Orlando\",\r\n    \"state\": \"FL\"\r\n  }\r\n]"
     }
   ],
-  "apiLinks": [
-    {
-      "title": "Mozilla Developer Network JavaScript Reference",
-      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
-    }
-  ],
+  "apiLinks": [],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"dataArray\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"key\": \"state\",\r\n  \"value\": \"GA\"\r\n}",

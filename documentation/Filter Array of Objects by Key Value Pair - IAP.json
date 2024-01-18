@@ -55,12 +55,7 @@
       "exampleValue": "{\r\n  \"city\": \"Dallas\",\r\n  \"state\": \"TX\"\r\n}"
     }
   ],
-  "apiLinks": [
-    {
-      "title": "Mozilla Developer Network JavaScript Reference",
-      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
-    }
-  ],
+  "apiLinks": [],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"filterableArray\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"keyToFilterOn\": \"state\",\r\n  \"valueToFind\": \"GA\",\r\n  \"discardMatching\": true\r\n}",

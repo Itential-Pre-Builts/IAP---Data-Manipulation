@@ -35,12 +35,7 @@
       "exampleValue": "{\r\n  \"fruit\": \"apple\",\r\n  \"quantity\": \"30\",\r\n  \"price\": 42.2,\r\n  \"aisle\": \"23b\"\r\n}"
     }
   ],
-  "apiLinks": [
-    {
-      "title": "Mozilla Developer Network JavaScript Reference",
-      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
-    }
-  ],
+  "apiLinks": [],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"keysToConvert\": [\r\n    \"price\",\r\n    \"aisle\"\r\n  ],\r\n  \"data\": {\r\n    \"fruit\": \"apple\",\r\n    \"quantity\": \"30\",\r\n    \"price\": \"42.2\",\r\n    \"aisle\": \"23b\"\r\n  }\r\n}",
