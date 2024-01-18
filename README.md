@@ -4,7 +4,6 @@
 
 This Transformation Project contains several transformation examples that are used for data manipulation in Itential Automation Platform (IAP)
 
-
 ## Transformations
 
 
