@@ -65,20 +65,6 @@
       }
     },
     {
-      "id": 36,
-      "type": "method",
-      "library": "Number",
-      "method": "parseInt",
-      "args": [
-        "0",
-        null
-      ],
-      "view": {
-        "row": 5,
-        "col": 1
-      }
-    },
-    {
       "id": 42,
       "type": "assign",
       "from": {
@@ -104,33 +90,6 @@
         "location": "method",
         "name": 32,
         "ptr": "/args/0/value"
-      }
-    },
-    {
-      "id": 37,
-      "type": "assign",
-      "from": {
-        "location": "method",
-        "name": 36,
-        "ptr": "/return"
-      },
-      "to": {
-        "location": "declaration",
-        "name": 35,
-        "ptr": "/args/0/value"
-      }
-    },
-    {
-      "id": 35,
-      "type": "declaration",
-      "library": "Boolean",
-      "method": "new Boolean",
-      "args": [
-        null
-      ],
-      "view": {
-        "row": 5,
-        "col": 2
       }
     },
     {
@@ -176,20 +135,6 @@
       }
     },
     {
-      "id": 38,
-      "type": "assign",
-      "from": {
-        "location": "declaration",
-        "name": 35,
-        "ptr": "/return"
-      },
-      "to": {
-        "location": "method",
-        "name": 32,
-        "ptr": "/args/2/value"
-      }
-    },
-    {
       "id": 1,
       "type": "declaration",
       "library": "Array",
@@ -225,7 +170,7 @@
       "args": [
         null,
         "assigned",
-        null
+        false
       ],
       "view": {
         "row": 4,
@@ -284,7 +229,7 @@
       "args": [
         null,
         "ƒ_reduce_2",
-        "falsee",
+        false,
         null,
         null,
         null
@@ -329,7 +274,7 @@
       "method": "equality",
       "args": [
         null,
-        "falsee"
+        false
       ],
       "view": {
         "row": 2,
@@ -647,7 +592,7 @@
           "method": "equality",
           "args": [
             null,
-            "falsee"
+            false
           ],
           "view": {
             "row": 4,
@@ -1121,13 +1066,13 @@
     "col": 4,
     "row": 6
   },
-  "created": "2024-01-04T18:50:33.665Z",
+  "created": "2024-01-18T18:13:00.968Z",
   "createdBy": {
     "_id": "652054b92c281c82e5b4c8b4",
     "provenance": "local_aaa",
     "username": "admin@pronghorn"
   },
-  "lastUpdated": "2024-01-04T18:50:33.665Z",
+  "lastUpdated": "2024-01-18T18:14:56.817Z",
   "lastUpdatedBy": {
     "_id": "652054b92c281c82e5b4c8b4",
     "provenance": "local_aaa",
