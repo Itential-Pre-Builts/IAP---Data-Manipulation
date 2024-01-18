@@ -1,9 +1,9 @@
 {
   "name": "IAP - Data Manipulation",
-  "webName": "IAP - Transformation Examples for Data Manipulation",
+  "webName": "IAP Data Manipulation Transformations",
   "type": "Transformation Project",
-  "vendor": "IAP",
-  "product": "Data Manipulation",
+  "vendor": "",
+  "product": "",
   "method": "REST",
   "osVersions": [],
   "apiVersions": [],
@@ -14,17 +14,7 @@
   "tags": [],
   "useCases": [],
   "deprecated": {
-    "isDeprecated": false,
-    "deprecatedOn": "",
-    "endOfLife": "",
-    "replacedBy": {
-      "name": "",
-      "overview": "",
-      "repoLink": "",
-      "docLink": "",
-      "webLink": "",
-      "isProductFeature": false
-    }
+    "isDeprecated": false
   },
   "brokerSince": "",
   "documentation": {
@@ -33,13 +23,19 @@
     "npmLink": "https://www.npmjs.com/package/@itentialopensource/iap-data-manipulation",
     "docLink": "",
     "demoLinks": [],
+    "trainingLinks": [],
     "faqLink": "",
     "contributeLink": "",
     "issueLink": "",
     "webLink": "",
     "vendorLink": "https://www.itential.com/",
     "productLink": "",
-    "apiLinks": []
+    "apiLinks": [
+      {
+        "title": "Mozilla Developer Network JavaScript Reference",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
+      }
+    ]
   },
   "assets": [
     {

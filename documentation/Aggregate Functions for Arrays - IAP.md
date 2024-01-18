@@ -15,7 +15,7 @@
     - [Entry Point IAP Component](#entry-point-iap-component)
     - [Inputs](#inputs)
     - [Outputs](#outputs)
-    - [Related Documentation](#related-documentation)
+    - [API Links](#api-links)
     - [Example Inputs and Outputs](#example-inputs-and-outputs)
   - [Support](#support)
 
@@ -231,9 +231,10 @@ The following table lists the outputs of the Transformation Project:
   
 
 
-### Related Documentation
+### API Links
 
-No related documentation provided.
+
+- [Mozilla Developer Network JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 
 
 
