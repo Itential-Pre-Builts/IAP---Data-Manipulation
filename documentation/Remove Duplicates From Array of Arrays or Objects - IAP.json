@@ -28,7 +28,16 @@
       "exampleValue": "[\r\n  {\r\n    \"a\": \"a\"\r\n  },\r\n  {\r\n    \"a\": \"b\"\r\n  },\r\n  {\r\n    \"a\": {\r\n      \"a\": [\r\n        1,\r\n        2,\r\n        3\r\n      ]\r\n    }\r\n  }\r\n]"
     }
   ],
-  "apiLinks": [],
+  "apiLinks": [
+    {
+      "title": "IAP JSON Schema Transformation (JST) Designer",
+      "link": "https://docs.itential.com/docs/jst-designer-2023-1"
+    },
+    {
+      "title": "Using Transformations in IAP Workflows",
+      "link": "https://docs.itential.com/docs/transformation-options-4"
+    }
+  ],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"a\": \"a\"\r\n    },\r\n    {\r\n      \"a\": \"b\"\r\n    },\r\n    {\r\n      \"a\": \"a\"\r\n    },\r\n    {\r\n      \"a\": {\r\n        \"a\": [\r\n          1,\r\n          2,\r\n          3\r\n        ]\r\n      }\r\n    },\r\n    {\r\n      \"a\": {\r\n        \"a\": [\r\n          1,\r\n          2,\r\n          3\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",
