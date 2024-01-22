@@ -35,7 +35,16 @@
       "exampleValue": "[[1, 2, 3], [\"a\", \"b\"]]"
     }
   ],
-  "apiLinks": [],
+  "apiLinks": [
+    {
+      "title": "IAP JSON Schema Transformation (JST) Designer",
+      "link": "https://docs.itential.com/docs/jst-designer-2023-1"
+    },
+    {
+      "title": "Using Transformations in IAP Workflows",
+      "link": "https://docs.itential.com/docs/transformation-options-4"
+    }
+  ],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"originalArray\": [\r\n    1,\r\n    2,\r\n    3,\r\n    \"a\",\r\n    \"b\"\r\n  ],\r\n  \"chunkSize\": 3\r\n}",
