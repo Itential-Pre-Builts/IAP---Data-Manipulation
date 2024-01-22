@@ -55,7 +55,16 @@
       "exampleValue": "{\r\n  \"city\": \"Dallas\",\r\n  \"state\": \"TX\"\r\n}"
     }
   ],
-  "apiLinks": [],
+  "apiLinks": [
+    {
+      "title": "IAP JSON Schema Transformation (JST) Designer",
+      "link": "https://docs.itential.com/docs/jst-designer-2023-1"
+    },
+    {
+      "title": "Using Transformations in IAP Workflows",
+      "link": "https://docs.itential.com/docs/transformation-options-4"
+    }
+  ],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"filterableArray\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"keyToFilterOn\": \"state\",\r\n  \"valueToFind\": \"GA\",\r\n  \"discardMatching\": true\r\n}",

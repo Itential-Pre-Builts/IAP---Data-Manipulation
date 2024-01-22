@@ -35,7 +35,16 @@
       "exampleValue": "{\r\n  \"fruit\": \"apple\",\r\n  \"quantity\": \"30\",\r\n  \"price\": 42.2,\r\n  \"aisle\": \"23b\"\r\n}"
     }
   ],
-  "apiLinks": [],
+  "apiLinks": [
+    {
+      "title": "IAP JSON Schema Transformation (JST) Designer",
+      "link": "https://docs.itential.com/docs/jst-designer-2023-1"
+    },
+    {
+      "title": "Using Transformations in IAP Workflows",
+      "link": "https://docs.itential.com/docs/transformation-options-4"
+    }
+  ],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"keysToConvert\": [\r\n    \"price\",\r\n    \"aisle\"\r\n  ],\r\n  \"data\": {\r\n    \"fruit\": \"apple\",\r\n    \"quantity\": \"30\",\r\n    \"price\": \"42.2\",\r\n    \"aisle\": \"23b\"\r\n  }\r\n}",

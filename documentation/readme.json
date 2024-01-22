@@ -20,16 +20,7 @@
   "webName": "IAP Data Manipulation Transformations",
   "useCases": [],
   "webLink": "",
-  "demoLinks": [
-    {
-      "title": "IAP JSON Schema Transformation (JST) Designer ",
-      "link": "https://docs.itential.com/docs/jst-designer-2023-1"
-    },
-    {
-      "title": "Using Transformations in IAP Workflows",
-      "link": "https://docs.itential.com/docs/transformation-options-4"
-    }
-  ],
+  "demoLinks": [],
   "trainingLinks": [
     {
       "title": "Itential Academy",

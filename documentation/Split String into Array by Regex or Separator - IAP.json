@@ -49,7 +49,16 @@
       "exampleValue": "[\r\n  \"Hello\",\r\n  \"world-\",\r\n  \",\",\r\n  \"\"\r\n]"
     }
   ],
-  "apiLinks": [],
+  "apiLinks": [
+    {
+      "title": "IAP JSON Schema Transformation (JST) Designer",
+      "link": "https://docs.itential.com/docs/jst-designer-2023-1"
+    },
+    {
+      "title": "Using Transformations in IAP Workflows",
+      "link": "https://docs.itential.com/docs/transformation-options-4"
+    }
+  ],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"inputString\": \"Hello123world-456,2024\",\r\n  \"separatorString\": \"\",\r\n  \"separatorRegex\": \"\/\\d+\/gm\",\r\n  \"limit\": null\r\n}",
