@@ -22,8 +22,22 @@
     "repoLink": "https://gitlab.com/itentialopensource/pre-built-automations/iap-data-manipulation",
     "npmLink": "https://www.npmjs.com/package/@itentialopensource/iap-data-manipulation",
     "docLink": "",
-    "demoLinks": [],
-    "trainingLinks": [],
+    "demoLinks": [
+      {
+        "title": "IAP JSON Schema Transformation (JST) Designer ",
+        "link": "https://docs.itential.com/docs/jst-designer-2023-1"
+      },
+      {
+        "title": "Using Transformations in IAP Workflows",
+        "link": "https://docs.itential.com/docs/transformation-options-4"
+      }
+    ],
+    "trainingLinks": [
+      {
+        "title": "Itential Academy",
+        "link": "https://www.itential.com/itential-academy/"
+      }
+    ],
     "faqLink": "",
     "contributeLink": "",
     "issueLink": "",

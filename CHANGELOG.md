@@ -1,4 +1,12 @@
 
+## 1.0.2-2023.1.1 [01-22-2024]
+
+* Adds demoLinks and trainingLink metadata
+
+See merge request itentialopensource/pre-built-automations/iap-data-manipulation!3
+
+---
+
 ## 1.0.1-2023.1.0 [01-18-2024]
 
 * Creating 2023.1 release branch
@@ -70,4 +78,4 @@ See merge request itentialopensource/pre-built-automations/pre-built-template-20
 See merge request itentialopensource/pre-built-automations/pre-built-template-2023-1!1
 
 ---
-\n\n\n\n\n\n\n\n\n
+\n\n\n\n\n\n\n\n\n\n
