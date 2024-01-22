@@ -1,4 +1,12 @@
 
+## 1.0.1 [01-22-2024]
+
+* Updates demoLinks and trainingLink metadata
+
+See merge request itentialopensource/pre-built-automations/iap-data-manipulation!4
+
+---
+
 ## 1.0.0 [01-18-2024]
 
 * Adds Project file and creates new major release
@@ -62,4 +70,4 @@ See merge request itentialopensource/pre-built-automations/pre-built-template-20
 See merge request itentialopensource/pre-built-automations/pre-built-template-2023-1!1
 
 ---
-\n\n\n\n\n\n\n\n
+\n\n\n\n\n\n\n\n\n
