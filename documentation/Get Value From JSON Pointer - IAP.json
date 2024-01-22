@@ -35,7 +35,16 @@
       "exampleValue": "2"
     }
   ],
-  "apiLinks": [],
+  "apiLinks": [
+    {
+      "title": "IAP JSON Schema Transformation (JST) Designer",
+      "link": "https://docs.itential.com/docs/jst-designer-2023-1"
+    },
+    {
+      "title": "Using Transformations in IAP Workflows",
+      "link": "https://docs.itential.com/docs/transformation-options-4"
+    }
+  ],
   "exampleInputsAndOutputs": [
     {
       "exampleInput": "{\r\n  \"jsonPointer\": \"\/a\/b\",\r\n  \"obj\": {\r\n    \"a\": {\r\n      \"b\": 2,\r\n      \"c\": 3\r\n    }\r\n  }\r\n}",
