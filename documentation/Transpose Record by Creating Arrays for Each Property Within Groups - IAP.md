@@ -178,6 +178,10 @@ The following table lists the outputs of the Transformation Project:
 
 ### API Links
 As noted on the JSON Schema Transformation (JST) Designer documentation for [Using a Method](https://docs.itential.com/docs/jst-designer-2023-1#using-a-method), select the information (i) icon in the header of the method to be redirected to the [Mozilla Developer Network JavaScript reference documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference) for the method. 
+
+
+- [IAP JSON Schema Transformation (JST) Designer](https://docs.itential.com/docs/jst-designer-2023-1)
+- [Using Transformations in IAP Workflows](https://docs.itential.com/docs/transformation-options-4)
  
 
 
