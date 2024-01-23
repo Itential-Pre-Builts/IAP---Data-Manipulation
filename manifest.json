@@ -113,6 +113,15 @@
       }
     },
     {
+      "id": "65aecf068e4f3c025aadb542",
+      "name": "Implement Set Operations on Arrays - IAP",
+      "type": "transformation",
+      "location": "/bundles/transformations/Implement Set Operations on Arrays - IAP.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
       "id": "5f232737ebaff79cdeb87351",
       "name": "Parse Number - IAP",
       "type": "transformation",

@@ -131,6 +131,15 @@
         }
       },
       {
+        "id": "65aecf068e4f3c025aadb542",
+        "name": "Implement Set Operations on Arrays - IAP",
+        "type": "transformation",
+        "location": "/bundles/transformations/Implement Set Operations on Arrays - IAP.json",
+        "properties": {
+          "entryPoint": false
+        }
+      },
+      {
         "id": "5f232737ebaff79cdeb87351",
         "name": "Parse Number - IAP",
         "type": "transformation",
@@ -12791,6 +12800,2091 @@
           "username": "admin@pronghorn"
         },
         "lastUpdated": "2024-01-08T16:57:19.529Z",
+        "lastUpdatedBy": {
+          "_id": "652054b92c281c82e5b4c8b4",
+          "provenance": "local_aaa",
+          "username": "admin@pronghorn"
+        },
+        "version": "4.1.2-2023.1.10",
+        "tags": []
+      }
+    },
+    {
+      "type": "transformation",
+      "data": {
+        "_id": "65aecf068e4f3c025aadb542",
+        "name": "Implement Set Operations on Arrays - IAP",
+        "incoming": [
+          {
+            "$id": "array1",
+            "type": "array",
+            "items": {
+              "type": [
+                "array",
+                "number",
+                "integer",
+                "string",
+                "object"
+              ],
+              "examples": []
+            }
+          },
+          {
+            "$id": "array2",
+            "type": "array",
+            "items": {
+              "type": [
+                "array",
+                "number",
+                "integer",
+                "string",
+                "object"
+              ],
+              "examples": []
+            }
+          }
+        ],
+        "outgoing": [
+          {
+            "$id": "intersection",
+            "type": "array",
+            "items": {
+              "type": [
+                "array",
+                "number",
+                "integer",
+                "string",
+                "object"
+              ],
+              "examples": []
+            }
+          },
+          {
+            "$id": "array1Only",
+            "type": "array",
+            "items": {
+              "type": [
+                "array",
+                "number",
+                "integer",
+                "string",
+                "object"
+              ],
+              "examples": []
+            }
+          },
+          {
+            "$id": "array2Only",
+            "type": "array",
+            "items": {
+              "type": [
+                "array",
+                "number",
+                "integer",
+                "string",
+                "object"
+              ],
+              "examples": []
+            }
+          },
+          {
+            "$id": "difference",
+            "type": "array",
+            "items": {
+              "type": [
+                "array",
+                "number",
+                "integer",
+                "string",
+                "object"
+              ],
+              "examples": []
+            }
+          },
+          {
+            "$id": "union",
+            "type": "array",
+            "items": {
+              "type": [
+                "array",
+                "number",
+                "integer",
+                "string",
+                "object"
+              ],
+              "examples": []
+            }
+          }
+        ],
+        "steps": [
+          {
+            "id": 3,
+            "type": "declaration",
+            "library": "Array",
+            "method": "new Array",
+            "args": [],
+            "view": {
+              "row": 3,
+              "col": 1
+            },
+            "summary": "Initialize empty array for Intersection",
+            "polymorphIndex": 0
+          },
+          {
+            "id": 4,
+            "type": "assign",
+            "from": {
+              "location": "incoming",
+              "name": "array1",
+              "ptr": ""
+            },
+            "to": {
+              "location": "function",
+              "name": 1,
+              "ptr": "/args/0/value"
+            }
+          },
+          {
+            "id": 5,
+            "type": "assign",
+            "from": {
+              "location": "incoming",
+              "name": "array2",
+              "ptr": ""
+            },
+            "to": {
+              "location": "function",
+              "name": 2,
+              "ptr": "/args/0/value"
+            }
+          },
+          {
+            "id": 6,
+            "type": "declaration",
+            "library": "Array",
+            "method": "new Array",
+            "args": [],
+            "view": {
+              "row": 4,
+              "col": 1
+            },
+            "summary": "Initialize empty array for difference",
+            "polymorphIndex": 0
+          },
+          {
+            "id": 1,
+            "type": "function",
+            "function": "removeDuplicates",
+            "args": [
+              ""
+            ],
+            "view": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "id": 2,
+            "type": "function",
+            "function": "removeDuplicates",
+            "args": [
+              ""
+            ],
+            "view": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          {
+            "id": 8,
+            "type": "assign",
+            "from": {
+              "location": "declaration",
+              "name": 3,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "declaration",
+              "name": 7,
+              "ptr": "/args/0/value"
+            }
+          },
+          {
+            "id": 9,
+            "type": "assign",
+            "from": {
+              "location": "declaration",
+              "name": 6,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "declaration",
+              "name": 7,
+              "ptr": "/args/1/value"
+            }
+          },
+          {
+            "id": 12,
+            "type": "assign",
+            "from": {
+              "location": "function",
+              "name": 1,
+              "ptr": "/return/array"
+            },
+            "to": {
+              "location": "method",
+              "name": 10,
+              "ptr": "/args/0/value"
+            }
+          },
+          {
+            "id": 13,
+            "type": "assign",
+            "from": {
+              "location": "function",
+              "name": 1,
+              "ptr": "/return/array"
+            },
+            "to": {
+              "location": "method",
+              "name": 11,
+              "ptr": "/args/3/value"
+            }
+          },
+          {
+            "id": 16,
+            "type": "assign",
+            "from": {
+              "location": "function",
+              "name": 2,
+              "ptr": "/return/array"
+            },
+            "to": {
+              "location": "method",
+              "name": 10,
+              "ptr": "/args/3/value"
+            }
+          },
+          {
+            "id": 17,
+            "type": "assign",
+            "from": {
+              "location": "function",
+              "name": 2,
+              "ptr": "/return/array"
+            },
+            "to": {
+              "location": "method",
+              "name": 11,
+              "ptr": "/args/0/value"
+            }
+          },
+          {
+            "id": 37,
+            "type": "assign",
+            "from": {
+              "location": "function",
+              "name": 1,
+              "ptr": "/return/array"
+            },
+            "to": {
+              "location": "method",
+              "name": 31,
+              "ptr": "/args/0/value"
+            }
+          },
+          {
+            "id": 38,
+            "type": "assign",
+            "from": {
+              "location": "function",
+              "name": 2,
+              "ptr": "/return/array"
+            },
+            "to": {
+              "location": "method",
+              "name": 31,
+              "ptr": "/args/1/value"
+            }
+          },
+          {
+            "id": 7,
+            "type": "declaration",
+            "library": "Array",
+            "method": "new Array",
+            "args": [
+              null,
+              null
+            ],
+            "view": {
+              "row": 3,
+              "col": 2
+            },
+            "summary": "Array for accumulator",
+            "polymorphIndex": 0
+          },
+          {
+            "id": 14,
+            "type": "assign",
+            "from": {
+              "location": "declaration",
+              "name": 7,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "method",
+              "name": 11,
+              "ptr": "/args/2/value"
+            }
+          },
+          {
+            "id": 15,
+            "type": "assign",
+            "from": {
+              "location": "declaration",
+              "name": 7,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "method",
+              "name": 10,
+              "ptr": "/args/2/value"
+            }
+          },
+          {
+            "id": 31,
+            "type": "method",
+            "library": "Array",
+            "method": "concat",
+            "args": [
+              null,
+              null
+            ],
+            "view": {
+              "row": 4,
+              "col": 2
+            },
+            "summary": "merge arrays for union"
+          },
+          {
+            "id": 35,
+            "type": "assign",
+            "from": {
+              "location": "method",
+              "name": 31,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "function",
+              "name": 34,
+              "ptr": "/args/0/value"
+            }
+          },
+          {
+            "id": 34,
+            "type": "function",
+            "function": "removeDuplicates",
+            "args": [
+              ""
+            ],
+            "view": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          {
+            "id": 36,
+            "type": "assign",
+            "from": {
+              "location": "function",
+              "name": 34,
+              "ptr": "/return/array"
+            },
+            "to": {
+              "location": "outgoing",
+              "name": "union",
+              "ptr": ""
+            }
+          },
+          {
+            "id": 10,
+            "type": "method",
+            "library": "Array",
+            "method": "reduce",
+            "args": [
+              null,
+              "ƒ_reduce_1",
+              null,
+              null
+            ],
+            "view": {
+              "row": 1,
+              "col": 3
+            },
+            "summary": "compute intersection & array1-array2"
+          },
+          {
+            "id": 11,
+            "type": "method",
+            "library": "Array",
+            "method": "reduce",
+            "args": [
+              null,
+              "ƒ_reduce_1",
+              null,
+              null
+            ],
+            "view": {
+              "row": 2,
+              "col": 3
+            },
+            "summary": "compute array2-array1"
+          },
+          {
+            "id": 21,
+            "type": "assign",
+            "from": {
+              "location": "method",
+              "name": 10,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "method",
+              "name": 18,
+              "ptr": "/args/0/value"
+            }
+          },
+          {
+            "id": 22,
+            "type": "assign",
+            "from": {
+              "location": "method",
+              "name": 10,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "method",
+              "name": 19,
+              "ptr": "/args/0/value"
+            }
+          },
+          {
+            "id": 23,
+            "type": "assign",
+            "from": {
+              "location": "method",
+              "name": 11,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "method",
+              "name": 20,
+              "ptr": "/args/0/value"
+            }
+          },
+          {
+            "id": 18,
+            "type": "method",
+            "library": "Array",
+            "method": "getIndex",
+            "args": [
+              null,
+              0
+            ],
+            "view": {
+              "row": 1,
+              "col": 4
+            },
+            "summary": "fetch intersection"
+          },
+          {
+            "id": 19,
+            "type": "method",
+            "library": "Array",
+            "method": "getIndex",
+            "args": [
+              null,
+              1
+            ],
+            "view": {
+              "row": 2,
+              "col": 4
+            },
+            "summary": "fetch array1-array2"
+          },
+          {
+            "id": 20,
+            "type": "method",
+            "library": "Array",
+            "method": "getIndex",
+            "args": [
+              null,
+              1
+            ],
+            "view": {
+              "row": 3,
+              "col": 4
+            },
+            "summary": "fetch array2-array1"
+          },
+          {
+            "id": 24,
+            "type": "assign",
+            "from": {
+              "location": "method",
+              "name": 20,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "outgoing",
+              "name": "array2Only",
+              "ptr": ""
+            }
+          },
+          {
+            "id": 25,
+            "type": "assign",
+            "from": {
+              "location": "method",
+              "name": 19,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "outgoing",
+              "name": "array1Only",
+              "ptr": ""
+            }
+          },
+          {
+            "id": 26,
+            "type": "assign",
+            "from": {
+              "location": "method",
+              "name": 18,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "outgoing",
+              "name": "intersection",
+              "ptr": ""
+            }
+          },
+          {
+            "id": 28,
+            "type": "assign",
+            "from": {
+              "location": "method",
+              "name": 19,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "method",
+              "name": 27,
+              "ptr": "/args/0/value"
+            }
+          },
+          {
+            "id": 29,
+            "type": "assign",
+            "from": {
+              "location": "method",
+              "name": 20,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "method",
+              "name": 27,
+              "ptr": "/args/1/value"
+            }
+          },
+          {
+            "id": 27,
+            "type": "method",
+            "library": "Array",
+            "method": "concat",
+            "args": [
+              null,
+              null
+            ],
+            "view": {
+              "row": 3,
+              "col": 5
+            },
+            "summary": "create difference array"
+          },
+          {
+            "id": 30,
+            "type": "assign",
+            "from": {
+              "location": "method",
+              "name": 27,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "outgoing",
+              "name": "difference",
+              "ptr": ""
+            }
+          }
+        ],
+        "functions": [
+          {
+            "incoming": [
+              {
+                "$id": "array",
+                "type": "array",
+                "items": {
+                  "type": [
+                    "object",
+                    "array"
+                  ]
+                }
+              }
+            ],
+            "outgoing": [
+              {
+                "$id": "array",
+                "type": "array",
+                "items": {
+                  "type": [
+                    "object",
+                    "array"
+                  ]
+                }
+              }
+            ],
+            "steps": [
+              {
+                "id": 3,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "array",
+                  "ptr": ""
+                },
+                "to": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 13,
+                "type": "declaration",
+                "library": "Array",
+                "method": "new Array",
+                "args": [],
+                "view": {
+                  "row": 2,
+                  "col": 1
+                },
+                "summary": "Accumulator array for final result",
+                "polymorphIndex": 0
+              },
+              {
+                "id": 1,
+                "type": "method",
+                "library": "Array",
+                "method": "reverse",
+                "args": [
+                  null
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 1
+                },
+                "summary": "Reversing to preserve output order"
+              },
+              {
+                "id": 14,
+                "type": "assign",
+                "from": {
+                  "location": "declaration",
+                  "name": 13,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "declaration",
+                  "name": 6,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 4,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 2,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 15,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "declaration",
+                  "name": 6,
+                  "ptr": "/args/1/value"
+                }
+              },
+              {
+                "id": 6,
+                "type": "declaration",
+                "library": "Array",
+                "method": "new Array",
+                "args": [
+                  null,
+                  null
+                ],
+                "view": {
+                  "row": 2,
+                  "col": 2
+                },
+                "summary": "Combined Accumulator",
+                "polymorphIndex": 0
+              },
+              {
+                "id": 12,
+                "type": "assign",
+                "from": {
+                  "location": "declaration",
+                  "name": 6,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 2,
+                  "ptr": "/args/2/value"
+                }
+              },
+              {
+                "id": 2,
+                "type": "method",
+                "library": "Array",
+                "method": "reduce",
+                "args": [
+                  null,
+                  "arrayReducer",
+                  null
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 3
+                },
+                "summary": "Check each value and DEDUP"
+              },
+              {
+                "id": 18,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 2,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 17,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 17,
+                "type": "method",
+                "library": "Array",
+                "method": "getIndex",
+                "args": [
+                  null,
+                  0
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 4
+                },
+                "summary": "Get the accumulator array"
+              },
+              {
+                "id": 21,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 17,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "outgoing",
+                  "name": "array",
+                  "ptr": ""
+                }
+              }
+            ],
+            "functions": [],
+            "name": "removeDuplicates",
+            "view": {
+              "col": 4,
+              "row": 5
+            },
+            "id": "removeDuplicates",
+            "_id": "5f1e1c05655a0306dde634b1",
+            "comments": []
+          },
+          {
+            "incoming": [
+              {
+                "type": [
+                  "array",
+                  "boolean",
+                  "number",
+                  "integer",
+                  "string",
+                  "object",
+                  "null"
+                ],
+                "$id": "accumulator"
+              },
+              {
+                "type": [
+                  "array",
+                  "boolean",
+                  "number",
+                  "integer",
+                  "string",
+                  "object",
+                  "null"
+                ],
+                "$id": "currentValue"
+              },
+              {
+                "title": "index",
+                "type": "number",
+                "$id": "index"
+              },
+              {
+                "type": "array",
+                "$id": "array"
+              },
+              {
+                "$id": "thisArg",
+                "type": "object",
+                "properties": {
+                  "0_array": {
+                    "$id": "0_array",
+                    "type": "array",
+                    "items": {
+                      "type": [
+                        "object",
+                        "array"
+                      ]
+                    }
+                  }
+                },
+                "isContext": true,
+                "isIndexed": true
+              }
+            ],
+            "outgoing": [
+              {
+                "title": "accumulator",
+                "type": [
+                  "array",
+                  "boolean",
+                  "number",
+                  "integer",
+                  "string",
+                  "object",
+                  "null"
+                ],
+                "$id": "accumulator"
+              }
+            ],
+            "steps": [
+              {
+                "id": 2,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "thisArg",
+                  "ptr": "/0_array"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 3,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "currentValue",
+                  "ptr": ""
+                },
+                "to": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/args/2/value"
+                }
+              },
+              {
+                "id": 5,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "accumulator",
+                  "ptr": ""
+                },
+                "to": {
+                  "location": "method",
+                  "name": 4,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 7,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "accumulator",
+                  "ptr": ""
+                },
+                "to": {
+                  "location": "method",
+                  "name": 6,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 8,
+                "type": "declaration",
+                "library": "Array",
+                "method": "new Array",
+                "args": [],
+                "view": {
+                  "row": 3,
+                  "col": 1
+                },
+                "summary": "initialize empty array for false condition",
+                "polymorphIndex": 0
+              },
+              {
+                "id": 39,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "currentValue",
+                  "ptr": ""
+                },
+                "to": {
+                  "location": "declaration",
+                  "name": 33,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 4,
+                "type": "method",
+                "library": "Array",
+                "method": "getIndex",
+                "args": [
+                  null,
+                  0
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 1
+                },
+                "summary": "fetch accumulator for intersection"
+              },
+              {
+                "id": 6,
+                "type": "method",
+                "library": "Array",
+                "method": "getIndex",
+                "args": [
+                  null,
+                  1
+                ],
+                "view": {
+                  "row": 2,
+                  "col": 1
+                },
+                "summary": "fetch accumulator for subtraction"
+              },
+              {
+                "id": 22,
+                "type": "assign",
+                "from": {
+                  "location": "declaration",
+                  "name": 8,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 16,
+                  "ptr": "/args/2/value"
+                }
+              },
+              {
+                "id": 33,
+                "type": "declaration",
+                "library": "Array",
+                "method": "new Array",
+                "args": [
+                  null
+                ],
+                "view": {
+                  "row": 3,
+                  "col": 3
+                },
+                "summary": "send current item for true condition",
+                "polymorphIndex": 0
+              },
+              {
+                "id": 44,
+                "type": "assign",
+                "from": {
+                  "location": "declaration",
+                  "name": 8,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 15,
+                  "ptr": "/args/2/value"
+                }
+              },
+              {
+                "id": 1,
+                "type": "method",
+                "library": "Array",
+                "method": "filter",
+                "args": [
+                  null,
+                  "checkEquality",
+                  null
+                ],
+                "view": {
+                  "row": 2,
+                  "col": 2
+                },
+                "summary": "fetch matching items for current item"
+              },
+              {
+                "id": 26,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 4,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 23,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 29,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 6,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 24,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 40,
+                "type": "assign",
+                "from": {
+                  "location": "declaration",
+                  "name": 33,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 15,
+                  "ptr": "/args/1/value"
+                }
+              },
+              {
+                "id": 41,
+                "type": "assign",
+                "from": {
+                  "location": "declaration",
+                  "name": 33,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 16,
+                  "ptr": "/args/1/value"
+                }
+              },
+              {
+                "id": 10,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 9,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 9,
+                "type": "method",
+                "library": "Array",
+                "method": "length",
+                "args": [
+                  null
+                ],
+                "view": {
+                  "row": 2,
+                  "col": 3
+                },
+                "summary": "count number of items matched"
+              },
+              {
+                "id": 13,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 9,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 11,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 14,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 9,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 12,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 11,
+                "type": "method",
+                "library": "Relational",
+                "method": "greaterThan",
+                "args": [
+                  null,
+                  "0"
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 4
+                },
+                "summary": "does the current item exist in array?"
+              },
+              {
+                "id": 12,
+                "type": "method",
+                "library": "Equality",
+                "method": "equality",
+                "args": [
+                  null,
+                  "0"
+                ],
+                "view": {
+                  "row": 2,
+                  "col": 4
+                },
+                "summary": "does the current item not exist in array?"
+              },
+              {
+                "id": 17,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 11,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 15,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 18,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 12,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 16,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 15,
+                "type": "method",
+                "library": "Conditional",
+                "method": "ternary",
+                "args": [
+                  null,
+                  null,
+                  null
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 5
+                },
+                "summary": "send corresponding value to intersection array"
+              },
+              {
+                "id": 16,
+                "type": "method",
+                "library": "Conditional",
+                "method": "ternary",
+                "args": [
+                  null,
+                  null,
+                  null
+                ],
+                "view": {
+                  "row": 2,
+                  "col": 5
+                },
+                "summary": "send corresponding value to subtraction array"
+              },
+              {
+                "id": 42,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 15,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 23,
+                  "ptr": "/args/1/value"
+                }
+              },
+              {
+                "id": 43,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 16,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 24,
+                  "ptr": "/args/1/value"
+                }
+              },
+              {
+                "id": 23,
+                "type": "method",
+                "library": "Array",
+                "method": "concat",
+                "args": [
+                  null,
+                  null
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 6
+                },
+                "summary": "add item to intersection array"
+              },
+              {
+                "id": 24,
+                "type": "method",
+                "library": "Array",
+                "method": "concat",
+                "args": [
+                  null,
+                  null
+                ],
+                "view": {
+                  "row": 2,
+                  "col": 6
+                },
+                "summary": "add item to subtraction array"
+              },
+              {
+                "id": 28,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 23,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "declaration",
+                  "name": 25,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 31,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 24,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "declaration",
+                  "name": 25,
+                  "ptr": "/args/1/value"
+                }
+              },
+              {
+                "id": 25,
+                "type": "declaration",
+                "library": "Array",
+                "method": "new Array",
+                "args": [
+                  null,
+                  null
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 7
+                },
+                "summary": "recreate accumulator",
+                "polymorphIndex": 0
+              },
+              {
+                "id": 32,
+                "type": "assign",
+                "from": {
+                  "location": "declaration",
+                  "name": 25,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "outgoing",
+                  "name": "accumulator",
+                  "ptr": ""
+                }
+              }
+            ],
+            "functions": [],
+            "name": "compute",
+            "view": {
+              "col": 7,
+              "row": 5
+            },
+            "id": "ƒ_reduce_1",
+            "comments": []
+          },
+          {
+            "incoming": [
+              {
+                "type": [
+                  "array",
+                  "boolean",
+                  "number",
+                  "integer",
+                  "string",
+                  "object",
+                  "null"
+                ],
+                "$id": "accumulator"
+              },
+              {
+                "type": [
+                  "array",
+                  "boolean",
+                  "number",
+                  "integer",
+                  "string",
+                  "object",
+                  "null"
+                ],
+                "$id": "currentValue"
+              },
+              {
+                "title": "index",
+                "type": "number",
+                "$id": "index"
+              },
+              {
+                "type": "array",
+                "$id": "array"
+              },
+              {
+                "$id": "thisArg",
+                "type": "object",
+                "properties": {},
+                "isContext": true
+              }
+            ],
+            "outgoing": [
+              {
+                "title": "accumulator",
+                "type": [
+                  "array",
+                  "boolean",
+                  "number",
+                  "integer",
+                  "string",
+                  "object",
+                  "null"
+                ],
+                "$id": "accumulator"
+              }
+            ],
+            "steps": [
+              {
+                "id": 2,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "accumulator",
+                  "ptr": ""
+                },
+                "to": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 4,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "accumulator",
+                  "ptr": ""
+                },
+                "to": {
+                  "location": "method",
+                  "name": 3,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 43,
+                "type": "declaration",
+                "library": "Array",
+                "method": "new Array",
+                "args": [],
+                "view": {
+                  "row": 4,
+                  "col": 3
+                },
+                "summary": "Add nothing to accumulator array",
+                "polymorphIndex": 0
+              },
+              {
+                "id": 1,
+                "type": "method",
+                "library": "Array",
+                "method": "getIndex",
+                "args": [
+                  null,
+                  0
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 1
+                },
+                "summary": "Get the Accumulator array"
+              },
+              {
+                "id": 3,
+                "type": "method",
+                "library": "Array",
+                "method": "getIndex",
+                "args": [
+                  null,
+                  1
+                ],
+                "view": {
+                  "row": 2,
+                  "col": 1
+                },
+                "summary": "Get the reversed array"
+              },
+              {
+                "id": 44,
+                "type": "assign",
+                "from": {
+                  "location": "declaration",
+                  "name": 43,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 41,
+                  "ptr": "/args/2/value"
+                }
+              },
+              {
+                "id": 6,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 3,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 5,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 39,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 25,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 5,
+                "type": "method",
+                "library": "Array",
+                "method": "pop",
+                "args": [
+                  null
+                ],
+                "view": {
+                  "row": 2,
+                  "col": 2
+                },
+                "summary": "Pop the last element for comparision"
+              },
+              {
+                "id": 33,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 5,
+                  "ptr": "/return/value"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 31,
+                  "ptr": "/args/2/value"
+                }
+              },
+              {
+                "id": 38,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 5,
+                  "ptr": "/return/array"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 31,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 42,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 5,
+                  "ptr": "/return/value"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 41,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 48,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 5,
+                  "ptr": "/return/value"
+                },
+                "to": {
+                  "location": "declaration",
+                  "name": 47,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 47,
+                "type": "declaration",
+                "library": "Array",
+                "method": "new Array",
+                "args": [
+                  null
+                ],
+                "view": {
+                  "row": 3,
+                  "col": 3
+                },
+                "summary": "Add popped element to accumulator array",
+                "polymorphIndex": 0
+              },
+              {
+                "id": 49,
+                "type": "assign",
+                "from": {
+                  "location": "declaration",
+                  "name": 47,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 41,
+                  "ptr": "/args/1/value"
+                }
+              },
+              {
+                "id": 31,
+                "type": "method",
+                "library": "Array",
+                "method": "filter",
+                "args": [
+                  null,
+                  "ƒ_query_1",
+                  null
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 4
+                },
+                "summary": "Remove other instances of popped element from the array"
+              },
+              {
+                "id": 37,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 31,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "declaration",
+                  "name": 7,
+                  "ptr": "/args/1/value"
+                }
+              },
+              {
+                "id": 41,
+                "type": "method",
+                "library": "Conditional",
+                "method": "ternary",
+                "args": [
+                  null,
+                  null,
+                  null
+                ],
+                "view": {
+                  "row": 3,
+                  "col": 4
+                },
+                "summary": "Check if popped element is not null"
+              },
+              {
+                "id": 46,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 41,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 25,
+                  "ptr": "/args/1/value"
+                }
+              },
+              {
+                "id": 25,
+                "type": "method",
+                "library": "Array",
+                "method": "concat",
+                "args": [
+                  null,
+                  null
+                ],
+                "view": {
+                  "row": 2,
+                  "col": 5
+                },
+                "summary": "Add popped element to accumulator array"
+              },
+              {
+                "id": 28,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 25,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "declaration",
+                  "name": 7,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 7,
+                "type": "declaration",
+                "library": "Array",
+                "method": "new Array",
+                "args": [
+                  null,
+                  null
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 6
+                },
+                "summary": "Make combined accumulator",
+                "polymorphIndex": 0
+              },
+              {
+                "id": 30,
+                "type": "assign",
+                "from": {
+                  "location": "declaration",
+                  "name": 7,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "outgoing",
+                  "name": "accumulator",
+                  "ptr": ""
+                }
+              }
+            ],
+            "functions": [],
+            "name": "arrayReducer",
+            "view": {
+              "col": 6,
+              "row": 5
+            },
+            "id": "arrayReducer",
+            "comments": []
+          },
+          {
+            "incoming": [
+              {
+                "type": [
+                  "array",
+                  "boolean",
+                  "number",
+                  "integer",
+                  "string",
+                  "object",
+                  "null"
+                ],
+                "$id": "element"
+              },
+              {
+                "title": "index",
+                "type": "number",
+                "$id": "index"
+              },
+              {
+                "type": "array",
+                "$id": "array"
+              },
+              {
+                "$id": "thisArg",
+                "type": "object",
+                "properties": {
+                  "0_pop return": {
+                    "type": [
+                      "array",
+                      "boolean",
+                      "number",
+                      "integer",
+                      "string",
+                      "object",
+                      "null"
+                    ]
+                  }
+                },
+                "isContext": true,
+                "isIndexed": true
+              }
+            ],
+            "outgoing": [
+              {
+                "title": "return",
+                "type": "boolean",
+                "$id": "return"
+              }
+            ],
+            "steps": [
+              {
+                "id": 2,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "element",
+                  "ptr": ""
+                },
+                "to": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 3,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "thisArg",
+                  "ptr": "/0_pop return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/args/1/value"
+                }
+              },
+              {
+                "id": 1,
+                "type": "method",
+                "library": "Equality",
+                "method": "deepEquals",
+                "args": [
+                  null,
+                  null
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 1
+                },
+                "summary": "Do deep comparison against all elements "
+              },
+              {
+                "id": 5,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 4,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 4,
+                "type": "method",
+                "library": "Logical",
+                "method": "not",
+                "args": [
+                  null
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 2
+                },
+                "summary": "Remove matching elements"
+              },
+              {
+                "id": 6,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 4,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "outgoing",
+                  "name": "return",
+                  "ptr": ""
+                }
+              }
+            ],
+            "functions": [],
+            "name": "filterObjects",
+            "view": {
+              "col": 2,
+              "row": 5
+            },
+            "id": "ƒ_query_1",
+            "comments": []
+          },
+          {
+            "incoming": [
+              {
+                "type": [
+                  "object",
+                  "array"
+                ],
+                "$id": "element"
+              },
+              {
+                "title": "index",
+                "type": "number",
+                "$id": "index"
+              },
+              {
+                "$id": "array",
+                "type": "array",
+                "items": {
+                  "type": [
+                    "object",
+                    "array"
+                  ]
+                }
+              },
+              {
+                "$id": "thisArg",
+                "type": "object",
+                "properties": {
+                  "0_currentValue": {
+                    "type": [
+                      "array",
+                      "boolean",
+                      "number",
+                      "integer",
+                      "string",
+                      "object",
+                      "null"
+                    ],
+                    "$id": "0_currentValue"
+                  }
+                },
+                "isContext": true,
+                "isIndexed": true
+              }
+            ],
+            "outgoing": [
+              {
+                "title": "return",
+                "type": "boolean",
+                "$id": "return"
+              }
+            ],
+            "steps": [
+              {
+                "id": 2,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "element",
+                  "ptr": ""
+                },
+                "to": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/args/0/value"
+                }
+              },
+              {
+                "id": 3,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "thisArg",
+                  "ptr": "/0_currentValue"
+                },
+                "to": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/args/1/value"
+                }
+              },
+              {
+                "id": 1,
+                "type": "method",
+                "library": "Equality",
+                "method": "deepEquals",
+                "args": [
+                  null,
+                  null
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 1
+                },
+                "summary": "filter out matching objects"
+              },
+              {
+                "id": 4,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "outgoing",
+                  "name": "return",
+                  "ptr": ""
+                }
+              }
+            ],
+            "functions": [],
+            "name": "checkEquality",
+            "view": {
+              "col": 1,
+              "row": 5
+            },
+            "id": "checkEquality",
+            "comments": []
+          }
+        ],
+        "comments": [],
+        "view": {
+          "col": 5,
+          "row": 5
+        },
+        "created": "2024-01-22T20:24:38.508Z",
+        "createdBy": {
+          "_id": "652054b92c281c82e5b4c8b4",
+          "provenance": "local_aaa",
+          "username": "admin@pronghorn"
+        },
+        "lastUpdated": "2024-01-22T21:02:59.545Z",
         "lastUpdatedBy": {
           "_id": "652054b92c281c82e5b4c8b4",
           "provenance": "local_aaa",
