@@ -53,8 +53,8 @@ This Transformation Project contains several transformation examples that are us
       <td><a href='https://gitlab.com/itentialopensource/pre-built-automations/iap-data-manipulation/-/blob/release/2023.1/documentation/Group Records by Property - IAP.md' target='_blank'>Group Records by Property - IAP</a></td>
       <td>Group records by a property</td>
     </tr>    <tr>
-      <td><a href='https://gitlab.com/itentialopensource/pre-built-automations/iap-data-manipulation/-/blob/master/documentation/Implement Set Operations on Arrays - IAP.md' target='_blank'>Implement Set Operations on Arrays - IAP</a></td>
-      <td>Implement set operations on 2 arrays</td>
+      <td><a href='https://gitlab.com/itentialopensource/pre-built-automations/iap-data-manipulation/-/blob/release/2023.1/documentation/Implement Set Operations on Arrays - IAP.md' target='_blank'>Implement Set Operations on Arrays - IAP</a></td>
+      <td>Implement set operations on 2 arrays including union, intersection, set difference and symmetric difference</td>
     </tr>    <tr>
       <td><a href='https://gitlab.com/itentialopensource/pre-built-automations/iap-data-manipulation/-/blob/release/2023.1/documentation/Parse Number - IAP.md' target='_blank'>Parse Number - IAP</a></td>
       <td>Convert strings and strings within objects to numbers</td>

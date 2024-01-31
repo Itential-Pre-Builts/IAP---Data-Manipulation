@@ -37,12 +37,12 @@
     "productLink": "",
     "apiLinks": [
       {
-        "title": "Using Transformations in IAP Workflows",
-        "link": "https://docs.itential.com/docs/transformation-options-4"
-      },
-      {
         "title": "IAP JSON Schema Transformation (JST) Designer",
         "link": "https://docs.itential.com/docs/jst-designer-2023-1"
+      },
+      {
+        "title": "Using Transformations in IAP Workflows",
+        "link": "https://docs.itential.com/docs/transformation-options-4"
       }
     ]
   },
@@ -183,7 +183,7 @@
       "name": "Implement Set Operations on Arrays - IAP",
       "webName": "Implement Set Operations on Arrays - IAP",
       "assetType": "Transformation",
-      "overview": "Implement set operations on 2 arrays",
+      "overview": "Implement set operations on 2 arrays including union, intersection, set difference and symmetric difference",
       "iapVersions": [
         "2023.1"
       ],
