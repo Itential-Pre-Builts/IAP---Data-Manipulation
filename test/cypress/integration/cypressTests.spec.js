@@ -33,6 +33,7 @@ describe('Default: Cypress Tests', function () {
   let GetRandomElementFromArrayIAP;
   let GetValueFromJSONPointerIAP;
   let GroupRecordsbyPropertyIAP;
+  let ImplementSetOperationsonArraysIAP;
   let ParseNumberIAP;
   let RemoveDuplicatesFromArrayofArraysorObjectsIAP;
   let RemoveDuplicatesFromArrayofPrimitivesIAP;
@@ -82,6 +83,9 @@ describe('Default: Cypress Tests', function () {
     });
     cy.fixture(`../../../bundles/transformations/Group Records by Property - IAP.json`).then((data) => {
       GroupRecordsbyPropertyIAP = data;
+    });
+    cy.fixture(`../../../bundles/transformations/Implement Set Operations on Arrays - IAP.json`).then((data) => {
+      ImplementSetOperationsonArraysIAP = data;
     });
     cy.fixture(`../../../bundles/transformations/Parse Number - IAP.json`).then((data) => {
       ParseNumberIAP = data;
@@ -638,6 +642,107 @@ describe('Default: Cypress Tests', function () {
               "left_office": "2017-01-20",
               "party": "Democratic"
             }
+          ]
+        }
+      });    
+    });
+  });
+
+  describe('Implement Set Operations on Arrays - IAP', function() {
+    it('It should return the expected results for union, intersection, set difference and symmetric difference', function () {
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(ImplementSetOperationsonArraysIAP, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array1": [
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            "apple"
+          ],
+          "array2": [
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              1,
+              3,
+              5
+            ],
+            "apple",
+            99
+          ]
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "intersection": [
+            [
+              1,
+              3,
+              4
+            ],
+            "apple"
+          ],
+          "array1Only": [
+            [
+              1,
+              2
+            ]
+          ],
+          "array2Only": [
+            [
+              1,
+              3,
+              5
+            ],
+            99
+          ],
+          "difference": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3,
+              5
+            ],
+            99
+          ],
+          "union": [
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            "apple",
+            [
+              1,
+              3,
+              5
+            ],
+            99
           ]
         }
       });    

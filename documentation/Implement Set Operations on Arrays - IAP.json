@@ -1,0 +1,87 @@
+{
+  "iapVersions": [
+    "2023.1"
+  ],
+  "capabilities": [
+    {
+      "capability": "This transformation allows IAP users to implement set operations on 2 arrays including union, intersection, set difference and symmetric difference"
+    }
+  ],
+  "entryPoint": {
+    "name": "Implement Set Operations on Arrays - IAP",
+    "type": "Transformation"
+  },
+  "inputs": [
+    {
+      "name": "array1",
+      "type": "array",
+      "required": "yes",
+      "description": "The first array which can contain elements of type arrays, numbers, integers, strings, or objects",
+      "exampleValue": "[\r\n  [\r\n    1,\r\n    3,\r\n    4\r\n  ],\r\n  [\r\n    1,\r\n    3,\r\n    4\r\n  ],\r\n  [\r\n    1,\r\n    2\r\n  ],\r\n  \"apple\"\r\n]"
+    },
+    {
+      "name": "array2",
+      "type": "array",
+      "required": "yes",
+      "description": "The second array which can contain elements of type arrays, numbers, integers, strings, or objects",
+      "exampleValue": "[\r\n  [\r\n    1,\r\n    3,\r\n    4\r\n  ],\r\n  [\r\n    1,\r\n    3,\r\n    5\r\n  ],\r\n  \"apple\",\r\n  99\r\n]"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "intersection",
+      "type": "array",
+      "description": "Array containing elements common to both arrays",
+      "exampleValue": "[\r\n  [\r\n    1,\r\n    3,\r\n    4\r\n  ],\r\n  \"apple\"\r\n]"
+    },
+    {
+      "name": "array1Only",
+      "type": "array",
+      "description": "Array containing elements in \"array1\" but not in \"array2\"",
+      "exampleValue": "[\r\n  [\r\n    1,\r\n    2\r\n  ]\r\n]"
+    },
+    {
+      "name": "array2Only",
+      "type": "array",
+      "description": "Array containing elements in \"array2\" but not in \"array1\"",
+      "exampleValue": "[\r\n  [\r\n    1,\r\n    3,\r\n    5\r\n  ],\r\n  99\r\n]"
+    },
+    {
+      "name": "difference",
+      "type": "array",
+      "description": "Array containing elements that are present in either \"array1\" or \"array2\", but not in both",
+      "exampleValue": "[\r\n  [\r\n    1,\r\n    2\r\n  ],\r\n  [\r\n    1,\r\n    3,\r\n    5\r\n  ],\r\n  99\r\n]"
+    },
+    {
+      "name": "union",
+      "type": "array",
+      "description": "Array containing all unique elements from both arrays",
+      "exampleValue": "[\r\n  [\r\n    1,\r\n    3,\r\n    4\r\n  ],\r\n  [\r\n    1,\r\n    2\r\n  ],\r\n  \"apple\",\r\n  [\r\n    1,\r\n    3,\r\n    5\r\n  ],\r\n  99\r\n]"
+    }
+  ],
+  "apiLinks": [
+    {
+      "title": "IAP JSON Schema Transformation (JST) Designer",
+      "link": "https://docs.itential.com/docs/jst-designer-2023-1"
+    },
+    {
+      "title": "Using Transformations in IAP Workflows",
+      "link": "https://docs.itential.com/docs/transformation-options-4"
+    }
+  ],
+  "exampleInputsAndOutputs": [
+    {
+      "exampleInput": "{\r\n  \"array1\": [\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    [\r\n      1,\r\n      2\r\n    ],\r\n    \"apple\"\r\n  ],\r\n  \"array2\": [\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    [\r\n      1,\r\n      3,\r\n      5\r\n    ],\r\n    \"apple\",\r\n    99\r\n  ]\r\n}",
+      "exampleOutput": "{\r\n  \"intersection\": [\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    \"apple\"\r\n  ],\r\n  \"array1Only\": [\r\n    [\r\n      1,\r\n      2\r\n    ]\r\n  ],\r\n  \"array2Only\": [\r\n    [\r\n      1,\r\n      3,\r\n      5\r\n    ],\r\n    99\r\n  ],\r\n  \"difference\": [\r\n    [\r\n      1,\r\n      2\r\n    ],\r\n    [\r\n      1,\r\n      3,\r\n      5\r\n    ],\r\n    99\r\n  ],\r\n  \"union\": [\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    [\r\n      1,\r\n      2\r\n    ],\r\n    \"apple\",\r\n    [\r\n      1,\r\n      3,\r\n      5\r\n    ],\r\n    99\r\n  ]\r\n}"
+    },
+    {
+      "exampleInput": "{\r\n  \"array1\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Silver Spring\",\r\n      \"state\": \"MD\"\r\n    }\r\n  ],\r\n  \"array2\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ]\r\n}",
+      "exampleOutput": "{\r\n  \"intersection\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    }\r\n  ],\r\n  \"array1Only\": [\r\n    {\r\n      \"city\": \"Silver Spring\",\r\n      \"state\": \"MD\"\r\n    }\r\n  ],\r\n  \"array2Only\": [\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"difference\": [\r\n    {\r\n      \"city\": \"Silver Spring\",\r\n      \"state\": \"MD\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"union\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Silver Spring\",\r\n      \"state\": \"MD\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ]\r\n}"
+    }
+  ],
+  "queryOutput": {},
+  "name": "Implement Set Operations on Arrays - IAP",
+  "overview": "Implement set operations on 2 arrays including union, intersection, set difference and symmetric difference",
+  "webName": "Implement Set Operations on Arrays - IAP",
+  "assetType": "Transformation"
+}

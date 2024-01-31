@@ -180,6 +180,17 @@
       "exampleOutput": "{\r\n  \"fruit\": [\r\n    {\r\n      \"fruit\": \"apple\",\r\n      \"price\": \"42.2\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"fruit\": \"banana\",\r\n      \"price\": \"10.1\",\r\n      \"type\": \"fruit\"\r\n    }\r\n  ],\r\n  \"vegetable\": [\r\n    {\r\n      \"fruit\": \"potato\",\r\n      \"price\": \"20\",\r\n      \"type\": \"vegetable\"\r\n    }\r\n  ]\r\n}"
     },
     {
+      "name": "Implement Set Operations on Arrays - IAP",
+      "webName": "Implement Set Operations on Arrays - IAP",
+      "assetType": "Transformation",
+      "overview": "Implement set operations on 2 arrays",
+      "iapVersions": [
+        "2023.1"
+      ],
+      "exampleInput": "{\r\n  \"array1\": [\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    [\r\n      1,\r\n      2\r\n    ],\r\n    \"apple\"\r\n  ],\r\n  \"array2\": [\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    [\r\n      1,\r\n      3,\r\n      5\r\n    ],\r\n    \"apple\",\r\n    99\r\n  ]\r\n}",
+      "exampleOutput": "{\r\n  \"intersection\": [\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    \"apple\"\r\n  ],\r\n  \"array1Only\": [\r\n    [\r\n      1,\r\n      2\r\n    ]\r\n  ],\r\n  \"array2Only\": [\r\n    [\r\n      1,\r\n      3,\r\n      5\r\n    ],\r\n    99\r\n  ],\r\n  \"difference\": [\r\n    [\r\n      1,\r\n      2\r\n    ],\r\n    [\r\n      1,\r\n      3,\r\n      5\r\n    ],\r\n    99\r\n  ],\r\n  \"union\": [\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    [\r\n      1,\r\n      2\r\n    ],\r\n    \"apple\",\r\n    [\r\n      1,\r\n      3,\r\n      5\r\n    ],\r\n    99\r\n  ]\r\n}"
+    },
+    {
       "name": "Parse Number - IAP",
       "webName": "Parse Number - IAP",
       "assetType": "Transformation",
