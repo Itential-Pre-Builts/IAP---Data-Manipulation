@@ -15,8 +15,9 @@
     - [Entry Point IAP Component](#entry-point-iap-component)
     - [Inputs](#inputs)
     - [Outputs](#outputs)
-    - [API Links](#api-links)
+    - [Query Output](#query-output)
     - [Example Inputs and Outputs](#example-inputs-and-outputs)
+    - [API Links](#api-links)
   - [Support](#support)
 
 ## Overview
@@ -25,6 +26,9 @@ Find the first available number from an array of already allocated integers give
 
 Capabilities include:
 - This transformation allows IAP users to find the first available number from an array of already allocated integers given a starting integer and an ending integer
+
+
+
 
 
 ## Getting Started
@@ -47,7 +51,7 @@ No external dependencies required to run this Transformation Project.
 
 ### Adapters
 
-No adapters required to run this Transformation Project.
+No adapters required to run **Allocate One Number - IAP**.
 
 
 ### How to Install
@@ -66,7 +70,7 @@ While Itential tests this Transformation Project and its capabilities, it is oft
 
 ### Entry Point IAP Component
 
-The primary IAP component to run this Transformation Project is listed below:
+The primary IAP component to run **Allocate One Number - IAP** is listed below:
 
 <table>
   <thead>
@@ -84,7 +88,7 @@ The primary IAP component to run this Transformation Project is listed below:
 
 ### Inputs
 
-The following table lists the inputs to the Transformation Project:
+The following table lists the inputs for **Allocate One Number - IAP**:
 
 <table>
   <thead>
@@ -127,7 +131,7 @@ The following table lists the inputs to the Transformation Project:
 
 ### Outputs
 
-The following table lists the outputs of the Transformation Project:
+The following table lists the outputs for **Allocate One Number - IAP**:
 
 <table>
   <thead>
@@ -148,16 +152,13 @@ The following table lists the outputs of the Transformation Project:
   </tbody>
 </table>
 
-  
 
 
-### API Links
-As noted on the JSON Schema Transformation (JST) Designer documentation for [Using a Method](https://docs.itential.com/docs/jst-designer-2023-1#using-a-method), select the information (i) icon in the header of the method to be redirected to the [Mozilla Developer Network JavaScript reference documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference) for the method. 
+### Query Output
+
+There are no query output examples for **Allocate One Number - IAP**.
 
 
-- [IAP JSON Schema Transformation (JST) Designer](https://docs.itential.com/docs/jst-designer-2023-1)
-- [Using Transformations in IAP Workflows](https://docs.itential.com/docs/transformation-options-4)
- 
 
 
 ### Example Inputs and Outputs
@@ -209,6 +210,31 @@ Output:
   
 
 
+### API Links
+As noted on the JSON Schema Transformation (JST) Designer documentation for [Using a Method](https://docs.itential.com/docs/jst-designer-2023-1#using-a-method), select the information `(i)` icon in the header of the method to be redirected to the [Mozilla Developer Network JavaScript reference documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference) for the method. 
+
+<table>
+  <thead>
+    <tr>
+      <th>API Name</th>
+      <th>API Documentation Link</th>
+      <th>API Link Visibility</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IAP JSON Schema Transformation (JST) Designer</td>
+      <td><a href="https://docs.itential.com/docs/jst-designer-2023-1">https://docs.itential.com/docs/jst-designer-2023-1</a></td>
+      <td>Public</td>
+    </tr>    <tr>
+      <td>Using Transformations in IAP Workflows</td>
+      <td><a href="https://docs.itential.com/docs/transformation-options-4">https://docs.itential.com/docs/transformation-options-4</a></td>
+      <td>Public</td>
+    </tr>
+  </tbody>
+</table>
+
+
 ## Support
 
-Please use your Itential Customer Success account if you need support when using this Transformation Project.
+Please use your Itential Customer Success account if you need support when using **Allocate One Number - IAP**.

@@ -1,4 +1,14 @@
 
+## 1.0.4 [04-03-2024]
+
+Regenerate documentation and metadata.json files
+
+See commit eb30ef1
+
+2024-01-31 22:13:33 +0000
+
+---
+
 ## 1.0.3 [01-31-2024]
 
 * Add Set Operations on Arrays transformation
@@ -86,4 +96,4 @@ See merge request itentialopensource/pre-built-automations/pre-built-template-20
 See merge request itentialopensource/pre-built-automations/pre-built-template-2023-1!1
 
 ---
-\n\n\n\n\n\n\n\n\n\n\n
+\n\n\n\n\n\n\n\n\n\n\n\n

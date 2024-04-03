@@ -38,11 +38,13 @@
     "apiLinks": [
       {
         "title": "IAP JSON Schema Transformation (JST) Designer",
-        "link": "https://docs.itential.com/docs/jst-designer-2023-1"
+        "link": "https://docs.itential.com/docs/jst-designer-2023-1",
+        "public": true
       },
       {
         "title": "Using Transformations in IAP Workflows",
-        "link": "https://docs.itential.com/docs/transformation-options-4"
+        "link": "https://docs.itential.com/docs/transformation-options-4",
+        "public": true
       }
     ]
   },
