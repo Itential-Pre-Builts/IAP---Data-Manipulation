@@ -1,4 +1,14 @@
 
+## 1.0.5 [04-03-2024]
+
+Regenerate documentation and metadata.json files
+
+See commit c310cfc
+
+2024-04-03 13:25:43 +0000
+
+---
+
 ## 1.0.4 [04-03-2024]
 
 Regenerate documentation and metadata.json files
@@ -96,4 +106,4 @@ See merge request itentialopensource/pre-built-automations/pre-built-template-20
 See merge request itentialopensource/pre-built-automations/pre-built-template-2023-1!1
 
 ---
-\n\n\n\n\n\n\n\n\n\n\n\n
+\n\n\n\n\n\n\n\n\n\n\n\n\n
