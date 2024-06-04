@@ -8,7 +8,7 @@
   "osVersions": [],
   "apiVersions": [],
   "iapVersions": [
-    "2023.1"
+    "2023.2"
   ],
   "domains": [],
   "tags": [],
@@ -55,7 +55,7 @@
       "assetType": "Transformation",
       "overview": "Run a set of mathematical aggregate functions on an array of numbers",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"groupedArray\": [\r\n    1,\r\n    2,\r\n    3\r\n  ]\r\n}",
       "exampleOutput": "{\r\n  \"sum\": 6,\r\n  \"maximum\": 3,\r\n  \"minimum\": 1,\r\n  \"range\": 2,\r\n  \"count\": 3,\r\n  \"arithmeticMean\": 2,\r\n  \"geometricMean\": 1.8171205928321397,\r\n  \"product\": 6,\r\n  \"harmonicMean\": 1.6363636363636365,\r\n  \"median\": 2,\r\n  \"mode\": [\r\n    1,\r\n    2,\r\n    3\r\n  ],\r\n  \"modeFrequency\": 1,\r\n  \"standardDeviation\": 0.816496580927726,\r\n  \"variance\": 0.6666666666666666,\r\n  \"valuesIgnored\": [],\r\n  \"valuesUsed\": [\r\n    1,\r\n    2,\r\n    3\r\n  ],\r\n  \"valuesUsed-converted\": [\r\n    1,\r\n    2,\r\n    3\r\n  ]\r\n}"
@@ -66,7 +66,7 @@
       "assetType": "Transformation",
       "overview": "Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"allocated\": [\r\n    1,\r\n    4,\r\n    5\r\n  ],\r\n  \"startRange\": 5,\r\n  \"endRange\": 8\r\n}",
       "exampleOutput": "{\r\n  \"assigned\": [\r\n    6,\r\n    7\r\n  ]\r\n}"
@@ -77,7 +77,7 @@
       "assetType": "Transformation",
       "overview": "Find the first available number from an array of already allocated integers given a starting integer and an ending integer",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"allocated\": [\r\n    1,\r\n    4,\r\n    5\r\n  ],\r\n  \"startRange\": 5,\r\n  \"endRange\": 8\r\n}",
       "exampleOutput": "{\r\n  \"assigned\": 6\r\n}"
@@ -88,7 +88,7 @@
       "assetType": "Transformation",
       "overview": "Split an array into a smaller sized groups given a desired chunk size",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"originalArray\": [\r\n    1,\r\n    2,\r\n    3,\r\n    \"a\",\r\n    \"b\"\r\n  ],\r\n  \"chunkSize\": 3\r\n}",
       "exampleOutput": "[\r\n  [\r\n    1,\r\n    2,\r\n    3\r\n  ],\r\n  [\r\n    \"a\",\r\n    \"b\"\r\n  ]\r\n]"
@@ -99,7 +99,7 @@
       "assetType": "Transformation",
       "overview": "Clear empty keys from a JSON",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"input\": {\r\n    \"name\": \"John\",\r\n    \"age\": \"30\",\r\n    \"address\": {},\r\n    \"hobbies\": []\r\n  }\r\n}",
       "exampleOutput": "{\r\n  \"name\": \"John\",\r\n  \"age\": \"30\"\r\n}"
@@ -110,7 +110,7 @@
       "assetType": "Transformation",
       "overview": "Convert CSV into JSON",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"csv\": \"a,b,c,d,e,f\\n1,2,3,4,5,7,8,9,0\\n5,4,3,2,1\\n1,2,3,4,5\"\r\n}",
       "exampleOutput": "[\r\n  {\r\n    \"a\": \"1\",\r\n    \"b\": \"2\",\r\n    \"c\": \"3\",\r\n    \"d\": \"4\",\r\n    \"e\": \"5\",\r\n    \"f\": \"7\"\r\n  },\r\n  {\r\n    \"a\": \"5\",\r\n    \"b\": \"4\",\r\n    \"c\": \"3\",\r\n    \"d\": \"2\",\r\n    \"e\": \"1\",\r\n    \"f\": \"\"\r\n  },\r\n  {\r\n    \"a\": \"1\",\r\n    \"b\": \"2\",\r\n    \"c\": \"3\",\r\n    \"d\": \"4\",\r\n    \"e\": \"5\",\r\n    \"f\": \"\"\r\n  }\r\n]"
@@ -121,7 +121,7 @@
       "assetType": "Transformation",
       "overview": "Convert string to special cases including camelCase, PascalCase, kebab-case, and snake_case",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"incomingString\": \"foo bar foobar\"\r\n}",
       "exampleOutput": "{\r\n  \"toCamelCase\": \"fooBarFoobar\",\r\n  \"toSnakeCase\": \"foo_bar_foobar\",\r\n  \"toKebabCase\": \"foo-bar-foobar\",\r\n  \"toPascalCase\": \"FooBarFoobar\"\r\n}"
@@ -132,7 +132,7 @@
       "assetType": "Transformation",
       "overview": "Filter array of objects by key value pair",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"filterableArray\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"keyToFilterOn\": \"state\",\r\n  \"valueToFind\": \"GA\",\r\n  \"discardMatching\": true\r\n}",
       "exampleOutput": "{\r\n  \"filteredArray\": [\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"firstFilteredElement\": {\r\n    \"city\": \"Dallas\",\r\n    \"state\": \"TX\"\r\n  }\r\n}"
@@ -143,7 +143,7 @@
       "assetType": "Transformation",
       "overview": "Generate a random integer within a range",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"minimum\": 2,\r\n  \"maximum\": 5\r\n}",
       "exampleOutput": "2"
@@ -154,7 +154,7 @@
       "assetType": "Transformation",
       "overview": "Get a random element from array",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ]\r\n}",
       "exampleOutput": "{\r\n  \"arrayWithoutElement\": [\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"randomElement\": {\r\n    \"city\": \"Atlanta\",\r\n    \"state\": \"GA\"\r\n  },\r\n  \"randomElementIndex\": 0,\r\n  \"poppedArrayLength\": 3\r\n}"
@@ -165,7 +165,7 @@
       "assetType": "Transformation",
       "overview": "Get a value from an object using JSON Pointer",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"jsonPointer\": \"/a/b\",\r\n  \"obj\": {\r\n    \"a\": {\r\n      \"b\": 2,\r\n      \"c\": 3\r\n    }\r\n  }\r\n}",
       "exampleOutput": "2"
@@ -176,7 +176,7 @@
       "assetType": "Transformation",
       "overview": "Group records by a property",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"fruit\": \"apple\",\r\n      \"price\": \"42.2\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"fruit\": \"banana\",\r\n      \"price\": \"10.1\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"fruit\": \"potato\",\r\n      \"price\": \"20\",\r\n      \"type\": \"vegetable\"\r\n    }\r\n  ],\r\n  \"groupByProperty\": \"type\"\r\n}",
       "exampleOutput": "{\r\n  \"fruit\": [\r\n    {\r\n      \"fruit\": \"apple\",\r\n      \"price\": \"42.2\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"fruit\": \"banana\",\r\n      \"price\": \"10.1\",\r\n      \"type\": \"fruit\"\r\n    }\r\n  ],\r\n  \"vegetable\": [\r\n    {\r\n      \"fruit\": \"potato\",\r\n      \"price\": \"20\",\r\n      \"type\": \"vegetable\"\r\n    }\r\n  ]\r\n}"
@@ -187,7 +187,7 @@
       "assetType": "Transformation",
       "overview": "Implement set operations on 2 arrays including union, intersection, set difference and symmetric difference",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"array1\": [\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    [\r\n      1,\r\n      2\r\n    ],\r\n    \"apple\"\r\n  ],\r\n  \"array2\": [\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    [\r\n      1,\r\n      3,\r\n      5\r\n    ],\r\n    \"apple\",\r\n    99\r\n  ]\r\n}",
       "exampleOutput": "{\r\n  \"intersection\": [\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    \"apple\"\r\n  ],\r\n  \"array1Only\": [\r\n    [\r\n      1,\r\n      2\r\n    ]\r\n  ],\r\n  \"array2Only\": [\r\n    [\r\n      1,\r\n      3,\r\n      5\r\n    ],\r\n    99\r\n  ],\r\n  \"difference\": [\r\n    [\r\n      1,\r\n      2\r\n    ],\r\n    [\r\n      1,\r\n      3,\r\n      5\r\n    ],\r\n    99\r\n  ],\r\n  \"union\": [\r\n    [\r\n      1,\r\n      3,\r\n      4\r\n    ],\r\n    [\r\n      1,\r\n      2\r\n    ],\r\n    \"apple\",\r\n    [\r\n      1,\r\n      3,\r\n      5\r\n    ],\r\n    99\r\n  ]\r\n}"
@@ -198,7 +198,7 @@
       "assetType": "Transformation",
       "overview": "Convert strings and strings within objects to numbers",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"keysToConvert\": [\r\n    \"price\",\r\n    \"aisle\"\r\n  ],\r\n  \"data\": {\r\n    \"fruit\": \"apple\",\r\n    \"quantity\": \"30\",\r\n    \"price\": \"42.2\",\r\n    \"aisle\": \"23b\"\r\n  }\r\n}",
       "exampleOutput": "{\r\n  \"fruit\": \"apple\",\r\n  \"quantity\": \"30\",\r\n  \"price\": 42.2,\r\n  \"aisle\": \"23b\"\r\n}"
@@ -209,7 +209,7 @@
       "assetType": "Transformation",
       "overview": "Remove duplicates from an array of objects or array of arrays",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"a\": \"a\"\r\n    },\r\n    {\r\n      \"a\": \"b\"\r\n    },\r\n    {\r\n      \"a\": \"a\"\r\n    },\r\n    {\r\n      \"a\": {\r\n        \"a\": [\r\n          1,\r\n          2,\r\n          3\r\n        ]\r\n      }\r\n    },\r\n    {\r\n      \"a\": {\r\n        \"a\": [\r\n          1,\r\n          2,\r\n          3\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",
       "exampleOutput": "[\r\n  {\r\n    \"a\": \"a\"\r\n  },\r\n  {\r\n    \"a\": \"b\"\r\n  },\r\n  {\r\n    \"a\": {\r\n      \"a\": [\r\n        1,\r\n        2,\r\n        3\r\n      ]\r\n    }\r\n  }\r\n]"
@@ -220,7 +220,7 @@
       "assetType": "Transformation",
       "overview": "Remove duplicates from an array of primitives",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"array\": [\r\n    \"hello\",\r\n    \"world\",\r\n    \"hello\",\r\n    null,\r\n    true,\r\n    true,\r\n    null,\r\n    \"world\",\r\n    \"HeLLo\"\r\n  ]\r\n}",
       "exampleOutput": "[\r\n  \"hello\",\r\n  \"world\",\r\n  null,\r\n  true,\r\n  \"HeLLo\"\r\n]"
@@ -231,7 +231,7 @@
       "assetType": "Transformation",
       "overview": "Remove an element from an array by index",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"array\": [\r\n    9,\r\n    8,\r\n    7.45,\r\n    77,\r\n    7\r\n  ],\r\n  \"index\": 1\r\n}",
       "exampleOutput": "{\r\n  \"newArray\": [\r\n    9,\r\n    7.45,\r\n    77,\r\n    7\r\n  ],\r\n  \"item\": 8\r\n}"
@@ -242,7 +242,7 @@
       "assetType": "Transformation",
       "overview": "Remove an element from an array by a value",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"array\": [\r\n    7,\r\n    9,\r\n    8,\r\n    7.45,\r\n    77,\r\n    7\r\n  ],\r\n  \"value\": 7,\r\n  \"removeAll\": true\r\n}",
       "exampleOutput": "{\r\n  \"newArray\": [\r\n    9,\r\n    8,\r\n    7.45,\r\n    77\r\n  ],\r\n  \"noOfRemovedItems\": 2\r\n}"
@@ -253,7 +253,7 @@
       "assetType": "Transformation",
       "overview": "Separate an array of objects by a key value pair",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"dataArray\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ],\r\n  \"key\": \"state\",\r\n  \"value\": \"GA\"\r\n}",
       "exampleOutput": "{\r\n  \"matchingItems\": [\r\n    {\r\n      \"city\": \"Atlanta\",\r\n      \"state\": \"GA\"\r\n    },\r\n    {\r\n      \"city\": \"Sandy Springs\",\r\n      \"state\": \"GA\"\r\n    }\r\n  ],\r\n  \"nonmatchingItems\": [\r\n    {\r\n      \"city\": \"Dallas\",\r\n      \"state\": \"TX\"\r\n    },\r\n    {\r\n      \"city\": \"Orlando\",\r\n      \"state\": \"FL\"\r\n    }\r\n  ]\r\n}"
@@ -264,7 +264,7 @@
       "assetType": "Transformation",
       "overview": "Split a string into an array by regex or another string",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"inputString\": \"Hello123world-456,2024\",\r\n  \"separatorString\": \"\",\r\n  \"separatorRegex\": \"/\\d+/gm\",\r\n  \"limit\": null\r\n}",
       "exampleOutput": "[\r\n  \"Hello\",\r\n  \"world-\",\r\n  \",\",\r\n  \"\"\r\n]"
@@ -275,7 +275,7 @@
       "assetType": "Transformation",
       "overview": "Transpose the record by creating arrays for each property within the groups",
       "iapVersions": [
-        "2023.1"
+        "2023.2"
       ],
       "exampleInput": "{\r\n  \"array\": [\r\n    {\r\n      \"item\": \"apple\",\r\n      \"price\": \"42.2\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"item\": \"banana\",\r\n      \"price\": \"10.1\",\r\n      \"type\": \"fruit\"\r\n    },\r\n    {\r\n      \"item\": \"potato\",\r\n      \"price\": \"20\",\r\n      \"type\": \"vegetable\"\r\n    }\r\n  ],\r\n  \"groupByProperty\": \"type\"\r\n}",
       "exampleOutput": "{\r\n  \"fruit\": {\r\n    \"item\": [\r\n      \"apple\",\r\n      \"banana\"\r\n    ],\r\n    \"price\": [\r\n      \"42.2\",\r\n      \"10.1\"\r\n    ]\r\n  },\r\n  \"vegetable\": {\r\n    \"item\": [\r\n      \"potato\"\r\n    ],\r\n    \"price\": [\r\n      \"20\"\r\n    ]\r\n  }\r\n}"

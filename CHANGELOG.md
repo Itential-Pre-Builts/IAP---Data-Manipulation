@@ -1,4 +1,14 @@
 
+## 1.0.7 [06-04-2024]
+
+Update IAP version in asset documentation
+
+See merge request itentialopensource/pre-built-automations/iap-data-manipulation!16
+
+2024-06-04 20:59:22 +0000
+
+---
+
 ## 1.0.6 [04-25-2024]
 
 Updates IAP Cypress Testing Library version
@@ -116,4 +126,4 @@ See merge request itentialopensource/pre-built-automations/pre-built-template-20
 See merge request itentialopensource/pre-built-automations/pre-built-template-2023-1!1
 
 ---
-\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
