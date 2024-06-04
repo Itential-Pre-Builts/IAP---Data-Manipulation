@@ -44,7 +44,7 @@ Transformation are used to translate data from one format to a different format.
 
 Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **IAP - Data Manipulation** has been tested with:
 
-- IAP **2023.1**
+- IAP **2023.2**
 
 ### External Dependencies
 
@@ -72,7 +72,7 @@ While Itential tests this Transformation Project and its capabilities, it is oft
 ## Using this Transformation Project
 Transformation Projects contain 1 or more transformations. Each of these transformations have different inputs and outputs.
 
-### Aggregate Functions for Arrays - IAP
+### <ins>Aggregate Functions for Arrays - IAP</ins>
 Run a set of mathematical aggregate functions on an array of numbers
 
 Capabilities include:
@@ -336,7 +336,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Allocate One Number - IAP
+
+---
+### <ins>Allocate One Number - IAP</ins>
 Find the first available number from an array of already allocated integers given a starting integer and an ending integer
 
 Capabilities include:
@@ -515,7 +517,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Allocate a Pair of Numbers - IAP
+
+---
+### <ins>Allocate a Pair of Numbers - IAP</ins>
 Find the first available consecutive pair of numbers from an array of already allocated integers given a starting integer and an ending integer
 
 Capabilities include:
@@ -703,7 +707,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Chunk Array - IAP
+
+---
+### <ins>Chunk Array - IAP</ins>
 Split an array into a smaller sized groups given a desired chunk size
 
 Capabilities include:
@@ -876,7 +882,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Clear Empty Keys - IAP
+
+---
+### <ins>Clear Empty Keys - IAP</ins>
 Clear empty keys from a JSON
 
 Capabilities include:
@@ -1026,7 +1034,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Convert CSV to JSON - IAP
+
+---
+### <ins>Convert CSV to JSON - IAP</ins>
 Convert CSV into JSON
 
 Capabilities include:
@@ -1213,7 +1223,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Convert String to Special Cases - IAP
+
+---
+### <ins>Convert String to Special Cases - IAP</ins>
 Convert string to special cases including camelCase, PascalCase, kebab-case, and snake_case
 
 Capabilities include:
@@ -1367,7 +1379,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Filter Array of Objects by Key Value Pair - IAP
+
+---
+### <ins>Filter Array of Objects by Key Value Pair - IAP</ins>
 Filter array of objects by key value pair
 
 Capabilities include:
@@ -1638,7 +1652,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Generate Random Integer Within Range - IAP
+
+---
+### <ins>Generate Random Integer Within Range - IAP</ins>
 Generate a random integer within a range
 
 Capabilities include:
@@ -1779,7 +1795,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Get Random Element From Array - IAP
+
+---
+### <ins>Get Random Element From Array - IAP</ins>
 Get a random element from array
 
 Capabilities include:
@@ -1999,7 +2017,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Get Value From JSON Pointer - IAP
+
+---
+### <ins>Get Value From JSON Pointer - IAP</ins>
 Get a value from an object using JSON Pointer
 
 Capabilities include:
@@ -2150,7 +2170,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Group Records by Property - IAP
+
+---
+### <ins>Group Records by Property - IAP</ins>
 Group records by a property
 
 Capabilities include:
@@ -2427,7 +2449,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Implement Set Operations on Arrays - IAP
+
+---
+### <ins>Implement Set Operations on Arrays - IAP</ins>
 Implement set operations on 2 arrays including union, intersection, set difference and symmetric difference
 
 Capabilities include:
@@ -2855,7 +2879,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Parse Number - IAP
+
+---
+### <ins>Parse Number - IAP</ins>
 Convert strings and strings within objects to numbers
 
 Capabilities include:
@@ -3094,7 +3120,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Remove Duplicates From Array of Arrays or Objects - IAP
+
+---
+### <ins>Remove Duplicates From Array of Arrays or Objects - IAP</ins>
 Remove duplicates from an array of objects or array of arrays
 
 Capabilities include:
@@ -3418,7 +3446,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Remove Duplicates From Array of Primitives - IAP
+
+---
+### <ins>Remove Duplicates From Array of Primitives - IAP</ins>
 Remove duplicates from an array of primitives
 
 Capabilities include:
@@ -3614,7 +3644,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Remove Element From Array by Index - IAP
+
+---
+### <ins>Remove Element From Array by Index - IAP</ins>
 Remove an element from an array by index
 
 Capabilities include:
@@ -3857,7 +3889,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Remove Element From Array by Value - IAP
+
+---
+### <ins>Remove Element From Array by Value - IAP</ins>
 Remove an element from an array by a value
 
 Capabilities include:
@@ -4100,7 +4134,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Separate Array of Objects by Key Value Pair - IAP
+
+---
+### <ins>Separate Array of Objects by Key Value Pair - IAP</ins>
 Separate an array of objects by a key value pair
 
 Capabilities include:
@@ -4380,7 +4416,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Split String into Array by Regex or Separator - IAP
+
+---
+### <ins>Split String into Array by Regex or Separator - IAP</ins>
 Split a string into an array by regex or another string
 
 Capabilities include:
@@ -4566,7 +4604,9 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
-### Transpose Record by Creating Arrays for Each Property Within Groups - IAP
+
+---
+### <ins>Transpose Record by Creating Arrays for Each Property Within Groups - IAP</ins>
 Transpose the record by creating arrays for each property within the groups
 
 Capabilities include:
@@ -4868,6 +4908,8 @@ As noted on the JSON Schema Transformation (JST) Designer documentation for [Usi
 </table>
 
 
+
+---
 ## Additional Information
 
 ### Support

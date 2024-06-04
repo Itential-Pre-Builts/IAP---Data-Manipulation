@@ -38,7 +38,7 @@ Capabilities include:
 Itential Transformation Projects are built and tested on particular versions of IAP. In addition, Transformation Projects are often dependent on external systems and as such, these Transformation Projects will have dependencies on these other systems. This version of **Parse Number - IAP** has been tested with:
 
 
-- IAP **2023.1**
+- IAP **2023.2**
 
 
 

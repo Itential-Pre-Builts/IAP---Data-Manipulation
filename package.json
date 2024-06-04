@@ -1,5 +1,5 @@
 {
-  "version": "1.0.7-2023.2.0",
+  "version": "1.0.8-2023.2.1",
   "description": "IAP Transformation Projects for Data Manipulation",
   "scripts": {
     "setup-hooks": "sh ./scripts/setup-hooks.sh",

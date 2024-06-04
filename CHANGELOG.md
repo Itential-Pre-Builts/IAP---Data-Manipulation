@@ -1,4 +1,14 @@
 
+## 1.0.8-2023.2.1 [06-04-2024]
+
+Update IAP version in asset documentation
+
+See merge request itentialopensource/pre-built-automations/iap-data-manipulation!17
+
+2024-06-04 21:00:04 +0000
+
+---
+
 ## 1.0.7-2023.2.0 [04-25-2024]
 
 Regenerate documentation and metadata.json files
@@ -126,4 +136,4 @@ See merge request itentialopensource/pre-built-automations/pre-built-template-20
 See merge request itentialopensource/pre-built-automations/pre-built-template-2023-1!1
 
 ---
-\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
