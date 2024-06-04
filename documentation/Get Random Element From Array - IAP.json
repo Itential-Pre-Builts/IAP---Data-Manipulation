@@ -1,6 +1,6 @@
 {
   "iapVersions": [
-    "2023.1"
+    "2023.2"
   ],
   "capabilities": [
     {
@@ -29,7 +29,14 @@
     },
     {
       "name": "randomElement",
-      "type": ["number", "string", "boolean", "array", "object", "null"],
+      "type": [
+        "number",
+        "string",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ],
       "description": "Randomly selected element",
       "exampleValue": "{\r\n  \"city\": \"Atlanta\",\r\n  \"state\": \"GA\"\r\n}"
     },

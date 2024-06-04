@@ -1,6 +1,6 @@
 {
   "iapVersions": [
-    "2023.1"
+    "2023.2"
   ],
   "capabilities": [
     {
@@ -36,7 +36,14 @@
     },
     {
       "name": "item",
-      "type": ["array", "boolean", "number", "string", "object", "null"],
+      "type": [
+        "array",
+        "boolean",
+        "number",
+        "string",
+        "object",
+        "null"
+      ],
       "description": "The item that was removed from the array",
       "exampleValue": "8"
     }
