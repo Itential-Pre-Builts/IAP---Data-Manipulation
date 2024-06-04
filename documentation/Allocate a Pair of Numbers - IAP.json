@@ -1,6 +1,6 @@
 {
   "iapVersions": [
-    "2023.1"
+    "2023.2"
   ],
   "capabilities": [
     {
@@ -37,7 +37,10 @@
   "outputs": [
     {
       "name": "assigned",
-      "type": ["array", "boolean"],
+      "type": [
+        "array",
+        "boolean"
+      ],
       "description": "An array of the first availble consecutive pair if found. Otherwise, it will be false",
       "exampleValue": "[6, 7]"
     }
