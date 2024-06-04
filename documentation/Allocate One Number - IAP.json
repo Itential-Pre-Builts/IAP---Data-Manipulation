@@ -1,6 +1,6 @@
 {
   "iapVersions": [
-    "2023.1"
+    "2023.2"
   ],
   "capabilities": [
     {
@@ -37,7 +37,10 @@
   "outputs": [
     {
       "name": "assigned",
-      "type": ["integer", "boolean"],
+      "type": [
+        "integer",
+        "boolean"
+      ],
       "description": "The first available number if found. Otherwise, it will be false",
       "exampleValue": "6"
     }

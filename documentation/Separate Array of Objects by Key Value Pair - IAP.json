@@ -1,6 +1,6 @@
 {
   "iapVersions": [
-    "2023.1"
+    "2023.2"
   ],
   "capabilities": [
     {
@@ -28,7 +28,14 @@
     },
     {
       "name": "value",
-      "type": ["array", "boolean", "null", "object", "number", "string"],
+      "type": [
+        "array",
+        "boolean",
+        "null",
+        "object",
+        "number",
+        "string"
+      ],
       "required": "yes",
       "description": "The value of the property that needs to be matched",
       "exampleValue": "GA"
