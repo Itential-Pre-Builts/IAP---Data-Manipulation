@@ -1,24 +1,26 @@
 {
   "name": "IAP - Data Manipulation",
+  "webName": "IAP Data Manipulation Transformations",
+  "supportLevel": "community",
   "overview": "This Transformation Project contains several transformation examples that are used for data manipulation in Itential Automation Platform (IAP)",
+  "vendor": "Itential",
+  "product": "IAP",
+  "techAlliance": false,
+  "type": "Transformation Project",
   "domains": [],
   "tags": [],
+  "useCases": [],
+  "deprecated": {
+    "isDeprecated": false
+  },
   "productLink": "",
   "storeLink": "",
   "docLink": "",
   "issueLink": "",
-  "deprecated": {
-    "isDeprecated": false
-  },
-  "type": "Transformation Project",
   "vendorLink": "https://www.itential.com/",
   "faqLink": "",
-  "vendor": "Itential",
-  "product": "IAP",
   "method": "",
   "contributeLink": "",
-  "webName": "IAP Data Manipulation Transformations",
-  "useCases": [],
   "webLink": "",
   "demoLinks": [],
   "trainingLinks": [
@@ -26,5 +28,7 @@
       "title": "Itential Academy",
       "link": "https://www.itential.com/itential-academy/"
     }
-  ]
+  ],
+  "workshopHomePage": "https://www.itential.com/get-started/",
+  "workshopLinks": []
 }

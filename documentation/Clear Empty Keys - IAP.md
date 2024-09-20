@@ -59,7 +59,7 @@ No adapters required to run **Clear Empty Keys - IAP**.
 To install the Transformation Project:
 
 - Verify you are running a supported version of the Itential Automation Platform (IAP) as listed above in the [Supported IAP Versions](#supported-iap-versions) section in order to install the Transformation Project.
-- Import the Transformation Project in [Admin Essentials](https://docs.itential.com/docs/importing-a-prebuilt-4).
+- Import the Transformation Project in [Admin Essentials](https://docs.itential.com/docs/importing-pre-built-iap).
 
 ### Testing
 

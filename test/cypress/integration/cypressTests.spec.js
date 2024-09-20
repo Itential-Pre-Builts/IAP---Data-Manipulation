@@ -1,4 +1,4 @@
-import { PrebuiltRunner, TransformationRunner } from '@itential-tools/iap-cypress-testing-library/testRunner/testRunners';
+import { PrebuiltRunner, TransformationRunner, ProjectRunner } from '@itential-tools/iap-cypress-testing-library/testRunner/testRunners';
 
 function initializeTransformationRunner(transformation, importTransformation) {
   const transformationRunner = new TransformationRunner(transformation.name);
@@ -19,7 +19,16 @@ function initializeTransformationRunner(transformation, importTransformation) {
   return transformationRunner;
 }
 
-describe('Default: Cypress Tests', function () {
+// Helper function to find transformation to test from Project
+function findTransformationInProject(transformationName, project) {
+  for (const projectComponent of project.components) {
+    if (projectComponent.type === 'transformation' && projectComponent.document.name === transformationName) {
+      return projectComponent.document;
+    }
+  }
+}
+
+describe('Default: Pre-Built Cypress Tests', function () {
   let prebuiltRunner;
   let AggregateFunctionsforArraysIAP;
   let AllocateaPairofNumbersIAP;
@@ -44,7 +53,7 @@ describe('Default: Cypress Tests', function () {
   let TransposeRecordbyCreatingArraysforEachPropertyWithinGroupsIAP;
 
   before(function () {
-    //creates a prebuiltRunner for importing the Project
+    //creates a prebuiltRunner for importing the Pre-Built
     cy.fixture(`../../../artifact.json`).then((data) => {
       prebuiltRunner = new PrebuiltRunner(data);
     });
@@ -117,9 +126,9 @@ describe('Default: Cypress Tests', function () {
     prebuiltRunner.deletePrebuilt.single({ failOnStatusCode: false });
   });
 
-  describe('Default: Imports Project', function () {
+  describe('Default: Imports Pre-Built', function () {
     // eslint-disable-next-line mocha/no-hooks-for-single-case
-    it('Default: Should import the Project into IAP', function () {
+    it('Default: Should import the Pre-Built into IAP', function () {
         prebuiltRunner.deletePrebuilt.single({ failOnStatusCode: false });
         prebuiltRunner.importPrebuilt.single({});
     });
@@ -1390,6 +1399,1378 @@ describe('Default: Cypress Tests', function () {
     it('It should return the expected results - each property within the groups is transformed into an array', function () {
       const importTransformation = true;
       const transformationRunner = initializeTransformationRunner(TransposeRecordbyCreatingArraysforEachPropertyWithinGroupsIAP, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array": [
+            {
+              "item": "apple",
+              "price": "42.2",
+              "type": "fruit"
+            },
+            {
+              "item": "banana",
+              "price": "10.1",
+              "type": "fruit"
+            },
+            {
+              "item": "potato",
+              "price": "20",
+              "type": "vegetable"
+            }
+          ],
+          "groupByProperty": "type"
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "fruit": {
+            "item": [
+              "apple",
+              "banana"
+            ],
+            "price": [
+              "42.2",
+              "10.1"
+            ]
+          },
+          "vegetable": {
+            "item": [
+              "potato"
+            ],
+            "price": [
+              "20"
+            ]
+          }
+        }
+      });    
+    });
+  });
+});
+
+describe('Default: Project Cypress Tests', function () {
+  let projectRunner;
+  let projectData;
+
+  before(function () {
+    // Creates a Project runner for importing the Project
+    cy.fixture(`../../../IAP - Data Manipulation.project.json`).then((data) => {
+      projectData = data;
+      projectRunner = new ProjectRunner(data);
+    });
+  });
+
+  after(function() {
+    projectRunner.deleteProject.single({ failOnStatusCode: false });
+  });
+
+  describe('Default: Imports Project', function () {
+    // eslint-disable-next-line mocha/no-hooks-for-single-case
+    it('Default: Should import the project into IAP', function () {
+        projectRunner.deleteProject.single({ failOnStatusCode: false });
+        projectRunner.importProject.single({});
+        projectRunner.verifyProject.exists();
+    });
+  })
+
+  describe('Aggregate Functions for Arrays - IAP', function() {
+    it('It should return the expected results', function () {
+      const transformationData = findTransformationInProject('Aggregate Functions for Arrays - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "groupedArray": [
+            1,
+            2,
+            3
+          ]
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "sum": 6,
+          "maximum": 3,
+          "minimum": 1,
+          "range": 2,
+          "count": 3,
+          "arithmeticMean": 2,
+          "geometricMean": 1.8171205928321397,
+          "product": 6,
+          "harmonicMean": 1.6363636363636365,
+          "median": 2,
+          "mode": [
+            1,
+            2,
+            3
+          ],
+          "modeFrequency": 1,
+          "standardDeviation": 0.816496580927726,
+          "variance": 0.6666666666666666,
+          "valuesIgnored": [],
+          "valuesUsed": [
+            1,
+            2,
+            3
+          ],
+          "valuesUsed-converted": [
+            1,
+            2,
+            3
+          ]
+        },
+      });    
+    });
+  });
+
+  describe('Allocate a Pair of Numbers - IAP', function() {
+    it('It should return the next available pair', function () {
+      const transformationData = findTransformationInProject('Allocate a Pair of Numbers - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "allocated": [
+            1,
+            4,
+            5
+          ],
+          "startRange": 5,
+          "endRange": 8
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "assigned": [
+            6,
+            7
+          ]
+        }
+      });    
+    });
+    it('It should return false if there is no available pair', function () {
+      const transformationData = findTransformationInProject('Allocate a Pair of Numbers - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "allocated": [
+            1,
+            4,
+            5,
+            7
+          ],
+          "startRange": 5,
+          "endRange": 8
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "assigned": false
+        }
+      });    
+    });
+  });
+
+  describe('Allocate One Number - IAP', function() {
+    it('It should return 2 for the next available number', function () {
+      const transformationData = findTransformationInProject('Allocate One Number - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "allocated": [
+            1
+          ],
+          "startRange": 2,
+          "endRange": 3
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "assigned": 2
+        }
+      });    
+    });
+    it('It should return false if there is no number available', function () {
+      const transformationData = findTransformationInProject('Allocate One Number - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "allocated": [
+            1
+          ],
+          "startRange": 2,
+          "endRange": 2
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "assigned": false
+        }
+      });    
+    });
+  });
+
+  describe('Chunk Array - IAP', function() {
+    it('It should return the expected results - the original array splitted into chunks', function () {
+      const transformationData = findTransformationInProject('Chunk Array - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "originalArray": [
+            1,
+            2,
+            3,
+            "a",
+            "b"
+          ],
+          "chunkSize": 3
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            "a",
+            "b"
+          ]
+        ]
+      });    
+    });
+  });
+
+  describe('Clear Empty Keys - IAP', function() {
+    it('It should remove the keys that have empty objects, empty array, empty string, and null values', function () {
+      const transformationData = findTransformationInProject('Clear Empty Keys - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "input": {
+            "firstName": "John",
+            "lastName": "",
+            "age": "30",
+            "address": {},
+            "hobbies": [],
+            "school": null
+          }
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "firstName": "John",
+          "age": "30"
+        }
+      });    
+    });
+  });
+
+  describe('Convert CSV to JSON - IAP', function() {
+    it('It should return the expected results - CSV string is converted to JSON', function () {
+      const transformationData = findTransformationInProject('Convert CSV to JSON - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "csv": "a,b,c,d,e,f\n1,2,3,4,5,7,8,9,0\n5,4,3,2,1\n1,2,3,4,5"
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: [
+          {
+            "a": "1",
+            "b": "2",
+            "c": "3",
+            "d": "4",
+            "e": "5",
+            "f": "7"
+          },
+          {
+            "a": "5",
+            "b": "4",
+            "c": "3",
+            "d": "2",
+            "e": "1",
+            "f": ""
+          },
+          {
+            "a": "1",
+            "b": "2",
+            "c": "3",
+            "d": "4",
+            "e": "5",
+            "f": ""
+          }
+        ]
+      });    
+    });
+  });
+
+  describe('Convert String to Special Cases - IAP', function() {
+    it('It should return the expected results - the original string is converted to special cases', function () {
+      const transformationData = findTransformationInProject('Convert String to Special Cases - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "incomingString": "foo bar foobar"
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "toCamelCase": "fooBarFoobar",
+          "toSnakeCase": "foo_bar_foobar",
+          "toKebabCase": "foo-bar-foobar",
+          "toPascalCase": "FooBarFoobar"
+        }
+      });    
+    });
+  });
+
+  describe('Filter Array of Objects by Key Value Pair - IAP', function() {
+    it('It should return the expected results - the output array contains non-matching objects if discardMatching is set to true', function () {
+      const transformationData = findTransformationInProject('Filter Array of Objects by Key Value Pair - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "filterableArray": [
+            {
+              "city": "Atlanta",
+              "state": "GA"
+            },
+            {
+              "city": "Sandy Springs",
+              "state": "GA"
+            },
+            {
+              "city": "Dallas",
+              "state": "TX"
+            },
+            {
+              "city": "Orlando",
+              "state": "FL"
+            }
+          ],
+          "keyToFilterOn": "state",
+          "valueToFind": "GA",
+          "discardMatching": true
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "filteredArray": [
+            {
+              "city": "Dallas",
+              "state": "TX"
+            },
+            {
+              "city": "Orlando",
+              "state": "FL"
+            }
+          ],
+          "firstFilteredElement": {
+            "city": "Dallas",
+            "state": "TX"
+          }
+        }
+      });    
+    });
+    it('It should return the expected results - the output array contains matching objects if discardMatching is set to false', function () {
+      const transformationData = findTransformationInProject('Filter Array of Objects by Key Value Pair - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "filterableArray": [
+            {
+              "city": "Atlanta",
+              "state": "GA"
+            },
+            {
+              "city": "Sandy Springs",
+              "state": "GA"
+            },
+            {
+              "city": "Dallas",
+              "state": "TX"
+            },
+            {
+              "city": "Orlando",
+              "state": "FL"
+            }
+          ],
+          "keyToFilterOn": "state",
+          "valueToFind": "GA",
+          "discardMatching": false
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "filteredArray": [
+            {
+              "city": "Atlanta",
+              "state": "GA"
+            },
+            {
+              "city": "Sandy Springs",
+              "state": "GA"
+            }
+          ],
+          "firstFilteredElement": {
+            "city": "Atlanta",
+            "state": "GA"
+          }
+        }
+      });    
+    });
+  });
+
+  describe('Generate Random Integer Within Range - IAP', function() {
+    it('It should return the expected results - inclusive of both min and max', function () {
+      const transformationData = findTransformationInProject('Generate Random Integer Within Range - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "minimum": 2,
+          "maximum": 2
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: 2
+      });    
+    });
+  });
+
+  describe('Get Random Element From Array - IAP', function() {
+    it('It should return the expected results', function () {
+      const transformationData = findTransformationInProject('Get Random Element From Array - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array": [
+            {
+              "city": "Atlanta",
+              "state": "GA"
+            }
+          ]
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "arrayWithoutElement": [],
+          "randomElement": {
+            "city": "Atlanta",
+            "state": "GA"
+          },
+          "randomElementIndex": 0,
+          "poppedArrayLength": 0
+        }
+      });    
+    });
+  });
+
+  describe('Get Value From JSON Pointer - IAP', function() {
+    it('It should return the expected results with a valid JSON pointer', function () {
+      const transformationData = findTransformationInProject('Get Value From JSON Pointer - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "jsonPointer": "/a/b",
+          "obj": {
+            "a": {
+              "b": 2,
+              "c": 3
+            }
+          }
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: 2
+      });    
+    });
+  });
+
+  describe('Group Records by Property - IAP', function() {
+    it('It should return the expected results which has each group represented as an array', function () {
+      const transformationData = findTransformationInProject('Group Records by Property - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array": [
+            {
+              "number": 43,
+              "president": "George W. Bush",
+              "took_office": "2001-01-20",
+              "left_office": "2009-01-20",
+              "party": "Republican"
+            },
+            {
+              "number": 44,
+              "president": "Barack Obama",
+              "took_office": "2009-01-20",
+              "left_office": "2017-01-20",
+              "party": "Democratic"
+            },
+            {
+              "number": 45,
+              "president": "Donald J. Trump",
+              "took_office": "2017-01-20",
+              "left_office": null,
+              "party": "Republican"
+            }
+          ],
+          "groupByProperty": "party"
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "Republican": [
+            {
+              "number": 43,
+              "president": "George W. Bush",
+              "took_office": "2001-01-20",
+              "left_office": "2009-01-20",
+              "party": "Republican"
+            },
+            {
+              "number": 45,
+              "president": "Donald J. Trump",
+              "took_office": "2017-01-20",
+              "left_office": null,
+              "party": "Republican"
+            }
+          ],
+          "Democratic": [
+            {
+              "number": 44,
+              "president": "Barack Obama",
+              "took_office": "2009-01-20",
+              "left_office": "2017-01-20",
+              "party": "Democratic"
+            }
+          ]
+        }
+      });    
+    });
+  });
+
+  describe('Implement Set Operations on Arrays - IAP', function() {
+    it('It should return the expected results for union, intersection, set difference and symmetric difference', function () {
+      const transformationData = findTransformationInProject('Implement Set Operations on Arrays - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array1": [
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            "apple"
+          ],
+          "array2": [
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              1,
+              3,
+              5
+            ],
+            "apple",
+            99
+          ]
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "intersection": [
+            [
+              1,
+              3,
+              4
+            ],
+            "apple"
+          ],
+          "array1Only": [
+            [
+              1,
+              2
+            ]
+          ],
+          "array2Only": [
+            [
+              1,
+              3,
+              5
+            ],
+            99
+          ],
+          "difference": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3,
+              5
+            ],
+            99
+          ],
+          "union": [
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            "apple",
+            [
+              1,
+              3,
+              5
+            ],
+            99
+          ]
+        }
+      });    
+    });
+  });
+
+  describe('Parse Number - IAP', function() {
+    it('It should parse number of the provided keys', function () {
+      const transformationData = findTransformationInProject('Parse Number - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "keysToConvert": [
+            "price",
+            "aisle"
+          ],
+          "data": {
+            "fruit": "apple",
+            "quantity": "30",
+            "price": "42.2",
+            "aisle": "23b"
+          }
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "fruit": "apple",
+          "quantity": "30",
+          "price": 42.2,
+          "aisle": "23b"
+        }
+      });    
+    });
+    it('It should parse number of all keys if keysToConvert is not provided', function () {
+      const transformationData = findTransformationInProject('Parse Number - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "keysToConvert": [],
+          "data": {
+            "fruit": "apple",
+            "quantity": "30",
+            "price": "42.2",
+            "aisle": "23b"
+          }
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "fruit": "apple",
+          "quantity": 30,
+          "price": 42.2,
+          "aisle": "23b"
+        }
+      });    
+    });
+  });
+
+  describe('Remove Duplicates From Array of Arrays or Objects - IAP', function() {
+    it('It should return the expected results if the input is an array of objects', function () {
+      const transformationData = findTransformationInProject('Remove Duplicates From Array of Arrays or Objects - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array": [
+            {
+              "a": "a"
+            },
+            {
+              "a": "b"
+            },
+            {
+              "a": "a"
+            },
+            {
+              "a": {
+                "a": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "a": {
+                "a": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: [
+          {
+            "a": "a"
+          },
+          {
+            "a": "b"
+          },
+          {
+            "a": {
+              "a": [
+                1,
+                2,
+                3
+              ]
+            }
+          }
+        ]
+      });    
+    });
+    it('It should return the expected results if the input is an array of arrays', function () {
+      const transformationData = findTransformationInProject('Remove Duplicates From Array of Arrays or Objects - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array": [
+            [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              4,
+              5
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          ]
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: [
+          [
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ]
+          ]
+        ]
+      });    
+    });
+  });
+
+  describe('Remove Duplicates From Array of Primitives - IAP', function() {
+    it('It should return the expected results which has all duplicates removed', function () {
+      const transformationData = findTransformationInProject('Remove Duplicates From Array of Primitives - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array": [
+            "hello",
+            "world",
+            "hello",
+            null,
+            true,
+            true,
+            null,
+            "world",
+            "HeLLo"
+          ]
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: [
+          "hello",
+          "world",
+          null,
+          true,
+          "HeLLo"
+        ]
+      });    
+    });
+  });
+
+  describe('Remove Element From Array by Index - IAP', function() {
+    it('It should return the expected results if the input is an array of primitives', function () {
+      const transformationData = findTransformationInProject('Remove Element From Array by Index - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array": [
+            9,
+            8,
+            7.45,
+            77,
+            7
+          ],
+          "index": 1
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "newArray": [
+            9,
+            7.45,
+            77,
+            7
+          ],
+          "item": 8
+        }
+      });    
+    });
+    it('It should return the expected results if the input is an array of objects', function () {
+      const transformationData = findTransformationInProject('Remove Element From Array by Index - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array": [
+            {
+              "a": "a"
+            },
+            {
+              "b": "b"
+            },
+            {
+              "c": "a"
+            },
+            {
+              "d": {
+                "e": [
+                  1,
+                  2
+                ]
+              }
+            },
+            {
+              "f": {
+                "g": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            }
+          ],
+          "index": 4
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "newArray": [
+            {
+              "a": "a"
+            },
+            {
+              "b": "b"
+            },
+            {
+              "c": "a"
+            },
+            {
+              "d": {
+                "e": [
+                  1,
+                  2
+                ]
+              }
+            }
+          ],
+          "item": {
+            "f": {
+              "g": [
+                1,
+                2,
+                3
+              ]
+            }
+          }
+        }
+      });    
+    });
+    it('It should remove 0 element from the array if the input index is not available', function () {
+      const transformationData = findTransformationInProject('Remove Element From Array by Index - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array": [
+            {
+              "a": "a"
+            },
+            {
+              "b": "b"
+            },
+            {
+              "c": "a"
+            },
+            {
+              "d": {
+                "e": [
+                  1,
+                  2
+                ]
+              }
+            },
+            {
+              "f": {
+                "g": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            }
+          ],
+          "index": 5
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "newArray": [
+            {
+              "a": "a"
+            },
+            {
+              "b": "b"
+            },
+            {
+              "c": "a"
+            },
+            {
+              "d": {
+                "e": [
+                  1,
+                  2
+                ]
+              }
+            },
+            {
+              "f": {
+                "g": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            }
+          ],
+          "item":"__undefined"
+        }
+      });    
+    });
+  });
+
+  describe('Remove Element From Array by Value - IAP', function() {
+    it('It should remove all elements in the array by value if removeAll is set to true', function () {
+      const transformationData = findTransformationInProject('Remove Element From Array by Value - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array": [
+            7,
+            9,
+            8,
+            7.45,
+            77,
+            7
+          ],
+          "value": 7,
+          "removeAll": true
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "newArray": [
+            9,
+            8,
+            7.45,
+            77
+          ],
+          "noOfRemovedItems": 2
+        }
+      });    
+    });
+    it('It should remove the first occurrence of the value if removeAll is set to false', function () {
+      const transformationData = findTransformationInProject('Remove Element From Array by Value - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array": [
+            7,
+            9,
+            8,
+            7.45,
+            77,
+            7
+          ],
+          "value": 7,
+          "removeAll": false
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "newArray": [
+            9,
+            8,
+            7.45,
+            77,
+            7
+          ],
+          "noOfRemovedItems": 1
+        }
+      });    
+    });
+    it('It should remove 0 element if the provided value is not found in the array', function () {
+      const transformationData = findTransformationInProject('Remove Element From Array by Value - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "array": [
+            7,
+            9,
+            8,
+            "hi"
+          ],
+          "value": "hello",
+          "removeAll": false
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "newArray": [
+            7,
+            9,
+            8,
+            "hi"
+          ],
+          "noOfRemovedItems": 0
+        }
+      });    
+    });
+  });
+
+  describe('Separate Array of Objects by Key Value Pair - IAP', function() {
+    it('It should return the expected results which separates the array into matching and nonMatching arrays', function () {
+      const transformationData = findTransformationInProject('Separate Array of Objects by Key Value Pair - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "dataArray": [
+            {
+              "city": "Atlanta",
+              "state": "GA"
+            },
+            {
+              "city": "Sandy Springs",
+              "state": "GA"
+            },
+            {
+              "city": "Dallas",
+              "state": "TX"
+            },
+            {
+              "city": "Orlando",
+              "state": "FL"
+            }
+          ],
+          "key": "state",
+          "value": "GA"
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: {
+          "matchingItems": [
+            {
+              "city": "Atlanta",
+              "state": "GA"
+            },
+            {
+              "city": "Sandy Springs",
+              "state": "GA"
+            }
+          ],
+          "nonmatchingItems": [
+            {
+              "city": "Dallas",
+              "state": "TX"
+            },
+            {
+              "city": "Orlando",
+              "state": "FL"
+            }
+          ]
+        }
+      });    
+    });
+  });
+
+  describe('Split String into Array by Regex or Separator - IAP', function() {
+    it('It should split string into an array if the string used as a separator is provided', function () {
+      const transformationData = findTransformationInProject('Split String into Array by Regex or Separator - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "inputString": "Hello123world-456,2024",
+          "separatorString": "o",
+          "separatorRegex": "/\\d+/gm",
+          "limit": 2
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: [
+          "Hell",
+          "123w"
+        ]
+      });    
+    });
+    it('It should split string into an array by regex if the regex used as a separator is provided', function () {
+      const transformationData = findTransformationInProject('Split String into Array by Regex or Separator - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
+      transformationRunner.transformationRun.run({
+        incoming: {
+          "inputString": "Hello123world-456,2024",
+          "separatorString": "",
+          "separatorRegex": "/\\d+/gm",
+          "limit": null
+        },
+        options: {
+          validateIncoming: true,
+          extractOutput: true,
+          revertToDefaultValue: true,
+        },
+        expectedOutput: [
+          "Hello",
+          "world-",
+          ",",
+          ""
+        ]
+      });    
+    });
+  });
+
+  describe('Transpose Record by Creating Arrays for Each Property Within Groups - IAP', function() {
+    it('It should return the expected results - each property within the groups is transformed into an array', function () {
+      const transformationData = findTransformationInProject('Transpose Record by Creating Arrays for Each Property Within Groups - IAP', projectData);
+      const importTransformation = true;
+      const transformationRunner = initializeTransformationRunner(transformationData, importTransformation);
       transformationRunner.transformationRun.run({
         incoming: {
           "array": [
