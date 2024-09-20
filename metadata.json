@@ -17,6 +17,8 @@
     "isDeprecated": false
   },
   "brokerSince": "",
+  "supportLevel": "community",
+  "techAlliance": false,
   "documentation": {
     "storeLink": "",
     "repoLink": "https://gitlab.com/itentialopensource/pre-built-automations/iap-data-manipulation",
@@ -46,7 +48,9 @@
         "link": "https://docs.itential.com/docs/jst-designer-2023-1",
         "public": true
       }
-    ]
+    ],
+    "workshopHomePage": "https://www.itential.com/get-started/",
+    "workshopLinks": []
   },
   "assets": [
     {
