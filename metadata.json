@@ -17,6 +17,8 @@
     "isDeprecated": false
   },
   "brokerSince": "",
+  "supportLevel": "community",
+  "techAlliance": false,
   "documentation": {
     "storeLink": "",
     "repoLink": "https://gitlab.com/itentialopensource/pre-built-automations/iap-data-manipulation",
@@ -37,16 +39,18 @@
     "productLink": "",
     "apiLinks": [
       {
-        "title": "Using Transformations in IAP Workflows",
-        "link": "https://docs.itential.com/docs/transformation-options-4",
-        "public": true
-      },
-      {
         "title": "IAP JSON Schema Transformation (JST) Designer",
         "link": "https://docs.itential.com/docs/jst-designer-2023-1",
         "public": true
+      },
+      {
+        "title": "Using Transformations in IAP Workflows",
+        "link": "https://docs.itential.com/docs/transformation-options-4",
+        "public": true
       }
-    ]
+    ],
+    "workshopHomePage": "https://www.itential.com/get-started/",
+    "workshopLinks": []
   },
   "assets": [
     {
